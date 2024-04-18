@@ -47,10 +47,10 @@ $user = $preparedGetUser->fetch();
     <header>
         <nav>
             <ul>
-                <li><a href="../register/form.php">Créer compte</a></li>
-                <li><a href="../login/loginForm.php">Login</a></li>
-                <li><a href="../account/account.php">Mon compte</a></li>
-                <li><a href="../logout.php">Se deconnecter</a></li>
+                <li><a href="form.php">Créer compte</a></li>
+                <li><a href="loginForm.php">Login</a></li>
+                <li><a href="account.php">Mon compte</a></li>
+                <li><a href="logout.php">Se deconnecter</a></li>
             </ul>
 
         </nav>

@@ -3,4 +3,4 @@ session_start();
 
 session_destroy();
 
-header('Location: login/loginForm.php');
+header('Location: loginForm.php');

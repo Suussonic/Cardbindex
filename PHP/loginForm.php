@@ -4,24 +4,22 @@ require_once('../db.php');
 
 $errorInfo = false;
 
-if (isset($_POST['email']) && isset($_POST['password'])) {
-    $email = $_POST['email'];
+if (isset($_POST['pseudo']) && isset($_POST['password'])) {
+    $pseudo = $_POST['pseudo'];
     $password = $_POST['password'];
 
-    $loginSql = 'SELECT * FROM users WHERE email = :email';
+    $loginSql = 'SELECT * FROM users WHERE pseudo = :pseudo';
 
     $preparedLoginRequest = $dbh->prepare($loginSql);
-    $preparedLoginRequest->execute(['email' => $email]);
+    $preparedLoginRequest->execute(['pseudo' => $pseudo]);
 
     $user = $preparedLoginRequest->fetch();
 
-    if (password_verify($password, $user['password'])) {
+    if (password_verify($password, $users['mdp'])) {
         session_start();
-        $_SESSION['userId'] = $user['id'];
-        $_SESSION['firstname'] = $user['firstname'];
-        $_SESSION['lastname'] = $user['lastname'];
+        $_SESSION['email'] = $users['email'];
 
-        header('location:../account/account.php');
+        header('location:account.php');
     } else {
         $errorInfo = true;
     }
@@ -39,10 +37,10 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     <header>
         <nav>
             <ul>
-                <li><a href="../register/form.php">Créer compte</a></li>
-                <li><a href="../login/loginForm.php">Login</a></li>
-                <li><a href="../account/account.php">Mon compte</a></li>
-                <li><a href="../logout.php">Se deconnecter</a></li>
+                <li><a href="form.php">Créer compte</a></li>
+                <li><a href="loginForm.php">Login</a></li>
+                <li><a href="account/account.php">Mon compte</a></li>
+                <li><a href="logout.php">Se deconnecter</a></li>
             </ul>
 
         </nav>
@@ -55,8 +53,8 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     ?>
     <form action="loginForm.php" method="POST">
         <div>
-            <label for="email">Email</label>
-            <input id="email" type="email" name="email" required>
+            <label for="email">Pseudo</label>
+            <input id="email" type="text" name="email" required>
         </div>
         <div>
             <label for="password">Mot de passe</label>
