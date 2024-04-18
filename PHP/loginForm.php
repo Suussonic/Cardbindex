@@ -1,6 +1,6 @@
 <?php
 global $dbh;
-require_once('../db.php');
+require_once('db.php');
 
 $errorInfo = false;
 
