@@ -38,9 +38,11 @@ INSERT INTO users (pseudo, email, mdp)
 VALUES (:firstname, :email, :password)
 ";
 
+sdbh<- begintransaction()
 $preparedQuery = $dbh->prepare($insertUser);
 $preparedQuery->execute([
     'firstname' => $firstname,
     'email' => $email,
     'password' => $passHash,
 ]);
+sdbh<- commit()
