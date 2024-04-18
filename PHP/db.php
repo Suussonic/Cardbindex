@@ -1,7 +1,7 @@
 <?php
 
-$user = 'debian';
-$password = 'tn3bbjTDe5UQ';
+$user = 'root';
+$password = 'dsfscx1lkj545';
 $options = [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC];
 
 try {
