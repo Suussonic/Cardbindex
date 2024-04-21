@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -11,10 +14,10 @@
 </head>
 <body>
     <header>
-        <a href="index.html"><img src="./ASSET/CARDBINDEX V4.png" alt="LOGO"></a>
-        <input id="recherche" type="search" placeholder="Recherche">
-        <a class="Connexion" href="connexion.html">Se Connecter</a>
-        <a id="param" href=""><img src="./ASSET/PARAMETRE.png"></a>
+        <a href="index.php"><img src="./ASSET/CARDBINDEX V4.png" alt="LOGO"></a>
+        <a href="../api-demo-master/index.html">Rechercher une Carte</a>
+        <a class="Connexion" href="../login/loginForm.php">Se Connecter</a>
+        <a id="param" href="../account/account.php"><img src="./ASSET/PARAMETRE.png"></a>
     </header>
     <div id="banniere">
         <img src="./ASSET/HORIZON.png" alt="banniere">
@@ -23,6 +26,7 @@
         <nav>
             <ul>
                 <li><a href=""><b>Collection</b></a></li>
+                <li><a href="../classeur/COMPTE.php">Mes cartes</a></li>
                 <li><a href=""><b>Marcher</b></a></li>
                 <li><a href=""><b>Tchat</b></a></li>
             </ul>

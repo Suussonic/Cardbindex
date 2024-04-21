@@ -1,9 +1,9 @@
 <?php
-$user = 'abdou';
-$password = 'tn3bbjTDe5UQ';
+$user = 'root';
+$password = '';
 
 try {
-    $dbh = new PDO('mysql:host:localhost;dbname=projet', $user, $password);
+    $dbh = new PDO('mysql:host:localhost;dbname=promo4', $user, $password);
 } catch (PDOException $e) {
     var_dump($e);
 }

@@ -11,7 +11,7 @@
 <body>
     <div class="container" id="container">
             <div class="form-container sign-up-container">
-                <form action="PHP/createAccount.php">
+                <form action="PHP/nocaptcha.php">
                     <h1>Create Account</h1>
                     <div class="social-container">
                         <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -22,11 +22,17 @@
                     <input type="text" placeholder="Name" name="pseudo"/>
                     <input type="email" placeholder="Email" name="email"/>
                     <input type="password" placeholder="Password" name="password" />
-                    <button>Sign Up</button>
+                    <div class="captcha-box">
+                        <!--<input type="checkbox" id="captcha" class="hidden-checkbox" require>
+                        <p>Accepter le contrat d'utilisation.</p>-->
+                        <label for="captcha" class="captcha-label">150 + 50 = ?</label>
+                        <input type="text" id="captcha-input" placeholder="Votre réponse" name="captcha_input" require>
+                    </div>
+                    <button><input type="submit" value="Créer le compte"></button>
                 </form>
             </div>
             <div class="form-container sign-in-container">
-                <form action="#">
+                <form action="PHP/login.php">
                     <h1>Sign in</h1>
                     <div class="social-container">
                         <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -37,7 +43,7 @@
                     <input type="email" placeholder="Email" />
                     <input type="password" placeholder="Password" />
                     <a href="#">Forgot your password?</a>
-                    <button>Sign In</button>
+                    <button><input type="submit" value="Se connecter"></button>
                 </form>
             </div>
             <div class="overlay-container">
