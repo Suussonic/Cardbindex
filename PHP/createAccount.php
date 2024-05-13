@@ -1,6 +1,30 @@
 <?php
 global $dbh;
-require_once('db.php');
+require_once('../db.php');
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon compte</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../register/form.php">Créer compte</a></li>
+                <li><a href="../login/loginForm.php">Login</a></li>
+                <li><a href="../account/account.php">Mon compte</a></li>
+                <li><a href="../logout.php">Se deconnecter</a></li>
+                <li><a href="../api-demo-master/index.html">API</a></li>
+            </ul>
+
+        </nav>
+    </header>
+</body>
+</html>
+<?php
 
 if(isset($_POST['captcha_input'])) {
     $user_answer =$_POST['captcha_input'];
@@ -27,7 +51,6 @@ if(isset($_POST['captcha_input'])) {
                 'password' => $passHash,
                 'gender' => $gender,
             ]); 
-            echo("Votre compte a bien été créé");header('Location:../index.php');
+            echo("Votre compte a bien été créé"); header('Location: ../CardBinDex/index.php');
     } else { echo "réponce incorrect. Veuiller Rréessayer" ; }
 } else {echo "veuiller répondre au captchat." ; }
-

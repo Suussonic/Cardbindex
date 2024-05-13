@@ -1,0 +1,10 @@
+.pkmn-card {
+  width: 215px;
+  height: 300px;
+  margin: 15px;
+  cursor: pointer;
+}
+
+#container, img{
+  cursor: pointer;
+}

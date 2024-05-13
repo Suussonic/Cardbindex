@@ -1,0 +1,103 @@
+<?php
+session_start();
+// Inclure le fichier de connexion à la base de données
+include_once('../db.php');
+
+// Vérifier si l'utilisateur est connecté
+if (!isset($_SESSION['userId'])) {
+    // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
+    header('Location: login.php');
+    exit; // Arrêter l'exécution du script
+}
+
+// Récupérer les id_cartes pour l'utilisateur connecté depuis la base de données
+$getUserCardsSql = "SELECT id_carte FROM classeur WHERE firstname = :firstname";
+$preparedGetUserCards = $dbh->prepare($getUserCardsSql);
+$preparedGetUserCards->execute(['firstname' => $_SESSION['firstname']]);
+$userCards = $preparedGetUserCards->fetchAll(PDO::FETCH_COLUMN);
+
+// Convertir le tableau PHP en chaîne JSON pour l'utiliser dans JavaScript
+$userCardsJson = json_encode($userCards);
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../CardBinDex/CSS/compte.css">
+    <title>Mes cartes</title>
+</head>
+<body>
+    <header>
+        <a href="../CardBinDex/index.php"><img src="../CardBinDex/ASSET/CARDBINDEX V4.png" alt="LOGO"></a>
+        <a id="param" href="../account/account.php"><img src="../CardBinDex/ASSET/PARAMETRE.png"></a>
+    </header>
+    <div class="rectangle-5">
+        <div class="flex-row-e">
+          <span class="nom">Nom</span><span class="cree-le">Crée le :</span>
+          <div class="regroup">
+            <div class="vector-6"></div>
+            <div class="vector-7"></div>
+          </div>
+        </div>
+        <div class="flex-row-ed">
+          <div class="rectangle-8">
+            <span class="description">Description</span>
+          </div>
+          <span class="nombre-de-carte">Nombre de carte<br />000 / 000</span
+          ><span class="estimation-totale">Estimation totale<br />00.00€</span>
+        </div>
+      </div>
+      <div class="rectangle-9">
+        <div class="flex-row-b">
+            <div class="container">
+                <div class="row" id="card-container">
+
+                </div>
+            </div>
+        </div>
+      </div>
+    <!-- Inclure jQuery pour faciliter l'utilisation de l'API -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // Récupérer les id_cartes de l'utilisateur à partir de la chaîne JSON
+            var userCards = <?php echo $userCardsJson; ?>;
+            
+            // Parcourir les id_cartes et les afficher en utilisant l'API
+            userCards.forEach(function(cardId) {
+                $.ajax({
+                    method: "GET",
+                    url: "https://api.pokemontcg.io/v1/cards/" + cardId,
+                    success: function(response) {
+                        // Créer une balise <img> pour chaque carte et l'ajouter au conteneur
+                        var cardImg = $("<img class='pkmn-card'>").attr("src", response.card.imageUrlHiRes);
+                        $("#card-container").append(cardImg);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Erreur lors de la récupération de la carte avec l'id " + cardId + ":", error);
+                    }
+                });
+            });
+        });
+    </script>
+    </div>
+  <footer>
+      <div id="Credit">
+          <p>© 2024 Pokémon. © 1995–2024 Nintendo/Creatures Inc./GAME FREAK Inc. est une marque déposée par Nintendo</p>
+          <p>© 2024, CardBinDex. Les autres marques, images ou noms de produit appartiennent à leurs propriétaires respectifs.</p>
+      </div>
+      <div id="Lien">
+          <h2>Nous Contacter</h2>
+          <h2>cardbindex@gmail.com</h2>
+          <h2>Nos réseaux :</h2>
+          <a href="https://twitter.com/cardbindex" target="_blank"><img src="../CardBinDex/ASSET/X.png" alt="TWITTER" width="24px" height="24px"></a>
+          <a href="https://twitter.com/cardbindex" target="_blank"><img src="../CardBinDex/ASSET/DISCORD.png" alt="DISCORD" width="24px" height="24px"></a>
+          <a href="https://twitter.com/cardbindex" target="_blank"><img src="../CardBinDex/ASSET/INSTAGRAM.png" alt="INSTAGRAM" width="24px" height="24px"></a>
+          <a href="https://github.com/Suussonic/CardBinDex" target="_blank"><img src="../CardBinDex/ASSET/GITHUB.png" alt="GITHUB" width="24px" height="24px"></a>
+      </div>
+  </body>
+</html>
