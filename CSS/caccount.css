@@ -1,0 +1,295 @@
+
+  
+  .main-container {
+    overflow: hidden;
+  }
+  
+  .main-container,
+  .main-container * {
+    box-sizing: border-box;
+  }
+  
+  input,
+  select,
+  textarea,
+  button {
+    outline: 0;
+  }
+  
+  .main-container {
+    position: flex;
+    width: 1440px;
+    height: 953px;
+    margin: 0 auto;
+    background: #383b42;
+    overflow: hidden;
+  }
+  @font-face {
+    font-family: 'MADE Mirage';
+    src: url('MADEMirage-Bold.woff2') format('woff2'),
+        url('MADEMirage-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    margin: 0;
+    font-family: 'MADE Mirage';
+    background-color: #383B42;
+    height: auto;
+    align-items: center;
+}
+  .flex-column-d {
+    position: absolute;
+    width: 732.003px;
+    height: 780px;
+    top: 78px;
+    left: 708px;
+    font-size: 0px;
+    z-index: 19;
+  }
+  .inscription-1 {
+    display: block;
+    position: relative;
+    height: 47px;
+    margin: 0 0 0 264px;
+    color: #ffffff;
+    font-family: Inter, var(--default-font-family);
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 47px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 14;
+  }
+  .line {
+    position: relative;
+    width: 732px;
+    height: 1px;
+    margin: 68px 0 0 0;
+    background: url(./assets/images/030390d6-b7fc-441a-b2bc-97d8588302df.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 15;
+  }
+  .rectangle-2 {
+    position: relative;
+    width: 450px;
+    height: 65px;
+    margin: 25px 0 0 144px;
+    background: #a5a5a5;
+    z-index: 16;
+    overflow: hidden;
+    border-radius: 15px;
+  }
+  .email {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 35px;
+    top: 15px;
+    left: 18px;
+    color: #ffffff;
+    font-family: Inter, var(--default-font-family);
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 35px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 17;
+  }
+  .rectangle-3 {
+    position: relative;
+    width: 450px;
+    height: 65px;
+    margin: 32px 0 0 144px;
+    background: #a5a5a5;
+    z-index: 13;
+    overflow: hidden;
+    border-radius: 15px;
+  }
+  .pseudo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 35px;
+    top: 15px;
+    left: 18px;
+    color: #ffffff;
+    font-family: Inter, var(--default-font-family);
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 35px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 18;
+  }
+  .rectangle-5 {
+    position: relative;
+    width: 450px;
+    height: 65px;
+    margin: 34px 0 0 144px;
+    background: #a5a5a5;
+    z-index: 11;
+    overflow: hidden;
+    border-radius: 15px;
+  }
+  .mots-passe {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 38px;
+    top: 14px;
+    left: 18px;
+    color: #ffffff;
+    font-family: Inter, var(--default-font-family);
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 36.307px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 20;
+  }
+  .rectangle-6 {
+    position: relative;
+    width: 450px;
+    height: 65px;
+    margin: 34px 0 0 144px;
+    background: #a5a5a5;
+    z-index: 19;
+    overflow: hidden;
+    border-radius: 15px;
+  }
+  .confirmation {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 36px;
+    top: 15px;
+    left: 18px;
+    color: #ffffff;
+    font-family: Inter, var(--default-font-family);
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 21;
+  }
+  .rectangle-button {
+    position: relative;
+    width: 338px;
+    height: 38px;
+    margin: 27px 0 0 200px;
+    cursor: pointer;
+    background: #c7c8c8;
+    border: none;
+    z-index: 4;
+    border-radius: 16px;
+  }
+  .vector {
+    position: absolute;
+    width: 8.88%;
+    height: 78.95%;
+    top: 10.53%;
+    left: 7.4%;
+    background: url(./assets/images/c11b738a-0d13-4867-8510-f50ff902b20b.png)
+      no-repeat center;
+    background-size: 100% 100%;
+    z-index: 6;
+  }
+  .google-connect {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 18px;
+    top: 10px;
+    left: 70px;
+    color: #000000;
+    font-family: Inter, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 5;
+  }
+  .rectangle-button-7 {
+    position: relative;
+    width: 338px;
+    height: 38px;
+    margin: 10px 0 0 200px;
+    cursor: pointer;
+    background: #c7c8c8;
+    border: none;
+    z-index: 7;
+    border-radius: 16px;
+  }
+  .vector-8 {
+    position: absolute;
+    width: 8.88%;
+    height: 78.95%;
+    top: 10.53%;
+    left: 7.4%;
+    background: url(./assets/images/11fa9f18-314b-432b-8d63-4169c4a9fcca.png)
+      no-repeat center;
+    background-size: 100% 100%;
+    z-index: 9;
+  }
+  .connect-with-facebook {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 19px;
+    top: 9px;
+    left: 63px;
+    color: #000000;
+    font-family: Inter, var(--default-font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 8;
+  }
+  .accept-terms-of-use {
+    display: block;
+    position: relative;
+    height: 39px;
+    margin: 28px 0 0 123px;
+    color: #ffffff;
+    font-family: Inter, var(--default-font-family);
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 38.727px;
+    text-align: left;
+    white-space: nowrap;
+    z-index: 3;
+  }
+  .rectangle-9 {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    top: 820px;
+    left: 775px;
+    background: #d9d9d9;
+    z-index: 2;
+    border-radius: 5px;
+  }
+  .captcha{
+    position: absolute;
+    width: 38px;
+    height: 40px;
+    top: 820px;
+    left: 775px;
+    background: #d9d9d9;
+    z-index: 2;
+    border-radius: 5px;
+  }

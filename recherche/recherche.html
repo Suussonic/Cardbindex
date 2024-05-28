@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    
+    <link rel="shortcut icon" href="../ASSET/CARDBINDEX V5.png" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="recherche.css">
+    <title>Rechercher une carte</title>
+</head>
+
+<body>
+    <header>
+        <a href="../index.php"><img src="../ASSET/CARDBINDEX V4.png" alt="LOGO"></a>
+    </header>
+    <h1>Rechercher une carte Pokemon !</h1>
+    <form>
+        <div class="form-row align-items-center">
+            <div class="col-auto">
+                <label class="sr-only" for="search">Nom du pokemon</label>
+                <input type="text" class="form-control mb-2" id="search" placeholder="Pikachu">
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-2" id="submit-button">Rechercher</button>
+            </div>
+        </div>
+    </form>
+    <div class="container">
+        <div class="row" id="card-container">
+
+        </div>
+    </div>
+
+    <!-- Affiche les cartes -->
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"
+        integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous">
+    </script>
+    
+    <!-- Affiche génériquement les carte mais c'est lent donc a voir si on garde -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous">
+    </script>
+    <script src="recherche.js"></script>
+</body>
+
+</html>
