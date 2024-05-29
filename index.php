@@ -26,7 +26,7 @@ session_start();
         <nav>
             <ul>
                 <li><a href=""><b>Collection</b></a></li>
-                <li><a href="PHP/cartes.php">Mes cartes</a></li>
+                <li><a href="PHP/cartes.php">Classeur</a></li>
                 <li><a href=""><b>Marcher</b></a></li>
                 <li><a href=""><b>Tchat</b></a></li>
             </ul>
