@@ -121,8 +121,8 @@ $test = "SELECT id_carte FROM classeur WHERE firstname=:firstname"
         </div>
     </div>
     <input type="submit" value="Modifier">
-    </form>
     <a id="deco" href="logout.php">Se deconnecter</a>
+    </form>
     <script src="../JS/recup.js"></script>
 </body>
 </html>
