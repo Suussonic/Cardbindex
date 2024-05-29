@@ -43,9 +43,6 @@ $userCardsJson = json_encode($userCards);
           </div>
         </div>
         <div class="flex-row-ed">
-          <div class="rectangle-8">
-            <span class="description">Description</span>
-          </div>
           <span class="nombre-de-carte">Nombre de carte<br />000 / 000</span
           ><span class="estimation-totale">Estimation totale<br />00.00€</span>
         </div>
