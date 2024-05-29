@@ -78,6 +78,7 @@ h1 {
     background-color: red;
     border-radius: 5px;
     border: solid 2px black;
+    color: black;
     text-decoration: none;
     width: 150px;
 }

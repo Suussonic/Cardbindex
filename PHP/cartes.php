@@ -31,8 +31,8 @@ $userCardsJson = json_encode($userCards);
 </head>
 <body>
     <header>
-        <a href="../CardBinDex/index.php"><img src="../ASSET/CARDBINDEX V4.png" alt="LOGO"></a>
-        <a id="param" href="account.php"><img src="../ASSET/PARAMETRE.png"></a>
+        <a href="../index.php"><img src="../ASSET/CARDBINDEX V4.png" alt="LOGO"></a>
+        <a id="param" href="compte.php"><img src="../ASSET/PARAMETRE.png"></a>
     </header>
     <div class="rectangle-5">
         <div class="flex-row-e">
