@@ -56,6 +56,7 @@ session_start();
           <span class="visually-hidden">Next</span>
         </button>
     </div>
+    <?php include 'PHP/nav.php'; ?>
     <footer>
         <div id="Credit">
             <p>© 2024 Pokémon. © 1995–2024 Nintendo/Creatures Inc./GAME FREAK Inc. est une marque déposée par Nintendo</p>
