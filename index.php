@@ -13,12 +13,7 @@ session_start();
     <title>Accueil</title>
 </head>
 <body>
-    <header>
-        <a href="index.php"><img src="ASSET/CARDBINDEX V4.png" alt="LOGO"></a>
-        <a href="recherche/recherche.html">Rechercher une Carte</a>
-        <a class="Connexion" href="PHP/loginForm.php">Se Connecter</a>
-        <a id="param" href="PHP/compte.php"><img src="ASSET/PARAMETRE.png"></a>
-    </header>
+    <?php include 'PHP/nav.php'; ?>
     <div id="banniere">
         <img src="ASSET/HORIZON.png" alt="banniere">
     </div>
@@ -56,7 +51,6 @@ session_start();
           <span class="visually-hidden">Next</span>
         </button>
     </div>
-    <?php include 'PHP/nav.php'; ?>
     <footer>
         <div id="Credit">
             <p>© 2024 Pokémon. © 1995–2024 Nintendo/Creatures Inc./GAME FREAK Inc. est une marque déposée par Nintendo</p>
