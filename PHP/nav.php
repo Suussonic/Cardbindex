@@ -4,7 +4,7 @@ include_once('db.php');
 ?>
 <header>
     <a href="../index.php"><img src="../ASSET/CARDBINDEX V4.png" alt="LOGO"></a>
-    <a href="../recherche/recherche.html">Rechercher une Carte</a>
+    <a href="../recherche/recherche.html">Rechercher</a>
     <?php
     if (isset($_SESSION['firstname'])) {
         // Si l'utilisateur est connecté
