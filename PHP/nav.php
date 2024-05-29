@@ -6,7 +6,7 @@ include_once('db.php');
     <a href="../index.php"><img src="../ASSET/CARDBINDEX V4.png" alt="LOGO"></a>
     <a href="../recherche/recherche.html">Rechercher une Carte</a>
     <?php
-    if (isset($_SESSION['username'])) {
+    if (isset($_SESSION['firstname'])) {
         // Si l'utilisateur est connecté
         echo '<a id="param" href="PHP/compte.php"><img src="../ASSET/PARAMETRE.png"></a>';
     } else {
