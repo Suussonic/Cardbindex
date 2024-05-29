@@ -36,8 +36,8 @@ $userCardsJson = json_encode($userCards);
     </header>
     <div class="rectangle-5">
         <div class="flex-row-ed">
-          <span class="nombre-de-carte">Nombre de carte<br />000 / 000</span
-          ><span class="estimation-totale">Estimation totale<br />00.00€</span>
+          <span class="nombre-de-carte">Nombre de carte<br />000 / 000</span>
+          <span class="estimation-totale">Estimation totale<br />00.00€</span>
         </div>
       </div>
       <a id="delete" href="delete.php">Supprimer des cartes</a>

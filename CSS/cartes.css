@@ -187,6 +187,8 @@ header a:hover {
 }
 
 .flex-row-ed {
+  display: flex;
+  justify-content: center;
   position: relative;
   width: 1138px;
   height: 204px;
