@@ -61,6 +61,20 @@ header a:hover {
   font-size: 120%;
 }
 
+#delete {
+  background-color: red;
+  color: black;
+  border: 2px black solid;
+  cursor: pointer;
+  margin-top: 20px;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  text-decoration:none;
+}
+
 .row {
   align-items: center;
   justify-content: center;
