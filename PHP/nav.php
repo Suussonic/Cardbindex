@@ -3,7 +3,7 @@ session_start();
 include_once('db.php');
 ?>
 <header>
-    <a href=";;/index.php"><img src="../ASSET/CARDBINDEX V4.png" alt="LOGO"></a>
+    <a href="../index.php"><img src="../ASSET/CARDBINDEX V4.png" alt="LOGO"></a>
     <a href="../recherche/recherche.html">Rechercher une Carte</a>
     <?php
     if (isset($_SESSION['username'])) {
