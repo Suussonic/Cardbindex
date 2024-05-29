@@ -40,7 +40,9 @@ $userCardsJson = json_encode($userCards);
           <span class="estimation-totale">Estimation totale<br />00.00€</span>
         </div>
       </div>
-      <a id="delete" href="delete.php">Supprimer des cartes</a>
+      <div class="button-container">
+        <a id="delete" href="#">Supprimer</a>
+      </div>
       <div class="rectangle-9">
         <div class="flex-row-b">
             <div class="container">
