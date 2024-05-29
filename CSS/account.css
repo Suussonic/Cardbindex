@@ -159,3 +159,17 @@ form input[type="submit"]:hover {
       width: 100%;
     }
 }
+
+.radio-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.radio-container label {
+    margin-right: 5px;
+}
+
+.radio-container input[type="radio"] {
+    margin-right: 20px;
+}

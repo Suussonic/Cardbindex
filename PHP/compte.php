@@ -89,37 +89,35 @@ $test = "SELECT id_carte FROM classeur WHERE firstname=:firstname"
             <input id="email" type="email" name="email" value="<?php echo $user['email'] ?>">
         </div>
     </div>
-    <div class="mb-3">
-        <!--  GENRE (RADIO button)  -->
-        <div>
-            <label for="man">Homme</label>
-            <input
-                    id="man"
-                    type="radio"
-                    name="gender"
-                    value="man"
-                <?php echo $user['gender'] === "man" ? 'checked' : '' ?>
-            >
+    <div class="radio-container">
+        <label for="man">Homme</label>
+        <input
+            id="man"
+            type="radio"
+            name="gender"
+            value="man"
+            <?php echo $user['gender'] === "man" ? 'checked' : '' ?>
+        >
 
-            <label for="woman">Femme</label>
-            <input
-                    id="woman"
-                    type="radio"
-                    name="gender"
-                    value="woman"
-                <?php echo $user['gender'] === "woman" ? 'checked' : '' ?>
-            >
+        <label for="woman">Femme</label>
+        <input
+            id="woman"
+            type="radio"
+            name="gender"
+            value="woman"
+            <?php echo $user['gender'] === "woman" ? 'checked' : '' ?>
+        >
 
-            <label for="other">Autre</label>
-            <input
-                    id="other"
-                    type="radio"
-                    name="gender"
-                    value="other"
-                <?php echo $user['gender'] === "other" ? 'checked' : '' ?>
-            >
-        </div>
+        <label for="other">Autre</label>
+        <input
+            id="other"
+            type="radio"
+            name="gender"
+            value="other"
+            <?php echo $user['gender'] === "other" ? 'checked' : '' ?>
+        >
     </div>
+
     <input type="submit" value="Modifier">
     <a id="deco" href="logout.php">Se deconnecter</a>
     </form>
