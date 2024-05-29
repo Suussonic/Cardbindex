@@ -49,6 +49,6 @@ if(isset($_POST['captcha_input'])) {
                 'password' => $passHash,
                 'gender' => $gender,
             ]); 
-            echo("Votre compte a bien été créé"); header('Location: ../CardBinDex/index.php');
+            echo("Votre compte a bien été créé"); header('Location: ../PHP/loginForm.php');
     } else { echo "réponce incorrect. Veuiller Rréessayer" ; }
 } else {echo "veuiller répondre au captchat." ; }
