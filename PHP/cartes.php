@@ -35,13 +35,6 @@ $userCardsJson = json_encode($userCards);
         <a id="param" href="compte.php"><img src="../ASSET/PARAMETRE.png"></a>
     </header>
     <div class="rectangle-5">
-        <div class="flex-row-e">
-          <span class="nom">Nom</span><span class="cree-le">Crée le :</span>
-          <div class="regroup">
-            <div class="vector-6"></div>
-            <div class="vector-7"></div>
-          </div>
-        </div>
         <div class="flex-row-ed">
           <span class="nombre-de-carte">Nombre de carte<br />000 / 000</span
           ><span class="estimation-totale">Estimation totale<br />00.00€</span>
