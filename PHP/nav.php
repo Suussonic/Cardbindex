@@ -7,10 +7,10 @@ session_start();
     <?php
     if (isset($_SESSION['username'])) {
         // Si l'utilisateur est connecté
-        echo '<a id="param" href="PHP/compte.php"><img src="../ASSET/PARAMETRE.png"></a>';
+        echo '<a class="Connexion" href="PHP/loginForm.php">Se Connecter</a>';
     } else {
         // Si l'utilisateur n'est pas connecté
-        echo '<a class="Connexion" href="PHP/loginForm.php">Se Connecter</a>';
+        echo '<a id="param" href="PHP/compte.php"><img src="../ASSET/PARAMETRE.png"></a>';
     }
     ?>
 </header>
