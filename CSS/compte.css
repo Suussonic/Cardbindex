@@ -61,7 +61,7 @@ header a:hover {
   font-size: 120%;
 }
 
-#delete {
+.delete {
   background-color: red;
   color: black;
   border: 2px black solid;
