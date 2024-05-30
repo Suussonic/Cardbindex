@@ -20,7 +20,7 @@ session_start();
     <div>
         <nav>
             <ul>
-                <li><a href=""><b>Collection</b></a></li>
+                <li><a href="PHP/collection.php"><b>Collection</b></a></li>
                 <li><a href="PHP/cartes.php">Classeur</a></li>
                 <li><a href=""><b>Marcher</b></a></li>
                 <li><a href=""><b>Tchat</b></a></li>

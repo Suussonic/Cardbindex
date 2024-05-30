@@ -177,12 +177,11 @@ header a:hover {
 }
 
 .rectangle-5 {
-  width: 1196px;
   height: 305px;
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-right: auto;
-  margin-left: auto;
+  margin-left: 40px;
+  margin-right: 40px;
   background: #024a8d;
   z-index: 39;
   overflow: visible auto;
@@ -238,12 +237,11 @@ header a:hover {
 
 .rectangle-9 {
   position: relative;
-  width: 1300px;
   height: auto;
   position: relative;
   margin-top: 20px;
-  margin-right: auto;
-  margin-left: auto;
+  margin-left: 40px;
+  margin-right: 40px;
   background: #555962;
   z-index: 12;
   border-radius: 50px;
