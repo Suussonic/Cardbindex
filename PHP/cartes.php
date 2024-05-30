@@ -26,14 +26,11 @@ $userCardsJson = json_encode($userCards);
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="../CSS/cartes.css">
+    <link rel="stylesheet" href="../CSS/delete.css">
     <title>Mes cartes</title>
 </head>
 <body>
-    <header>
-        <a href="../index.php"><img src="../ASSET/CARDBINDEX V4.png" alt="LOGO"></a>
-        <a id="param" href="compte.php"><img src="../ASSET/PARAMETRE.png"></a>
-    </header>
+    <?php include 'nav.php'; ?>
     <div class="rectangle-5">
         <div class="flex-row-ed">
           <span class="nombre-de-carte">Nombre de carte<br />000 / 000</span>
@@ -85,7 +82,7 @@ $userCardsJson = json_encode($userCards);
       </div>
       <div id="Lien">
           <h2>Nous Contacter</h2>
-          <h2>cardbindex@gmail.com</h2>
+          <h2>projet.annuel3tan@gmail.com</h2>
           <h2>Nos réseaux :</h2>
           <a href="https://twitter.com/cardbindex" target="_blank"><img src="../ASSET/X.png" alt="TWITTER" width="24px" height="24px"></a>
           <a href="https://twitter.com/cardbindex" target="_blank"><img src="../ASSET/DISCORD.png" alt="DISCORD" width="24px" height="24px"></a>

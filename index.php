@@ -58,7 +58,7 @@ session_start();
         </div>
         <div id="Lien">
             <h2>Nous Contacter</h2>
-            <h2>cardbindex@gmail.com</h2>
+            <h2>projet.annuel3tan@gmail.com</h2>
             <h2>Nos réseaux :</h2>
             <a href="https://twitter.com/cardbindex" target="_blank"><img src="./ASSET/X.png" alt="TWITTER" width="24px" height="24px"></a>
             <a href="https://twitter.com/cardbindex" target="_blank"><img src="./ASSET/DISCORD.png" alt="DISCORD" width="24px" height="24px"></a>
