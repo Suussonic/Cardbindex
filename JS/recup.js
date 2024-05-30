@@ -3,7 +3,7 @@ $(document).ready(function() {
     $("#card-container").empty();
     $.ajax({
         method: "GET",
-        url: "https://api.pokemontcg.io/v2/cards?id=" + test
+        url: "https://api.pokemontcg.io/v1/cards?id=" + test
     }).then(function(response) {
         for (var i = 0; i < response.cards.length; i++) {
         var pokemonCard = $("<img class='pkmn-card'>");
