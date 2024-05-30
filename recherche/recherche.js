@@ -62,7 +62,7 @@ $(document).ready(function() {
 
         $.ajax({
             method: "GET",
-            url: "https://api.pokemontcg.io/v1/cards?name=" + pokemon
+            url: "https://api.pokemontcg.io/v1/cards/?name=" + pokemon
         }).then(function(response) {
             for (var i = 0; i < response.cards.length; i++) {
                 var pokemonCard = $("<img class='pkmn-card'>");
