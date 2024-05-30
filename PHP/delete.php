@@ -36,7 +36,7 @@ $userCardsJson = json_encode($userCards);
     </header>
     <div class="rectangle-5">
       <div class="button-container">
-        <a id="delete" href="delete.php">Retourner dans le classeur</a>
+        <a id="delete" href="cartes.php">Retourner dans le classeur</a>
       </div>
       <div class="rectangle-9">
         <div class="flex-row-b">
