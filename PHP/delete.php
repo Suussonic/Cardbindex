@@ -67,7 +67,8 @@ $userCardsJson = json_encode($userCards);
                     error: function(xhr, status, error) {
                         console.error("Erreur lors de la récupération de la carte avec l'id " + cardId + ":", error);
                     }
-                    $(".pkmn-card").on("click", function() {
+                });
+                $(".pkmn-card").on("click", function() {
                     var cardId = $(this).data("card-id");
                     $.ajax({
                         method: "POST",
@@ -79,7 +80,6 @@ $userCardsJson = json_encode($userCards);
                         error: function(xhr, status, error) {
                         console.error("Erreur lors de la suprression de l'ID de la carte :", error);
                     }
-                });
             });
                 });
             });
