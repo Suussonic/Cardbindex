@@ -47,6 +47,7 @@ $test = "SELECT id_carte FROM classeur WHERE firstname=:firstname"
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../CSS/account.css">
+    <?php include 'theme.php'; ?>
     <link rel="shortcut icon" href="../ASSET/CARDBINDEX V5.png" type="image/x-icon">
     <title>Mon compte</title>
 </head>
@@ -115,6 +116,25 @@ $test = "SELECT id_carte FROM classeur WHERE firstname=:firstname"
             name="gender"
             value="other"
             <?php echo $user['gender'] === "other" ? 'checked' : '' ?>
+        >
+    </div>
+    <div class="radio-container">
+        <label for="noir">Noir</label>
+        <input
+            id="noir"
+            type="radio"
+            name="gender"
+            value="1"
+            <?php echo $user['theme'] === 1 ? 'checked' : '' ?>
+        >
+
+        <label for="blanc">Blanc</label>
+        <input
+            id="blanc"
+            type="radio"
+            name="theme"
+            value="0"
+            <?php echo $user['theme'] === 0 ? 'checked' : '' ?>
         >
     </div>
 

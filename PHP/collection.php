@@ -27,6 +27,7 @@ $userCardsJson = json_encode($userCards);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon Blocks</title>
     <link rel="stylesheet" href="../CSS/collection.css">
+    <?php include 'theme.php'; ?>
 </head>
 <body>
     <div class="container">
