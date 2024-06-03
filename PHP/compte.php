@@ -47,7 +47,6 @@ $test = "SELECT id_carte FROM classeur WHERE firstname=:firstname"
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../CSS/account.css">
-    <?php include 'theme.php'; ?>
     <link rel="shortcut icon" href="../ASSET/CARDBINDEX V5.png" type="image/x-icon">
     <title>Mon compte</title>
 </head>

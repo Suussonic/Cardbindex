@@ -33,7 +33,6 @@ $user = $preparedGetUser->fetch();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <?php include 'theme.php'; ?>
     <title>Mon compte</title>
 </head>
 <body>
