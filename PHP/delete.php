@@ -67,6 +67,20 @@ $userCardsJson = json_encode($userCards);
                     error: function(xhr, status, error) {
                         console.error("Erreur lors de la récupération de la carte avec l'id " + cardId + ":", error);
                     }
+                    $(".pkmn-card").on("click", function() {
+                    var cardId = $(this).data("card-id");
+                    $.ajax({
+                        method: "POST",
+                        url: "del.php",
+                        data: { cardId: cardId },
+                        success: function(response) {
+                            console.log("ID de la carte est supprimer avec succès !");
+                        },
+                        error: function(xhr, status, error) {
+                        console.error("Erreur lors de la suprression de l'ID de la carte :", error);
+                    }
+                });
+            });
                 });
             });
         });
