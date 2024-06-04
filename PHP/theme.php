@@ -2,12 +2,7 @@
 session_start();
 include_once('db.php');
 
-// Activer l'affichage des erreurs pour le débogage
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-if (isset($_SESSION['id'])) { // Utiliser l'ID de l'utilisateur stocké dans la session
+if (isset($_SESSION['firstname'])) { // Utiliser l'ID de l'utilisateur stocké dans la session
     $userId = $_SESSION['id']; // Assurez-vous que l'ID de l'utilisateur est bien stocké dans la session
 
     // Préparez une requête pour obtenir le thème de l'utilisateur
