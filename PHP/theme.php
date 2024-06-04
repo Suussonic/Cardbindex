@@ -6,11 +6,9 @@ if (isset($_SESSION['firstname'])) { // Utiliser l'ID de l'utilisateur stocké d
     $userId = $_SESSION['id']; // Assurez-vous que l'ID de l'utilisateur est bien stocké dans la session
 
     // Préparez une requête pour obtenir le thème de l'utilisateur
-    $stmt = $pdo->prepare('SELECT theme FROM users WHERE id = :id');
-    $stmt->execute(['id' => $userId]);
-    $user = $stmt->fetch();
+    $getUser = "SELECT theme FROM users WHERE id = :id";
 
-    if ($user && $user['theme'] == 1) { // Vérifiez la valeur du thème (0 ou 1)
+    if ($getUser == 1) { // Vérifiez la valeur du thème (0 ou 1)
         echo '<link rel="stylesheet" href="../CSS/white.css">';
     } else {
         echo '<link rel="stylesheet" href="../CSS/black.css">';
