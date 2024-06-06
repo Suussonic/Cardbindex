@@ -23,7 +23,7 @@ session_start();
             <ul>
                 <li><a href="PHP/collection.php"><b>Collection</b></a></li>
                 <li><a href="PHP/cartes.php">Classeur</a></li>
-                <li><a href=""><b>Marcher</b></a></li>
+                <li><a href="PHP/test.html"><b>Marcher</b></a></li>
                 <li><a href=""><b>Tchat</b></a></li>
             </ul>
         </nav>
