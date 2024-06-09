@@ -57,14 +57,22 @@ $userCardsJson = json_encode($userCards);
                 // Utiliser l'API Pokémon TCG pour récupérer les informations de la carte
                 $.ajax({
                     method: "GET",
-                    url: "https://api.pokemontcg.io/v1/cards?name=" + pokemon
-                }).then(function(response) {
-                    for (var i = 0; i < response.cards.length; i++) {
-                        var pokemonCard = $("<img class='pkmn-card'>");
-                        pokemonCard.attr("src", response.cards[i].imageUrlHiRes);
-                        pokemonCard.data("card-id", response.cards[i].id);
-                        $("#card-container").append(pokemonCard);
+                    url: "https://api.pokemontcg.io/v1/cards?id=" + cardId,
+                    success: function(response) {
+                        if (response.cards && response.cards.length > 0) {
+                            var card = response.cards[0];
+                            $('#card-container').append(
+                                '<div class="col-md-4 pkmn-card" data-card-id="' + card.id + '">' +
+                                    '<img src="' + card.imageUrl + '" alt="' + card.name + '">' +
+                                '</div>'
+                            );
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Erreur lors de la récupération de la carte avec l'id " + cardId + ":", error);
                     }
+                });
+            });
 
             $(document).on("click", ".pkmn-card", function() {
                 var cardId = $(this).data("card-id");
