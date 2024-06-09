@@ -51,56 +51,45 @@ $userCardsJson = json_encode($userCards);
 
     <script>
         $(document).ready(function() {
-    $("#submit-button").on("click", function(event) {
-        $("#card-container").empty();
-        event.preventDefault();
-        var pokemon = $("#search").val().trim();
+            var userCards = <?php echo $userCardsJson; ?>;
 
-        if (pokemon === "") {
-            alert("Veuillez entrer un nom de Pokémon.");
-            return;
-        }
-
-        $.ajax({
-            method: "GET",
-            url: "https://api.pokemontcg.io/v1/cards?name=" + pokemon,
-            success: function(response) {
-                if (response.cards && response.cards.length > 0) {
-                    for (var i = 0; i < response.cards.length; i++) {
-                        var pokemonCard = $("<img class='pkmn-card'>");
-                        pokemonCard.attr("src", response.cards[i].imageUrlHiRes);
-                        pokemonCard.data("card-id", response.cards[i].id);
-                        $("#card-container").append(pokemonCard);
+            userCards.forEach(function(cardId) {
+                // Utiliser l'API Pokémon TCG pour récupérer les informations de la carte
+                $.ajax({
+                    method: "GET",
+                    url: "https://api.pokemontcg.io/v1/cards?id=" + cardId,
+                    success: function(response) {
+                        if (response.cards && response.cards.length > 0) {
+                            var card = response.cards[0];
+                            $('#card-container').append(
+                                '<div class="col-md-4 pkmn-card" data-card-id="' + card.id + '">' +
+                                    '<img src="' + card.imageUrl + '" alt="' + card.name + '">' +
+                                '</div>'
+                            );
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Erreur lors de la récupération de la carte avec l'id " + cardId + ":", error);
                     }
-                    
-                    // Ajouter un gestionnaire d'événements clic pour chaque carte Pokémon après qu'elles soient chargées
-                    $(".pkmn-card").on("click", function() {
-                        var cardId = $(this).data("card-id");
-                        $.ajax({
-                            method: "POST",
-                            url: "del.php",
-                            data: { cardId: cardId },
-                            success: function(response) {
-                                console.log("ID de la carte supprimée avec succès !");
-                                location.reload(); // Recharger la page pour mettre à jour les cartes affichées
-                            },
-                            error: function(xhr, status, error) {
-                                console.error("Erreur lors de la suppression de l'ID de la carte :", error);
-                            }
-                        });
-                    });
-                } else {
-                    console.log("Aucune carte trouvée pour ce nom de Pokémon.");
-                    alert("Aucune carte trouvée pour ce nom de Pokémon.");
-                }
-            },
-            error: function(xhr, status, error) {
-                console.error("Erreur lors de la récupération des cartes :", error);
-                alert("Erreur lors de la récupération des cartes. Veuillez réessayer.");
-            }
+                });
+            });
+
+            $(document).on("click", ".pkmn-card", function() {
+                var cardId = $(this).data("card-id");
+                $.ajax({
+                    method: "POST",
+                    url: "del.php",
+                    data: { cardId: cardId },
+                    success: function(response) {
+                        console.log("ID de la carte supprimée avec succès !");
+                        location.reload(); // Recharger la page pour mettre à jour les cartes affichées
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Erreur lors de la suppression de l'ID de la carte :", error);
+                    }
+                });
+            });
         });
-    });
-});
     </script>
     </div>
   <footer>
