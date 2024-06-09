@@ -51,35 +51,25 @@ $userCardsJson = json_encode($userCards);
 
     <script>
         $(document).ready(function() {
-            // Récupérer les id_cartes de l'utilisateur à partir de la chaîne JSON
             var userCards = <?php echo $userCardsJson; ?>;
-            
-            // Parcourir les id_cartes et les afficher en utilisant l'API
+
             userCards.forEach(function(cardId) {
+                $('#card-container').append('<div class="col-md-4 pkmn-card" data-card-id="' + cardId + '">Card ID: ' + cardId + '</div>');
+            });
+
+            $(".pkmn-card").on("click", function() {
+                var cardId = $(this).data("card-id");
                 $.ajax({
-                    method: "GET",
-                    url: "https://api.pokemontcg.io/v1/cards/" + cardId,
+                    method: "POST",
+                    url: "del.php",
+                    data: { cardId: cardId },
                     success: function(response) {
-                        // Créer une balise <img> pour chaque carte et l'ajouter au conteneur
-                        var cardImg = $("<img class='pkmn-card'>").attr("src", response.card.imageUrlHiRes);
-                        $("#card-container").append(cardImg);
+                        console.log("ID de la carte supprimée avec succès !");
+                        location.reload(); // Recharger la page pour mettre à jour les cartes affichées
                     },
                     error: function(xhr, status, error) {
-                        console.error("Erreur lors de la récupération de la carte avec l'id " + cardId + ":", error);
+                        console.error("Erreur lors de la suppression de l'ID de la carte :", error);
                     }
-                    $(".pkmn-card").on("click", function() {
-                    var cardId = $(this).data("card-id");
-                    $.ajax({
-                        method: "POST",
-                        url: "del.php",
-                        data: { cardId: cardId },
-                        success: function(response) {
-                            console.log("ID de la carte est supprimer avec succès !");
-                        },
-                        error: function(xhr, status, error) {
-                        console.error("Erreur lors de la suprression de l'ID de la carte :", error);
-                    }
-                });
                 });
             });
         });
