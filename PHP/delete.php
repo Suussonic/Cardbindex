@@ -51,24 +51,30 @@ $userCardsJson = json_encode($userCards);
 
     <script>
         $(document).ready(function() {
-    $("#submit-button").on("click", function(event) {
-        $("#card-container").empty();
-        event.preventDefault();
-        var pokemon = $("#search").val().trim();
+            var userCards = <?php echo $userCardsJson; ?>;
 
-        $.ajax({
-            method: "GET",
-            url: "https://api.pokemontcg.io/v1/cards?name=" + pokemon
-        }).then(function(response) {
-            for (var i = 0; i < response.cards.length; i++) {
-                var pokemonCard = $("<img class='pkmn-card'>");
-                pokemonCard.attr("src", response.cards[i].imageUrlHiRes);
-                pokemonCard.data("card-id", response.cards[i].id);
-                $("#card-container").append(pokemonCard);
-            }
-            
-            // Ajouter un gestionnaire d'événements clic pour chaque carte Pokémon après qu'elles soient chargées
-            $(".pkmn-card").on("click", function() {
+            userCards.forEach(function(cardId) {
+                // Utiliser l'API Pokémon TCG pour récupérer les informations de la carte
+                $.ajax({
+                    method: "GET",
+                    url: "https://api.pokemontcg.io/v1/cards?id=" + cardId,
+                    success: function(response) {
+                        if (response.cards && response.cards.length > 0) {
+                            var card = response.cards[0];
+                            $('#card-container').append(
+                                '<div class="col-md-4 pkmn-card" data-card-id="' + card.id + '">' +
+                                    '<img src="' + card.imageUrl + '" alt="' + card.name + '">' +
+                                '</div>'
+                            );
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Erreur lors de la récupération de la carte avec l'id " + cardId + ":", error);
+                    }
+                });
+            });
+
+            $(document).on("click", ".pkmn-card", function() {
                 var cardId = $(this).data("card-id");
                 $.ajax({
                     method: "POST",
@@ -84,9 +90,6 @@ $userCardsJson = json_encode($userCards);
                 });
             });
         });
-    });
-});
-
     </script>
     </div>
   <footer>
