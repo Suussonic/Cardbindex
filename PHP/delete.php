@@ -65,11 +65,6 @@ $userCardsJson = json_encode($userCards);
                         pokemonCard.data("card-id", response.cards[i].id);
                         $("#card-container").append(pokemonCard);
                     }
-                    error: function(xhr, status, error) {
-                        console.error("Erreur lors de la récupération de la carte avec l'id " + cardId + ":", error);
-                    }
-                });
-            });
 
             $(document).on("click", ".pkmn-card", function() {
                 var cardId = $(this).data("card-id");
