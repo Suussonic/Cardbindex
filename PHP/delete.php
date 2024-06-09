@@ -62,10 +62,7 @@ $userCardsJson = json_encode($userCards);
                         if (response.cards && response.cards.length > 0) {
                             var card = response.cards[0];
                             $('#card-container').append(
-                                '<div class="col-md-4 pkmn-card" data-card-id="' + card.id + '">' +
                                     '<img src="' + card.imageUrl + '" alt="' + card.name + '">' +
-                                    '<p>' + card.name + '</p>' +
-                                '</div>'
                             );
                         }
                     },
