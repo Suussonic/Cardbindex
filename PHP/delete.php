@@ -54,10 +54,28 @@ $userCardsJson = json_encode($userCards);
             var userCards = <?php echo $userCardsJson; ?>;
 
             userCards.forEach(function(cardId) {
-                $('#card-container').append('<div class="col-md-4 pkmn-card" data-card-id="' + cardId + '">Card ID: ' + cardId + '</div>');
+                // Utiliser l'API Pokémon TCG pour récupérer les informations de la carte
+                $.ajax({
+                    method: "GET",
+                    url: "https://api.pokemontcg.io/v1/cards?id=" + cardId,
+                    success: function(response) {
+                        if (response.cards && response.cards.length > 0) {
+                            var card = response.cards[0];
+                            $('#card-container').append(
+                                '<div class="col-md-4 pkmn-card" data-card-id="' + card.id + '">' +
+                                    '<img src="' + card.imageUrl + '" alt="' + card.name + '">' +
+                                    '<p>' + card.name + '</p>' +
+                                '</div>'
+                            );
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Erreur lors de la récupération de la carte avec l'id " + cardId + ":", error);
+                    }
+                });
             });
 
-            $(".pkmn-card").on("click", function() {
+            $(document).on("click", ".pkmn-card", function() {
                 var cardId = $(this).data("card-id");
                 $.ajax({
                     method: "POST",
