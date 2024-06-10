@@ -22,25 +22,27 @@ $userCardsJson = json_encode($userCards);
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="shortcut icon" href="../ASSET/CARDBINDEX V5.png" type="image/x-icon">    <link rel="shortcut icon" href="../ASSET/CARDBINDEX V5.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../CSS/cartes.css">
     <title>Mes cartes</title>
 </head>
+
 <body>
     <?php include 'nav.php'; ?>
     <div class="rectangle-5">
         <div class="flex-row-ed">
-          <span class="nombre-de-carte">Nombre de carte<br />000 / 000</span>
-          <span class="estimation-totale">Estimation totale<br />00.00€</span>
+            <span class="nombre-de-carte">Nombre de carte<br />000 / 000</span>
+            <span class="estimation-totale">Estimation totale<br />00.00€</span>
         </div>
-      </div>
-      <div class="button-container">
+    </div>
+    <div class="button-container">
         <a id="delete" href="delete.php">Supprimer des cartes</a>
-      </div>
-      <div class="rectangle-9">
+    </div>
+    <div class="rectangle-9">
         <div class="flex-row-b">
             <div class="container">
                 <div class="row" id="card-container">
@@ -48,46 +50,45 @@ $userCardsJson = json_encode($userCards);
                 </div>
             </div>
         </div>
-      </div>
-    <!-- Inclure jQuery pour faciliter l'utilisation de l'API -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+    </div>
+    </div>
+    <footer>
+        <div id="Credit">
+            <p>© 2024 Pokémon. © 1995–2024 Nintendo/Creatures Inc./GAME FREAK Inc. est une marque déposée par Nintendo</p>
+            <p>© 2024, CardBinDex. Les autres marques, images ou noms de produit appartiennent à leurs propriétaires respectifs.</p>
+        </div>
+        <div id="Lien">
+            <h2>Nous Contacter</h2>
+            <h2>projet.annuel3tan@gmail.com</h2>
+            <h2>Nos réseaux :</h2>
+            <a href="https://twitter.com/cardbindex" target="_blank"><img src="../ASSET/X.png" alt="TWITTER" width="24px" height="24px"></a>
+            <a href="https://twitter.com/cardbindex" target="_blank"><img src="../ASSET/DISCORD.png" alt="DISCORD" width="24px" height="24px"></a>
+            <a href="https://twitter.com/cardbindex" target="_blank"><img src="../ASSET/INSTAGRAM.png" alt="INSTAGRAM" width="24px" height="24px"></a>
+            <a href="https://github.com/Suussonic/CardBinDex" target="_blank"><img src="../ASSET/GITHUB.png" alt="GITHUB" width="24px" height="24px"></a>
+        </div>
+    </footer>
     <script>
-        $(document).ready(function() {
-            // Récupérer les id_cartes de l'utilisateur à partir de la chaîne JSON
-            var userCards = <?php echo $userCardsJson; ?>;
-            
-            // Parcourir les id_cartes et les afficher en utilisant l'API
+        document.addEventListener("DOMContentLoaded", function() {
+            let userCards = <?php echo $userCardsJson; ?>;
             userCards.forEach(function(cardId) {
-                $.ajax({
-                    method: "GET",
-                    url: "https://api.pokemontcg.io/v1/cards/" + cardId,
-                    success: function(response) {
-                        // Créer une balise <img> pour chaque carte et l'ajouter au conteneur
-                        var cardImg = $("<img class='pkmn-card'>").attr("src", response.card.imageUrlHiRes);
-                        $("#card-container").append(cardImg);
-                    },
-                    error: function(xhr, status, error) {
+                fetch("https://api.pokemontcg.io/v1/cards/" + cardId)
+                    .then(response => response.json())
+                    .then(function(response) {
+                        if (response.card) {
+                            let cardImg = document.createElement("img");
+                            cardImg.className = "pkmn-card";
+                            cardImg.src = response.card.imageUrlHiRes;
+                            document.getElementById("card-container").appendChild(cardImg);
+                        } else {
+                            console.error("Aucune carte trouvée avec l'ID " + cardId);
+                        }
+                    })
+                    .catch(function(error) {
                         console.error("Erreur lors de la récupération de la carte avec l'id " + cardId + ":", error);
-                    }
-                });
+                    });
             });
         });
     </script>
-    </div>
-  <footer>
-      <div id="Credit">
-          <p>© 2024 Pokémon. © 1995–2024 Nintendo/Creatures Inc./GAME FREAK Inc. est une marque déposée par Nintendo</p>
-          <p>© 2024, CardBinDex. Les autres marques, images ou noms de produit appartiennent à leurs propriétaires respectifs.</p>
-      </div>
-      <div id="Lien">
-          <h2>Nous Contacter</h2>
-          <h2>projet.annuel3tan@gmail.com</h2>
-          <h2>Nos réseaux :</h2>
-          <a href="https://twitter.com/cardbindex" target="_blank"><img src="../ASSET/X.png" alt="TWITTER" width="24px" height="24px"></a>
-          <a href="https://twitter.com/cardbindex" target="_blank"><img src="../ASSET/DISCORD.png" alt="DISCORD" width="24px" height="24px"></a>
-          <a href="https://twitter.com/cardbindex" target="_blank"><img src="../ASSET/INSTAGRAM.png" alt="INSTAGRAM" width="24px" height="24px"></a>
-          <a href="https://github.com/Suussonic/CardBinDex" target="_blank"><img src="../ASSET/GITHUB.png" alt="GITHUB" width="24px" height="24px"></a>
-      </div>
-  </body>
+</body>
+
 </html>

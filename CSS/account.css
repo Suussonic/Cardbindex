@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'MADE Mirage';
-    src: url('MADEMirage-Bold.woff2') format('woff2'),
-        url('MADEMirage-Bold.woff') format('woff');
+    src: url('../ASSET/MADEMirage-Bold.woff2') format('woff2'),
+        url('../ASSET/MADEMirage-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
