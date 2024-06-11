@@ -43,11 +43,6 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 </head>
 
 <body>
-    <?php
-    if ($errorInfo) {
-        echo "<p class='error'>Utilisateur ou Mot de passe incorrect</p>";
-    }
-    ?>
     <form action="loginForm.php" method="POST">
         <h1>Se connecter</h1>
         <div>
@@ -56,6 +51,11 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
         <div>
             <input id="password" placeholder="Mot de passe" type="password" name="password" required>
         </div>
+        <?php
+        if ($errorInfo) {
+            echo "<p class='error'>Utilisateur ou Mot de passe incorrect</p>";
+        }
+        ?>
         <input type="submit" class="btn" value="Se connecter">
         <a href="form.php">
             <div id="btn2">S'inscrire</div>
