@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'MADE Mirage';
-    src: url('MADEMirage-Bold.woff2') format('woff2'),
-        url('MADEMirage-Bold.woff') format('woff');
+    src: url('../ASSET/MADEMirage-Bold.woff2') format('woff2'),
+        url('../ASSET/MADEMirage-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -31,12 +31,12 @@ header {
     border-radius: 15px;
 }
 
-header img{
+header img {
     width: 64px;
     margin: 8px;
 }
 
-header a{
+header a {
     text-align: center;
     align-items: center;
     text-decoration: none;
@@ -46,15 +46,15 @@ header a{
     padding-right: 50px;
 }
 
-header a:hover{
+header a:hover {
     text-decoration: none;
     color: rgb(59, 59, 255);
     font-weight: bold;
     font-size: 120%;
 }
 
-#recherche{
-    color:white;
+#recherche {
+    color: white;
     width: auto;
     background-color: #26272C;
     height: 60px;
@@ -68,7 +68,7 @@ header a:hover{
     margin-left: 10%;
 }
 
-#param{
+#param {
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -77,69 +77,72 @@ header a:hover{
     width: 40px;
 }
 
-@media screen and (max-width: 860px){
-    #recherche{
+@media screen and (max-width: 860px) {
+    #recherche {
         width: 210px;
         font-size: 15px;
         height: 40px;
     }
-    header{
+
+    header {
         width: 80%;
         margin-left: auto;
         margin-right: auto;
         height: 50px;
     }
-    header a, header input{
+
+    header a,
+    header input {
         padding-left: 10px;
         padding-right: 10px;
         width: 15%;
     }
-    header a img{
+
+    header a img {
         padding-left: 10px;
         padding-right: 10px;
         width: 64px;
     }
 }
 
-@media screen and (max-width: 660px){
-    #recherche{
+@media screen and (max-width: 660px) {
+    #recherche {
         width: 210px;
         font-size: 15px;
         height: 40px;
     }
-    header{
+
+    header {
         width: 80%;
         margin-left: auto;
         margin-right: auto;
         height: 50px;
     }
-    header a, header input{
+
+    header a,
+    header input {
         padding-left: 10px;
         padding-right: 10px;
         width: 15%;
     }
-    header a img{
+
+    header a img {
         padding-left: 10px;
         padding-right: 10px;
         width: 64px;
     }
 }
 
-#banniere, #banniere img {
+#banniere,
+#banniere img {
     margin-top: 20px;
     width: 1000px;
     margin-left: auto;
     margin-right: auto;
 }
 
-@media screen and (max-width: 1040px){
-    #banniere, #banniere img{
-        width: 90%;
-        margin-right: 0;
-    }
-}
 
-#carouselExampleAutoplaying{
+#carouselExampleAutoplaying {
     width: 1200px;
     border-radius: 20px;
     padding: 0;
@@ -149,19 +152,11 @@ header a:hover{
     margin-right: auto;
 }
 
-#carouselExampleAutoplaying, img{
+#carouselExampleAutoplaying,
+img {
     border-radius: 20px;
 }
 
-@media screen and (max-width: 1250px){
-    #carouselExampleAutoplaying{
-        width: 85%;
-        border-radius: 20px;
-        padding: 0;
-        margin-top: 20px;
-        margin-left: auto;
-    }
-}
 
 body ul {
     display: flex;
@@ -197,21 +192,13 @@ ul a {
     text-decoration: none;
 }
 
-ul :hover{
+ul :hover {
     background-color: #024A8D;
     border-radius: 16px;
 }
 
-@media screen and (max-width: 1050px){
-    ul a, body li, body ul {
-        width: 80%;
-        height: 80%;
-        font-size: 100%;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        margin-left: auto;
-        margin-right: auto ;
-    }
+#deco {
+    background-color: white;
 }
 
 footer {
@@ -247,7 +234,8 @@ footer #Lien {
     font-size: 40px;
     width: 500px;
 }
-h2{
+
+h2 {
     width: auto;
     font-size: 25px;
     padding-top: 2px;
@@ -263,8 +251,40 @@ footer img {
     padding-top: 2px;
 }
 
-@media screen and (max-width: 1050px){
+@media screen and (max-width: 1250px) {
+    #carouselExampleAutoplaying {
+        width: 85%;
+        border-radius: 20px;
+        padding: 0;
+        margin-top: 20px;
+        margin-left: auto;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+
+    ul a,
+    body li,
+    body ul {
+        width: 80%;
+        height: 80%;
+        font-size: 100%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     footer {
         height: auto;
+    }
+}
+
+@media screen and (max-width: 1040px) {
+
+    #banniere,
+    #banniere img {
+        width: 90%;
+        margin-right: 0;
     }
 }

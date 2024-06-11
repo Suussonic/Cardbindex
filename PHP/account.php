@@ -51,8 +51,7 @@ $user = $preparedGetUser->fetch();
     <h1>Bienvenue <?php echo $_SESSION['pseudo']?></h1>
 
     <form action="" method="POST">
-
-        <!--  EMAIL  -->
+        
         <div>
             <label for="email">Email</label>
             <input id="email" type="email" name="email" value="<?php echo $user['email'] ?>">

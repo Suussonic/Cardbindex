@@ -1,8 +1,11 @@
 <?php
 session_start();
+include_once('./PHP/db.php');
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="sUTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +16,7 @@ session_start();
     <?php include 'PHP/theme.php'; ?>
     <title>Accueil</title>
 </head>
+
 <body>
     <?php include 'PHP/nav.php'; ?>
     <div id="banniere">
@@ -48,8 +52,8 @@ session_start();
             <span class="visually-hidden">Previous</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
         </button>
     </div>
     <footer>
@@ -67,6 +71,7 @@ session_start();
             <a href="https://github.com/Suussonic/CardBinDex" target="_blank"><img src="./ASSET/GITHUB.png" alt="GITHUB" width="24px" height="24px"></a>
         </div>
     </footer>
-</body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
 </html>
