@@ -23,7 +23,6 @@ if (isset($_POST['captcha_input'])) {
 
         $preparedQuery = $dbh->prepare($insertUser);
         $preparedQuery->execute([
-            'id' => null,
             'firstname' => $firstname,
             'lastname' => $lastname,
             'email' => $email,
@@ -48,7 +47,7 @@ if (isset($_POST['captcha_input'])) {
 
 <head>
     <meta charset="UTF-8">
-    <?php include 'PHP/theme.php'; ?>
+    <?php include 'theme.php'; ?>
     <title>Mon compte</title>
 </head>
 
