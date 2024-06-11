@@ -23,6 +23,7 @@ if (isset($_POST['captcha_input'])) {
 
         $preparedQuery = $dbh->prepare($insertUser);
         $preparedQuery->execute([
+            'id' => null,
             'firstname' => $firstname,
             'lastname' => $lastname,
             'email' => $email,
