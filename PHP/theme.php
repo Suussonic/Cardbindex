@@ -1,13 +1,13 @@
 <?php
 
-if (isset($_SESSION['id'])) { 
-    $id = $_SESSION['id'];
+if (isset($_SESSION['userId'])) { 
+    $userId = $_SESSION['userId'];
 
     $getUser = "SELECT theme FROM users WHERE id = :id";
     
     $preparedGetUser = $dbh->prepare($getUser);
     $preparedGetUser->execute([
-        'id' => $id
+        'id' => $userId
     ]);
 
     $result = $preparedGetUser->fetch(PDO::FETCH_ASSOC);
