@@ -28,6 +28,7 @@ $userCardsJson = json_encode($userCards);
     <link rel="shortcut icon" href="../ASSET/CARDBINDEX V5.png" type="image/x-icon">
     <title>Pokemon Blocks</title>
     <link rel="stylesheet" href="../CSS/collection.css">
+    <?php include './theme.php'; ?>
 </head>
 <body>
     <div class="container">
