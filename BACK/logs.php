@@ -24,5 +24,5 @@ function insert_logs($action){
     $logs_query->execute();
 
 }
-
+echo"TRAVAIL EN COURS";
 ?>
