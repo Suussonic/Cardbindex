@@ -4,6 +4,19 @@
     <?php
     if (isset($_SESSION['firstname'])) {
         echo '<a id="param" href="PHP/compte.php"><img src="/ASSET/PARAMETRE.png"></a>';
+        $userId = $_SESSION['userId'];
+    
+        $getUser = "SELECT role FROM users WHERE id = :id";
+        
+        $preparedGetUser = $dbh->prepare($getUser);
+        $preparedGetUser->execute([
+            'id' => $userId
+        ]);
+    
+        $result = $preparedGetUser->fetch(PDO::FETCH_ASSOC);
+        if ($result['theme'] == "admin") { 
+            echo '<a class="Connexion" href="BACK/logs.php">Back</a>';
+        }
     } else {
         echo '<a class="Connexion" href="PHP/loginForm.php">Se Connecter</a>';
     }
