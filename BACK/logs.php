@@ -11,7 +11,7 @@ function insert_logs($action){
 
     $ip = $_SERVER['REMOTE_ADDR'];
     $date_now = date('Y-m-d H:i:s');
-    $pseudo = $_SESSION['firstname'];
+    $firstname = $_SESSION['firstname'];
     $email = $row_login['email'];
 
     $logs_req = 'INSERT INTO logs(action, ip, date, firstname, email) VALUES(:action, :ip, :date, :firstname, :email)';
