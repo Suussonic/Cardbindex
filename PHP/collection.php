@@ -32,7 +32,7 @@ $userCardsJson = json_encode($userCards);
 </head>
 <body>
     <div class="container">
-        <button class="block" id="scarlet-violet"><img src="../ASSET/SCARLETVIOLET.png" alt="Scarlet & Violet"></button>
+        <button class="block" id="scarlet-violet"><img src="./ASSET/SCARLETVIOLET.png" alt="Scarlet & Violet"></button>
         <button class="block" id="sword-shield"><img src="X" alt="Sword & Shield"></button>
         <button class="block" id="sun-moon"><img src="X" alt="Sun & Moon"></button>
         <button class="block" id="xy"><img src="X" alt="XY"></button>
