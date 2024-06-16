@@ -2,12 +2,11 @@
     <a href="/index.php"><img src="/ASSET/CARDBINDEX V4.png" alt="LOGO"></a>
     <a href="../recherche/recherche.html">Rechercher</a>
     <?php
-    session_start();
     if (isset($_SESSION['firstname'])) {
         echo '<a id="param" href="PHP/compte.php"><img src="/ASSET/PARAMETRE.png"></a>';
         $userId = $_SESSION['userId'];
     
-        $getUser = "SELECT rol FROM users WHERE id = :id";
+        $getUser = "SELECT role FROM users WHERE id = :id";
         
         $preparedGetUser = $dbh->prepare($getUser);
         $preparedGetUser->execute([
@@ -15,7 +14,7 @@
         ]);
     
         $result = $preparedGetUser->fetch(PDO::FETCH_ASSOC);
-        if ($result['theme'] == "admin") { 
+        if ($result['role'] == "admin") { 
             echo '<a class="Connexion" href="BACK/logs.php">Back</a>';
         }
     } else {
