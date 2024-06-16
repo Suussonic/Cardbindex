@@ -15,7 +15,7 @@
     
         $result = $preparedGetUser->fetch(PDO::FETCH_ASSOC);
         if ($result['role'] == "admin") { 
-            echo '<a class="Connexion" href="BACK/logs.php">Back</a>';
+            echo '<a class="Connexion" href="BACK/parametre.php">Back</a>';
         }
     } else {
         echo '<a class="Connexion" href="PHP/loginForm.php">Se Connecter</a>';

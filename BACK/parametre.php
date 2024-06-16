@@ -1,7 +1,7 @@
 <?php
 global $dbh;
 session_start();
-include_once('db.php');
+include_once('../PHP/db.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $editUserSql = '
