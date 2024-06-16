@@ -2,6 +2,7 @@
     <a href="/index.php"><img src="/ASSET/CARDBINDEX V4.png" alt="LOGO"></a>
     <a href="../recherche/recherche.html">Rechercher</a>
     <?php
+    session_start();
     if (isset($_SESSION['firstname'])) {
         echo '<a id="param" href="PHP/compte.php"><img src="/ASSET/PARAMETRE.png"></a>';
         $userId = $_SESSION['userId'];
