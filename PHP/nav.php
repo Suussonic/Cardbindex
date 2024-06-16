@@ -6,7 +6,7 @@
         echo '<a id="param" href="PHP/compte.php"><img src="/ASSET/PARAMETRE.png"></a>';
         $userId = $_SESSION['userId'];
     
-        $getUser = "SELECT role FROM users WHERE id = :id";
+        $getUser = "SELECT rol FROM users WHERE id = :id";
         
         $preparedGetUser = $dbh->prepare($getUser);
         $preparedGetUser->execute([
