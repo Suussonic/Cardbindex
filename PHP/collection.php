@@ -36,7 +36,6 @@ $userCardsJson = json_encode($userCards);
         <h2>Séries</h2>
         <div class="galerie">
             <div class="item"><a href="" target="_blank"><img src="../ASSET/XY.png" alt="XY"></a></div>
-            <div class="item"><a href="" target="_blank"><img src="../ASSET/X.png" alt="X"></a></div>
             <div class="item"><a href="" target="_blank"><img src="../ASSET/SWSH1.png" alt="SWSH1"></a></div>
             <div class="item"><a href="" target="_blank"><img src="../ASSET/SVI.png" alt="SVI"></a></div>
             <div class="item"><a href="" target="_blank"><img src="../ASSET/SM01.png" alt="SM01"></a></div>
