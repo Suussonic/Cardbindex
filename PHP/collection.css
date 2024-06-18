@@ -1,13 +1,13 @@
 body {
     display: flex;
     align-items: center;
+    display: block;
     height: 100vh;
     margin: 0;
 }
 
 #First {
     display: block;
-    background-color: #1f1f1f;
     margin-top: 20px;
     height: auto;
     text-align: center;
@@ -42,7 +42,7 @@ body {
 }
 
 .item {
-    width: 100px;
+    width: 100%;
     height: auto;
     margin: 10px;
     overflow: hidden;
@@ -54,7 +54,7 @@ body {
 
 .item img {
     border-radius: 15px;
-    width: 100px;
+    width: 100%;
     height: auto;
 }
 
