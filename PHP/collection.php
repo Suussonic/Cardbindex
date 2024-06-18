@@ -32,11 +32,8 @@ $userCardsJson = json_encode($userCards);
 </head>
 <body>
     <?php include 'PHP/nav.php'; ?>
-    <div id="banniere">
-        <img src="../ASSET/HORIZON.png" alt="banniere">
-    </div>
     <div class="GALERIE">
-        <h2>Interviews et Podcasts</h2>
+        <h2>Séries</h2>
         <div class="galerie">
             <div class="item"><a href="" target="_blank"><img src="../ASSET/XY.png" alt="XY"></a></div>
             <div class="item"><a href="" target="_blank"><img src="../ASSET/X.png" alt="X"></a></div>
