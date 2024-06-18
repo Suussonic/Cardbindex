@@ -42,7 +42,7 @@ body {
 }
 
 .item {
-    width: 150px;
+    width: 100px;
     height: auto;
     margin: 10px;
     overflow: hidden;
@@ -54,7 +54,7 @@ body {
 
 .item img {
     border-radius: 15px;
-    width: 15g0px;
+    width: 100px;
     height: auto;
 }
 
