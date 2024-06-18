@@ -31,6 +31,10 @@ $userCardsJson = json_encode($userCards);
     <?php include './theme.php'; ?>
 </head>
 <body>
+    <?php include 'PHP/nav.php'; ?>
+    <div id="banniere">
+        <img src="../ASSET/HORIZON.png" alt="banniere">
+    </div>
     <div class="GALERIE">
         <h2>Interviews et Podcasts</h2>
         <div class="galerie">
