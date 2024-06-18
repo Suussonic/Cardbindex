@@ -6,6 +6,19 @@ body {
     margin: 0;
 }
 
+#First {
+    display: block;
+    background-color: #1f1f1f;
+    margin-top: 20px;
+    height: auto;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    align-items: center;
+    color: white;
+    border-radius: 15px;
+}
+
 .GALERIE {
     display: block;
     border-radius: 15px;

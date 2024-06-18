@@ -32,19 +32,21 @@ $userCardsJson = json_encode($userCards);
 </head>
 <body>
     <?php include 'PHP/nav.php'; ?>
-    <div class="GALERIE">
-        <h2>Séries</h2>
-        <div class="galerie">
-            <div class="item"><a href="" target="_blank"><img src="../ASSET/XY.png" alt="XY"></a></div>
-            <div class="item"><a href="" target="_blank"><img src="../ASSET/SWSH1.png" alt="SWSH1"></a></div>
-            <div class="item"><a href="" target="_blank"><img src="../ASSET/SVI.png" alt="SVI"></a></div>
-            <div class="item"><a href="" target="_blank"><img src="../ASSET/SM01.png" alt="SM01"></a></div>
-            <div class="item"><a href="" target="_blank"><img src="../ASSET/PT.png" alt="PT"></a></div>
-            <div class="item"><a href="" target="_blank"><img src="../ASSET/HGSS.png" alt="HGSS"></a></div>
-            <div class="item"><a href="" target="_blank"><img src="../ASSET/DP.png" alt="DP"></a></div>
-            <div class="item"><a href="" target="_blank"><img src="../ASSET/CL.png" alt="CL"></a></div>
-            <div class="item"><a href="" target="_blank"><img src="../ASSET/BLW.png" alt="BLW"></a></div>
+    <section id="First">
+        <div class="GALERIE">
+            <h2>Séries</h2>
+            <div class="galerie">
+                <div class="item"><a href="" target="_blank"><img src="../ASSET/XY.png" alt="XY"></a></div>
+                <div class="item"><a href="" target="_blank"><img src="../ASSET/SWSH1.png" alt="SWSH1"></a></div>
+                <div class="item"><a href="" target="_blank"><img src="../ASSET/SVI.png" alt="SVI"></a></div>
+                <div class="item"><a href="" target="_blank"><img src="../ASSET/SM01.png" alt="SM01"></a></div>
+                <div class="item"><a href="" target="_blank"><img src="../ASSET/PT.png" alt="PT"></a></div>
+                <div class="item"><a href="" target="_blank"><img src="../ASSET/HGSS.png" alt="HGSS"></a></div>
+                <div class="item"><a href="" target="_blank"><img src="../ASSET/DP.png" alt="DP"></a></div>
+                <div class="item"><a href="" target="_blank"><img src="../ASSET/CL.png" alt="CL"></a></div>
+                <div class="item"><a href="" target="_blank"><img src="../ASSET/BLW.png" alt="BLW"></a></div>
+            </div>
         </div>
-    </div>
+    </section>
 </body>
 </html>
