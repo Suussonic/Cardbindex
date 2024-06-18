@@ -31,7 +31,7 @@ $userCardsJson = json_encode($userCards);
     <?php include './theme.php'; ?>
 </head>
 <body>
-    <?php include 'PHP/nav.php'; ?>
+    <?php include 'nav.php'; ?>
     <section id="First">
         <div class="GALERIE">
             <h2>Séries</h2>
