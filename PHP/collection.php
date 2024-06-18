@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../ASSET/CARDBINDEX V5.png" type="image/x-icon">
     <title>Pokemon Blocks</title>
-    <link rel="stylesheet" href="collection.css">
+    <link rel="stylesheet" href="../CSS/collection.css">
     <?php include 'theme.php'; ?>
 </head>
 <body>
