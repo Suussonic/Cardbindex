@@ -31,16 +31,20 @@ $userCardsJson = json_encode($userCards);
     <?php include './theme.php'; ?>
 </head>
 <body>
-    <div class="container">
-        <button class="block" id="scarlet-violet"><img src="../ASSET/SCARLETVIOLET.png" alt="Scarlet & Violet"></button>
-        <button class="block" id="sword-shield"><img src="X" alt="Sword & Shield"></button>
-        <button class="block" id="sun-moon"><img src="X" alt="Sun & Moon"></button>
-        <button class="block" id="xy"><img src="X" alt="XY"></button>
-        <button class="block" id="black-white"><img src="X" alt="Black & White"></button>
-        <button class="block" id="heartgold-soulsilver"><img src="X" alt="HeartGold SoulSilver"></button>
-        <button class="block" id="platinum"><img src="X" alt="Platinum"></button>
-        <button class="block" id="diamond-pearl"><img src="X" alt="Diamond & Pearl"></button>
-        <button class="block" id="pokemon-organized-play"><img src="X" alt="Pokemon Organized Play"></button>
+    <div class="GALERIE">
+        <h2>Interviews et Podcasts</h2>
+        <div class="galerie">
+            <div class="item"><a href="" target="_blank"><img src="../ASSET/XY.png" alt="XY"></a></div>
+            <div class="item"><a href="" target="_blank"><img src="../ASSET/X.png" alt="X"></a></div>
+            <div class="item"><a href="" target="_blank"><img src="../ASSET/SWSH1.png" alt="SWSH1"></a></div>
+            <div class="item"><a href="" target="_blank"><img src="../ASSET/SVI.png" alt="SVI"></a></div>
+            <div class="item"><a href="" target="_blank"><img src="../ASSET/SM01.png" alt="SM01"></a></div>
+            <div class="item"><a href="" target="_blank"><img src="../ASSET/PT.png" alt="PT"></a></div>
+            <div class="item"><a href="" target="_blank"><img src="../ASSET/HGSS.png" alt="HGSS"></a></div>
+            <div class="item"><a href="" target="_blank"><img src="../ASSET/DP.png" alt="DP"></a></div>
+            <div class="item"><a href="" target="_blank"><img src="../ASSET/CL.png" alt="CL"></a></div>
+            <div class="item"><a href="" target="_blank"><img src="../ASSET/BLW.png" alt="BLW"></a></div>
+        </div>
     </div>
 </body>
 </html>
