@@ -27,7 +27,7 @@ header {
     height: 80px;
     align-items: center;
     color: white;
-    justify-content: space-between;
+    justify-content: space-around;
     border-radius: 15px;
 }
 

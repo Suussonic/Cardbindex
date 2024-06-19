@@ -24,10 +24,19 @@ header {
     height: 80px;
     align-items: center;
     color: white;
-    justify-content: space-between;
+    justify-content: space-around;
     border-radius: 15px;
 }
 
+header a {
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding-left: 50px;
+    padding-right: 50px;
+}
 
 header img{
     width: 64px;
