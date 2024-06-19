@@ -15,6 +15,20 @@ body {
     align-items: center;
 }
 
+header {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    background-color: #555962;
+    height: 80px;
+    align-items: center;
+    color: white;
+    justify-content: space-between;
+    border-radius: 15px;
+}
+
+
 header img{
     width: 64px;
     margin: 8px;
