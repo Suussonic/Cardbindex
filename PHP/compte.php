@@ -2,6 +2,7 @@
 global $dbh;
 session_start();
 include_once('db.php');
+include('../BACK/logs.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $editUserSql = '
@@ -25,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ]);
     $_SESSION['firstname'] = $_POST['firstname'];
     $_SESSION['lastname'] = $_POST['lastname'];
+    insert_logs('modification de donnée');
 }
 
 

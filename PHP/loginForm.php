@@ -1,6 +1,7 @@
 <?php
 global $dbh;
 require_once('db.php');
+include('../BACK/logs.php');
 
 $errorInfo = false;
 
@@ -13,18 +14,21 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     $preparedLoginRequest = $dbh->prepare($loginSql);
     $preparedLoginRequest->execute(['email' => $email]);
 
-    $user = $preparedLoginRequest->fetch();
+    if ($user = $preparedLoginRequest->fetch()) {
+        if (password_verify($password, $user['password'])) {
+            session_start();
+            $_SESSION['userId'] = $user['id'];
+            $_SESSION['firstname'] = $user['firstname'];
+            $_SESSION['lastname'] = $user['lastname'];
+            $_SESSION['user'] = $user;
+            $_SESSION['theme'] = $user['theme'];
 
-    if (password_verify($password, $user['password'])) {
-        session_start();
-        $_SESSION['userId'] = $user['id'];
-        $_SESSION['firstname'] = $user['firstname'];
-        $_SESSION['lastname'] = $user['lastname'];
-        $_SESSION['user'] = $user;
-        $_SESSION['theme'] = $user['theme'];
-
-        header('location:../index.php');
-    } else {
+            insert_logs('connexion');
+            header('location:../index.php');
+        } else {
+            $errorInfo = true;
+        }
+    }else{
         $errorInfo = true;
     }
 }

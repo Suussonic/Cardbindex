@@ -1,7 +1,7 @@
 <?php
-include("../PHP/db.php");
 
 function insert_logs($action){
+    include('../PHP/db.php');
 
     $login_req = 'SELECT * FROM users WHERE firstname = :firstname';
     $login_query = $dbh->prepare($login_req);
@@ -24,5 +24,4 @@ function insert_logs($action){
     $logs_query->execute();
 
 }
-echo"TRAVAIL EN COURS";
 ?>
