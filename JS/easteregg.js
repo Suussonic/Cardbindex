@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Fonction pour envoyer une requête AJAX
     function sendKonamiCode() {
+        console.log("Konami Code entered!");
         let xhr = new XMLHttpRequest();
         xhr.open("POST", "../PHP/easteregg.php", true);
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");

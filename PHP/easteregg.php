@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Récupération des informations de l'utilisateur
-    $getUser = "SELECT id, firstname FROM users WHERE id = :id";
+    $getUser = "SELECT id FROM users WHERE id = :id";
     $preparedGetUser = $dbh->prepare($getUser);
     $preparedGetUser->execute(['id' => $_SESSION['user_id']]);
     $user = $preparedGetUser->fetch();
