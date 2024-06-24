@@ -3,7 +3,7 @@ session_start();
 require_once('../PHP/db.php');
 
 // Vérifiez si l'utilisateur est connecté
-if (!isset($_SESSION['id'])) {
+if (isset($_SESSION['firstname'])) {
     die("Utilisateur non connecté");
 }
 
