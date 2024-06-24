@@ -5,7 +5,7 @@ $user_id = $data['user_id'];
 $badge_value = $data['badge_value'];
 
 // Insertion des données dans la base de données
-$sql = "INSERT INTO badge (user_id, value) VALUES ('$user_id', '$badge_value')";
+$sql = "INSERT INTO badge (id, badges) VALUES ('$user_id', '$badge_value')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
