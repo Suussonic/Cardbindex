@@ -79,7 +79,7 @@ header img{
 }
 
 .item {
-    width: 100px;
+    width: 100%;
     height: auto;
     margin: 10px;
     overflow: hidden;
@@ -91,7 +91,7 @@ header img{
 
 .item img {
     border-radius: 15px;
-    width: 100px;
+    width: 100%;
     height: auto;
 }
 
