@@ -21,7 +21,7 @@ $preparedGetUser->execute([
 $user = $preparedGetUser->fetch();
 
 // Récupération du prénom de l'utilisateur
-$id = $user['id'];
+$id = $user['userid'];
 
 // Utilisation du prénom récupéré
 echo "Le prénom de l'utilisateur est : $id";
