@@ -16,21 +16,6 @@
             CONDITION D'UTILISATION A REMPLIR
         </p>
     </section>
-    <footer>
-        <div id="Credit">
-            <p>© 2024 Pokémon. © 1995–2024 Nintendo/Creatures Inc./GAME FREAK Inc. est une marque déposée par Nintendo</p>
-            <p>© 2024, CardBinDex. Les autres marques, images ou noms de produit appartiennent à leurs propriétaires respectifs.</p>
-        </div>
-        <div id="Lien">
-            <h2>Nous Contacter</h2>
-            <h2>projet.annuel3tan@gmail.com</h2>
-            <h2>Nos réseaux :</h2>
-            <a href="https://twitter.com/cardbindex" target="_blank"><img src="./ASSET/X.png" alt="TWITTER" width="24px" height="24px"></a>
-            <a href="https://twitter.com/cardbindex" target="_blank"><img src="./ASSET/DISCORD.png" alt="DISCORD" width="24px" height="24px"></a>
-            <a href="https://twitter.com/cardbindex" target="_blank"><img src="./ASSET/INSTAGRAM.png" alt="INSTAGRAM" width="24px" height="24px"></a>
-            <a href="https://github.com/Suussonic/CardBinDex" target="_blank"><img src="./ASSET/GITHUB.png" alt="GITHUB" width="24px" height="24px"></a>
-        </div>
-    </footer>
 </body>
 
 </html>
