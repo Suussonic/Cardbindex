@@ -44,7 +44,7 @@ require_once('db.php');
             <label for="captcha" class="captcha-label">150 + 50 = ?</label>
             <input type="text" id="captcha-input" placeholder="Votre réponse" name="captcha_input" require>
         </div>
-        <label for="captcha">Accepter le contrat d'utilisation.</label>
+        <label for="captcha"><a href="condition.php" target="blank">Accepter le contrat d'utilisation.</a></label>
             <input type="checkbox" id="captcha" class="hidden-checkbox" require>
         <input class="btn" type="submit">
 </div>
