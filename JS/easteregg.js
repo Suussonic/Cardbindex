@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
             konamiCodePosition++;
             if (konamiCodePosition === konamiCode.length) {
                 // URL de l'image à télécharger
-                const imageUrl = "path/to/your/image.jpg";
+                const imageUrl = "../ASSET/LOGONVMAX.png";
                 downloadImage(imageUrl);
                 konamiCodePosition = 0;
             }
