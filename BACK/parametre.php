@@ -68,10 +68,12 @@
                             <td>test@example.com</td>
                             <td>man</td>
                             <td>user</tb>
+
                             <tb>
-                            <button class="button" onclick="alert('Éditer utilisateur')">Éditer</button>
-                            <button class="button" onclick="alert('Supprimer utilisateur')">Supprimer</button>
+                                <button class="button" onclick="alert('Éditer utilisateur')">Éditer</button>
+                                <button class="button" onclick="alert('Supprimer utilisateur')">Supprimer</button>
                             </td>
+                            
                         </tr>
                         <tr>
                             <td>1</td>
