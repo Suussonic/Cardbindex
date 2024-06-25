@@ -54,61 +54,55 @@
                     <table class="admin-table">
                         <tr>
                             <th>ID</th>
-                            <th>Action</th>
-                            <th>Pseudo</th>
-                            <th>ip</th>
-                            <th>date</th>
                             <th>firstname</th>
+                            <th>lastname</th>
                             <th>Email</th>
+                            <th>gender</th>
+                            <th>Role</th>
                             <th>Admin</th>
                         </tr>
                         <tr>
                             <td>1</td>
-                            <td>Connection</td>
                             <td>test</td>
                             <td>test</td>
                             <td>test@example.com</td>
-                            <tb></tb>
-                            <tb></tb>
+                            <td>man</td>
+                            <tb>user</tb>
                             <td>
                                 <button class="button" onclick="alert('Éditer utilisateur')">Éditer</button>
                                 <button class="button" onclick="alert('Supprimer utilisateur')">Supprimer</button>
                             </td>
                         </tr>
                         <tr>
-                            <td>35</td>
-                            <th>modification</th>
+                            <td>1</td>
                             <td>test</td>
                             <td>test</td>
                             <td>test@example.com</td>
-                            <tb></tb>
-                            <tb></tb>
+                            <td>man</td>
+                            <tb>user</tb>
                             <td>
                                 <button class="button" onclick="alert('Éditer utilisateur')">Éditer</button>
                                 <button class="button" onclick="alert('Supprimer utilisateur')">Supprimer</button>
                             </td>
                         </tr>
                         <tr>
-                            <td>17</td>
-                            <th>modification</th>
+                            <td>1</td>
                             <td>test</td>
                             <td>test</td>
                             <td>test@example.com</td>
-                            <tb></tb>
-                            <tb></tb>
-                            <td>
+                            <td>man</td>
+                            <tb>user</tb>
                                 <button class="button" onclick="alert('Éditer utilisateur')">Éditer</button>
                                 <button class="button" onclick="alert('Supprimer utilisateur')">Supprimer</button>
                             </td>
                         </tr>
                         <tr>
-                            <td>2</td>
-                            <th>connection</th>
+                            <td>1</td>
                             <td>test</td>
                             <td>test</td>
                             <td>test@example.com</td>
-                            <tb></tb>
-                            <tb></tb>
+                            <td>man</td>
+                            <tb>user</tb>
                             <td>
                                 <button class="button" onclick="alert('Éditer utilisateur')">Éditer</button>
                                 <button class="button" onclick="alert('Supprimer utilisateur')">Supprimer</button>
