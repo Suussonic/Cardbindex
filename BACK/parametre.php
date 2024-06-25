@@ -56,7 +56,9 @@
                             <th>ID</th>
                             <th>Action</th>
                             <th>Pseudo</th>
-                            <th>Nom</th>
+                            <th>ip</th>
+                            <th>date</th>
+                            <th>firstname</th>
                             <th>Email</th>
                             <th>Admin</th>
                         </tr>
@@ -66,6 +68,8 @@
                             <td>test</td>
                             <td>test</td>
                             <td>test@example.com</td>
+                            <tb></tb>
+                            <tb></tb>
                             <td>
                                 <button class="button" onclick="alert('Éditer utilisateur')">Éditer</button>
                                 <button class="button" onclick="alert('Supprimer utilisateur')">Supprimer</button>
@@ -77,6 +81,8 @@
                             <td>test</td>
                             <td>test</td>
                             <td>test@example.com</td>
+                            <tb></tb>
+                            <tb></tb>
                             <td>
                                 <button class="button" onclick="alert('Éditer utilisateur')">Éditer</button>
                                 <button class="button" onclick="alert('Supprimer utilisateur')">Supprimer</button>
@@ -88,6 +94,8 @@
                             <td>test</td>
                             <td>test</td>
                             <td>test@example.com</td>
+                            <tb></tb>
+                            <tb></tb>
                             <td>
                                 <button class="button" onclick="alert('Éditer utilisateur')">Éditer</button>
                                 <button class="button" onclick="alert('Supprimer utilisateur')">Supprimer</button>
@@ -99,6 +107,8 @@
                             <td>test</td>
                             <td>test</td>
                             <td>test@example.com</td>
+                            <tb></tb>
+                            <tb></tb>
                             <td>
                                 <button class="button" onclick="alert('Éditer utilisateur')">Éditer</button>
                                 <button class="button" onclick="alert('Supprimer utilisateur')">Supprimer</button>
