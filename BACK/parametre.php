@@ -69,8 +69,7 @@
                             <td>man</td>
                             <tb>user</tb>
                             <td>
-                                <button class="button" onclick="alert('Éditer utilisateur')">Éditer</button>
-                                <button class="button" onclick="alert('Supprimer utilisateur')">Supprimer</button>
+                                
                             </td>
                         </tr>
                         <tr>
@@ -92,6 +91,7 @@
                             <td>test@example.com</td>
                             <td>man</td>
                             <tb>user</tb>
+                            
                             <td>
                                 <button class="button" onclick="alert('Éditer utilisateur')">Éditer</button>
                                 <button class="button" onclick="alert('Supprimer utilisateur')">Supprimer</button>
