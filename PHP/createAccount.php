@@ -33,7 +33,7 @@ if (isset($_POST['captcha_input'])) {
         exit;
     } else {
         echo "réponse incorrecte. Veuillez réessayer";
-        header("Location: /createAccount.php");
+        header("Location: form.php");
         exit;
     }
 } else {
@@ -41,27 +41,3 @@ if (isset($_POST['captcha_input'])) {
 }
 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <?php include 'theme.php'; ?>
-    <title>Mon compte</title>
-</head>
-
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="form.php">Créer compte</a></li>
-                <li><a href="loginForm.php">Login</a></li>
-                <li><a href="account.php">Mon compte</a></li>
-                <li><a href="logout.php">Se deconnecter</a></li>
-            </ul>
-        </nav>
-    </header>
-</body>
-
-</html>
