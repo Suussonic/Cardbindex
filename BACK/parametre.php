@@ -67,9 +67,8 @@
                             <td>test</td>
                             <td>test@example.com</td>
                             <td>man</td>
-                            <tb>user</tb>
                             <td>
-                                
+                                user
                             </td>
                         </tr>
                         <tr>
