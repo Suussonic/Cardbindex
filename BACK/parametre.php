@@ -68,6 +68,8 @@
                             <td>test</td>
                             <td>test</td>
                             <td>test@example.com</td>
+                            <tb></tb>
+                            <tb></tb>
                             <td>
                                 <button class="button" onclick="alert('Éditer utilisateur')">Éditer</button>
                                 <button class="button" onclick="alert('Supprimer utilisateur')">Supprimer</button>
@@ -79,6 +81,8 @@
                             <td>test</td>
                             <td>test</td>
                             <td>test@example.com</td>
+                            <tb></tb>
+                            <tb></tb>
                             <td>
                                 <button class="button" onclick="alert('Éditer utilisateur')">Éditer</button>
                                 <button class="button" onclick="alert('Supprimer utilisateur')">Supprimer</button>
@@ -90,6 +94,8 @@
                             <td>test</td>
                             <td>test</td>
                             <td>test@example.com</td>
+                            <tb></tb>
+                            <tb></tb>
                             <td>
                                 <button class="button" onclick="alert('Éditer utilisateur')">Éditer</button>
                                 <button class="button" onclick="alert('Supprimer utilisateur')">Supprimer</button>
@@ -101,6 +107,8 @@
                             <td>test</td>
                             <td>test</td>
                             <td>test@example.com</td>
+                            <tb></tb>
+                            <tb></tb>
                             <td>
                                 <button class="button" onclick="alert('Éditer utilisateur')">Éditer</button>
                                 <button class="button" onclick="alert('Supprimer utilisateur')">Supprimer</button>
