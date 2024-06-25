@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'MADE Mirage';
+    src: url('../ASSET/MADEMirage-Bold.woff2') format('woff2'),
+        url('../ASSET/MADEMirage-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    margin: 0;
+    font-family: 'MADE Mirage';
+    height: auto;
+    align-items: center;
+}
+
+section {
+    border-radius: 15px;
+    background-color: #555962;
+}
