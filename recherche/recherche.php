@@ -21,19 +21,19 @@ $preparedGetUser->execute([
 $user = $preparedGetUser->fetch();
 
 // Récupération du prénom de l'utilisateur
-$id = $user['userid'];
+$firstname = $user['firstname'];
 
 // Utilisation du prénom récupéré
-echo "Le prénom de l'utilisateur est : $id";
+echo "Le prénom de l'utilisateur est : $firstname";
 
 $cardId = $_POST["cardId"];
 $insertUser = "
-INSERT INTO classeur (id, id_carte)
-VALUES (:id, :cardId)
+INSERT INTO classeur (firstname, id_carte)
+VALUES (:firstname, :cardId)
 ";
 
 $preparedQuery = $dbh->prepare($insertUser);
 $preparedQuery->execute([
     'cardId' => $cardId,
-    'id' => $id,
+    'firstname' => $firstname,
 ]);
