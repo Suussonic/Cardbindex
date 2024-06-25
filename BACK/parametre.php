@@ -54,16 +54,18 @@
                     <table class="admin-table">
                         <tr>
                             <th>ID</th>
+                            <th>Action</th>
                             <th>Pseudo</th>
                             <th>Nom</th>
                             <th>Email</th>
-                            <th>Actions</th>
+                            <th>Admin</th>
                         </tr>
                         <tr>
                             <td>1</td>
-                            <td>John Doe</td>
-                            <td>johndoe</td>
-                            <td>johndoe@example.com</td>
+                            <td>Connection</td>
+                            <td>test</td>
+                            <td>test</td>
+                            <td>test@example.com</td>
                             <td>
                                 <button class="button" onclick="alert('Éditer utilisateur')">Éditer</button>
                                 <button class="button" onclick="alert('Supprimer utilisateur')">Supprimer</button>
@@ -71,9 +73,10 @@
                         </tr>
                         <tr>
                             <td>35</td>
-                            <td>flute</td>
-                            <td>flute</td>
-                            <td>johndoe@example.com</td>
+                            <th>modification</th>
+                            <td>test</td>
+                            <td>test</td>
+                            <td>test@example.com</td>
                             <td>
                                 <button class="button" onclick="alert('Éditer utilisateur')">Éditer</button>
                                 <button class="button" onclick="alert('Supprimer utilisateur')">Supprimer</button>
@@ -81,9 +84,10 @@
                         </tr>
                         <tr>
                             <td>17</td>
-                            <td>fiack</td>
-                            <td>ton chiot</td>
-                            <td>johndoe@example.com</td>
+                            <th>modification</th>
+                            <td>test</td>
+                            <td>test</td>
+                            <td>test@example.com</td>
                             <td>
                                 <button class="button" onclick="alert('Éditer utilisateur')">Éditer</button>
                                 <button class="button" onclick="alert('Supprimer utilisateur')">Supprimer</button>
@@ -91,9 +95,10 @@
                         </tr>
                         <tr>
                             <td>2</td>
-                            <td>mon reuf </td>
-                            <td>tes</td>
-                            <td>johndoe@example.com</td>
+                            <th>connection</th>
+                            <td>test</td>
+                            <td>test</td>
+                            <td>test@example.com</td>
                             <td>
                                 <button class="button" onclick="alert('Éditer utilisateur')">Éditer</button>
                                 <button class="button" onclick="alert('Supprimer utilisateur')">Supprimer</button>
