@@ -68,7 +68,7 @@ h1 {
     background-color: #3e444a;
     padding: 20px;
     border-radius: 8px;
-    display: flex;
+    background-size : cover;
 }
 
 /* Form styling */
