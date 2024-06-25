@@ -33,7 +33,7 @@ if (isset($_POST['captcha_input'])) {
         exit;
     } else {
         echo "réponse incorrecte. Veuillez réessayer";
-        header("Location: /createAccount.php");
+        header("Location: form.php");
         exit;
     }
 } else {
