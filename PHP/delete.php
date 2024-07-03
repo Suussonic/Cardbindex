@@ -1,13 +1,10 @@
 <?php
 session_start();
-// Inclure le fichier de connexion à la base de données
 include_once('db.php');
 
-// Vérifier si l'utilisateur est connecté
 if (!isset($_SESSION['userId'])) {
-    // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
     header('Location: loginForm.php');
-    exit; // Arrêter l'exécution du script
+    exit;
 }
 
 // Récupérer les id_cartes pour l'utilisateur connecté depuis la base de données
