@@ -186,5 +186,6 @@
             showPage('page1');
         });
     </script>
+    <script src="../JS/easteregg.js"></script>
 </body>
 </html>
