@@ -12,9 +12,20 @@
             <ul>
                 <li><a href="#page1">Informations du compte</a></li>
                 <li><a href="#page2">Profil utilisateur</a></li>
-                <li><a href="#page3">Administration</a></li>
+
+                <div class="dropdown">
+                    <span>Administration</span>
+                    <div class="dropdown-content">
+                        <a href="#page3">- Liste utilisateur</a><br>
+                        <a href="#page4">- Captcha</a><br>
+                        <a href="#page5">- Logs</a><br>
+                        <a href="#page6">- Newsletter</a><br>
+                    </div>
+                </div>
             </ul>
         </div>
+
+
         <div class="content">
             <div id="page1" class="page">
                 <h1>Informations du compte</h1>
@@ -113,6 +124,15 @@
                         <!-- Ajoutez d'autres lignes pour plus d'utilisateurs -->
                     </table>
                 </div>
+            </div>
+            <div id="page4" class="page">
+                <h1>Captcha</h1>
+            </div>
+            <div id="page5" class="page">
+                <h1>Logs</h1>
+            </div>
+            <div id="page6" class="page">
+                <h1>Création Newsletter</h1>
             </div>
         </div>
     </div>
