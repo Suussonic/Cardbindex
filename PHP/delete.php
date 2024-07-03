@@ -54,54 +54,61 @@ $userCardsJson = json_encode($userCards);
             let userCards = <?php echo $userCardsJson; ?>;
 
             userCards.forEach(function(cardId) {
-                let xhr = new XMLHttpRequest();
-                xhr.open("GET", "https://api.pokemontcg.io/v1/cards?id=" + cardId, true);
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState === XMLHttpRequest.DONE) {
-                        if (xhr.status === 200) {
-                            let response = JSON.parse(xhr.responseText);
-                            if (response.cards && response.cards.length > 0) {
-                                let card = response.cards[0];
-                                let cardContainer = document.getElementById('card-container');
-                                let cardElement = document.createElement('div');
-                                cardElement.className = 'col-md-4 pkmn-card';
-                                let imgElement = document.createElement('img');
-                                imgElement.setAttribute('src', card.imageUrl);
-                                imgElement.setAttribute('data-card-id', card.id);
-                                imgElement.className = 'pkmn-card';
-                                cardElement.appendChild(imgElement);
-                                cardContainer.appendChild(cardElement);
-                            }
-                        } else {
-                            console.error("Erreur lors de la récupération de la carte avec l'id " + cardId + ":", xhr.statusText);
+                fetch("https://api.pokemontcg.io/v1/cards?id=" + cardId)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Erreur lors de la récupération de la carte avec l'id " + cardId + ": " + response.statusText);
                         }
-                    }
-                };
-                xhr.send();
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (data.cards && data.cards.length > 0) {
+                            let card = data.cards[0];
+                            let cardContainer = document.getElementById('card-container');
+                            let cardElement = document.createElement('div');
+                            cardElement.className = 'col-md-4 pkmn-card';
+                            let imgElement = document.createElement('img');
+                            imgElement.setAttribute('src', card.imageUrl);
+                            imgElement.setAttribute('data-card-id', card.id);
+                            imgElement.className = 'pkmn-card';
+                            cardElement.appendChild(imgElement);
+                            cardContainer.appendChild(cardElement);
+                        }
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    });
             });
 
             document.addEventListener("click", function(event) {
                 if (event.target.classList.contains("pkmn-card")) {
-                    console.log("ID de la carte :", event.target.getAttribute('data-card-id'));
                     let cardId = event.target.getAttribute('data-card-id');
                     let cardContainer = event.target.closest('.col-md-4'); // Récupérer le parent avec la classe 'col-md-4'
-                    let xhr = new XMLHttpRequest();
-                    xhr.open("POST", "del.php", true);
-                    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                    xhr.onreadystatechange = function() {
-                        if (xhr.readyState === XMLHttpRequest.DONE) {
-                            if (xhr.status === 200) {
-                                console.log("ID de la carte supprimée avec succès !");
-                                cardContainer.remove(); // Supprimer le parent de l'image du DOM
-                            } else {
-                                console.error("Erreur lors de la suppression de l'ID de la carte :", xhr.statusText);
-                            }
+                    
+                    fetch("del.php", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/x-www-form-urlencoded"
+                        },
+                        body: new URLSearchParams({ cardId: cardId })
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Erreur lors de la suppression de l'ID de la carte : " + response.statusText);
                         }
-                    };
-                    xhr.send("cardId=" + cardId);
+                        return response.text();
+                    })
+                    .then(() => {
+                        console.log("ID de la carte supprimée avec succès !");
+                        cardContainer.remove(); // Supprimer le parent de l'image du DOM
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    });
                 }
             });
         });
+
     </script>
     </div>
     <footer>
