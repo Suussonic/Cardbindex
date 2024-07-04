@@ -34,7 +34,8 @@ if (isset($_POST['captcha_input'])) {
             header("Location: /");
             exit;
         } else {
-            echo "Votre mot de passe doit posséder un minimum de 8 caractères, dont une majuscule, une minuscule, un caractère spécial et un chiffre.";
+            header('location: form.php?error=Votre mot de passe doit posséder un minimum de 8 caractères, dont une majuscule, une minuscule, un caractère spécial et un chiffre.');
+
         }
     } else {
         echo "réponse incorrecte. Veuillez réessayer";
