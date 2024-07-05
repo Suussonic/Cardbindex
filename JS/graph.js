@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $.ajax({
-      url: '../BACK/get_logs.php',
+      url: 'get_logs.php',
       method: 'GET',
       success: function (data) {
         var logsData = JSON.parse(data);
