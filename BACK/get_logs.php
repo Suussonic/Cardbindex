@@ -16,6 +16,11 @@ try {
     // Exécuter la requête pour obtenir les logs
     $query = "SELECT action, ip, date, firstname, email FROM logs";
     $stmt = $dbh->query($query);
+    
+    if (!$stmt) {
+        die("Erreur dans la requête SQL : " . var_dump($dbh->errorInfo()));
+    }
+
     $logs = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     // Renvoyer les logs en format JSON
