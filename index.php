@@ -27,7 +27,6 @@ include_once('./PHP/db.php');
             <ul>
                 <li><a href="collection/collection.html"><b>Collection</b></a></li>
                 <li><a href="PHP/cartes.php">Classeur</a></li>
-                <li><a href="PHP/rechercheusers.php"><b>Utilisateur</b></a></li>
             </ul>
         </nav>
     </div>
