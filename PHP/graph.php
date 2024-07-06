@@ -31,8 +31,6 @@
             </div>
             <div class="col-md-6 col-xs-6 col-sm-6">
                 <div class="aws-block-info">
-                    <h3><span>&nbsp;</span></h3>
-                    <h5><span></span></h5>
                 </div>
             </div>
         </div>
