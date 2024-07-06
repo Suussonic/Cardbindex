@@ -44,9 +44,6 @@
       <span>&nbsp;</span>
     </div>
   </div>
-  <div class="aws-author">
-    Made with <i class="fa fa-heart"></i> by <a target="_blank" href="http://depeloper.com/">Noval Agung Prayogo</a>
-  </div>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
