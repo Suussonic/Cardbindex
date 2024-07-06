@@ -1,103 +1,40 @@
-@font-face {
-    font-family: 'MADE Mirage';
-    src: url('../ASSET/MADEMirage-Bold.woff2') format('woff2'),
-        url('../ASSET/MADEMirage-Bold.woff') format('woff');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
-}
-
 body {
-    margin: 0;
-    font-family: 'MADE Mirage';
-    background-color: #383B42;
-    height: auto;
-    align-items: center;
-}
-
-header {
+    font-family: Arial, sans-serif;
     display: flex;
-    margin-top: 20px;
-    margin-left: 40px;
-    margin-right: 40px;
-    background-color: #555962;
-    height: 80px;
-    align-items: center;
-    color: white;
-    justify-content: space-around;
-    border-radius: 15px;
-}
-
-header a {
-    text-align: center;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    padding-left: 50px;
-    padding-right: 50px;
-}
-
-header img{
-    width: 64px;
-    margin: 8px;
-}
-
-#First {
-    display: block;
-    margin-top: 20px;
-    height: auto;
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    align-items: center;
-    color: white;
-    border-radius: 15px;
-}
-
-.GALERIE {
-    display: block;
-    border-radius: 15px;
-    width: 80%;
-    padding-top: 10px;
-    height: auto;
-    max-width: 1300px;
-    margin: 20px auto 0;
-    background-color: #42414d;
-    text-align: center;
-}
-
-.galerie {
-    display: flex;
-    flex-wrap: wrap;
-    margin: auto;
-    border-radius: 15px;
-    background-color: #42414d;
     justify-content: center;
-    text-align: center;
     align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #383B42;
 }
 
-.item {
-    width: 100%;
-    height: auto;
-    margin: 10px;
-    overflow: hidden;
-    border-radius: 15px;
-    flex-shrink: 0;
-    text-align: center;
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
     align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    text-decoration: none;
 }
 
-.item img {
-    border-radius: 15px;
-    width: 100%;
+.button img {
+    max-width: 100%;
     height: auto;
+    display: block;
 }
 
-@media(max-width: 455px){
-    .item{
-        width: 100%;
-    }
+.button:hover {
+    transform: scale(1.05);
 }
-
