@@ -1,6 +1,6 @@
 $(document).ready(function () {
   $.ajax({
-      url: '/BACK/get_logs.php',
+      url: '../BACK/get_logs.php',
       method: 'GET',
       success: function (data) {
           console.log(data); // Vérifie les données reçues
