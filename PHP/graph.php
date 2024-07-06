@@ -29,10 +29,6 @@
                     <h5><span>Total logs (30 days)</span></h5>
                 </div>
             </div>
-            <div class="col-md-6 col-xs-6 col-sm-6">
-                <div class="aws-block-info">
-                </div>
-            </div>
         </div>
         <div class="clearfix"></div>
         <div class="aws-tooltip">
