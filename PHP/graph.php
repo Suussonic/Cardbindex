@@ -9,7 +9,26 @@
 </head>
 <body>
   <?php 
-  include '../PHP/db.php';
+  ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+header('Content-Type: application/json');
+
+include('../PHP/db.php'); // Assure-toi que le chemin est correct
+
+if (isset($dbh)) {
+    try {
+        $sql = "SELECT * FROM logs";
+        $stmt = $dbh->query($sql);
+        $logs = $stmt->fetchAll();
+        echo json_encode($logs);
+    } catch (PDOException $e) {
+        echo json_encode(['error' => $e->getMessage()]);
+    }
+} else {
+    echo json_encode(['error' => 'Database connection failed.']);
+}
   ?>
 
   <div class="aws-container">
