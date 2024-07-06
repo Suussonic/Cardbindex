@@ -5,7 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // Inclure le fichier de connexion à la base de données
-include 'db.php';
+include '../db.php';
 
 // Vérifier la connexion à la base de données
 if (!$dbh) {
