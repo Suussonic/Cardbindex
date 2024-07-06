@@ -56,7 +56,7 @@ $(document).ready(function () {
                       return moment(e.date).format('D. MMM');
                   }),
                   datasets: [{
-                      backgroundColor: '#3d9e40',
+                      backgroundColor: '#024A8D',
                       borderColor: '#fefefe',
                       pointBackgroundColor: 'transparent',
                       pointBorderColor: 'transparent',
@@ -79,18 +79,14 @@ $(document).ready(function () {
               scales: {
                   x: {
                       ticks: {
-                          color: '#fefefe'
                       },
                       grid: {
-                          color: '#54b858'
                       }
                   },
                   y: {
                       ticks: {
-                          color: '#fefefe'
                       },
                       grid: {
-                          color: '#54b858'
                       }
                   }
               },

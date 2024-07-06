@@ -1,13 +1,13 @@
 body {
     padding: 0;
     margin: 0;
-    background-color: #f0f0f0;
+    background-color: #555962;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     font-family: 'Open Sans', sans-serif;
-    color: white !important;
+    color: #555962 !important;
   }
   
   .aws-container {
@@ -15,9 +15,9 @@ body {
     border-radius: 6px;
     position: relative;
     width: 560px;
-    background-color: #4dae50;
-    box-shadow: 1px 1px 0.5px 0.5px #e1e1e1;
-    color: white !important;
+    background-color: #0A81FF;
+    box-shadow: 1px 1px 0.5px 0.5px #555962;
+    color: #0A81FF !important;
   }
   
   .aws-content {
@@ -31,7 +31,7 @@ body {
   }
   
   .aws-content nav span {
-    color: #87c98a;
+    color: #024A8D;
     cursor: pointer;
     text-transform: uppercase;
   }
@@ -46,21 +46,11 @@ body {
   
   .aws-details {
     height: 100px;
-    background-color: #fefefe;
+    background-color: #333;
     position: relative;
     overflow: hidden;
   }
   
-  .aws-details:after {
-    content: " ";
-    position: absolute;
-    width: 1px;
-    background-color: #e8e8e8;
-    z-index: 1;
-    right: 50%;
-    top: 26px;
-    bottom: 28px;
-  }
   
   .aws-block-info {
     padding: 26px 15px 28px;
@@ -90,12 +80,9 @@ body {
   }
   
   .aws-block-info h3[data-status=up]:before {
-    border-bottom: 8px solid #6caa32;
+    border-bottom: 8px solid #024A8D;
   }
-  
-  .aws-block-info h3[data-status=down]:before {
-    border-top: 8px solid #b35d44;
-  }
+
   
   .aws-block-info h5 {
     margin: 0px;
@@ -165,8 +152,3 @@ body {
     color: inherit;
     position: relative;
   }
-  
-  .fa {
-    color: #db3131;
-  }
-  
