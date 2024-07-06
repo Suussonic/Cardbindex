@@ -135,6 +135,7 @@ $(document).ready(function () {
             }
         };
         
+        
           var chartContext = document.getElementById('chartCanvas').getContext('2d');
 
           var updateBlockInfo = function (whichChartData) {
