@@ -46,6 +46,9 @@ header a:hover {
     gap: 10px;
     width: 80%;
     max-width: 1200px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .button {
