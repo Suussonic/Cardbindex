@@ -15,7 +15,7 @@
   
   header('Content-Type: application/json');
   
-  include('../PHP/db.php'); // Assure-toi que le chemin est correct
+  include('../PHP/db.php'); 
   
   if (isset($dbh)) {
       try {
