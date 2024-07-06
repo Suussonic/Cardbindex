@@ -5,10 +5,10 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // Inclure le fichier de connexion à la base de données
-include __DIR__ . '../db.php'; // Ajustez le chemin en fonction de la localisation réelle de db.php
+include __DIR__ . '/db.php'; // Chemin absolu pour inclure db.php
 
 // Vérifier la connexion à la base de données
-if (!$dbh) {
+if (!isset($dbh)) {
     die("Erreur de connexion : " . var_dump($e));
 }
 
