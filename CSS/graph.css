@@ -7,7 +7,7 @@ body {
     align-items: center;
     height: 100vh;
     font-family: 'Open Sans', sans-serif;
-    color: white !important;
+    color: #555962 !important;
   }
   
   .aws-container {
@@ -15,8 +15,8 @@ body {
     border-radius: 6px;
     position: relative;
     width: 560px;
-    background-color: #4dae50;
-    box-shadow: 1px 1px 0.5px 0.5px #e1e1e1;
+    background-color: #0A81FF;
+    box-shadow: 1px 1px 0.5px 0.5px #555962;
     color: #0A81FF !important;
   }
   
