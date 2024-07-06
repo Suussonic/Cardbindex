@@ -1,7 +1,7 @@
 body {
     padding: 0;
     margin: 0;
-    background-color: #f0f0f0;
+    background-color: #555962;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,7 +17,7 @@ body {
     width: 560px;
     background-color: #4dae50;
     box-shadow: 1px 1px 0.5px 0.5px #e1e1e1;
-    color: white !important;
+    color: #0A81FF !important;
   }
   
   .aws-content {
