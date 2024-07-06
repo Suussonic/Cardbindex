@@ -51,16 +51,6 @@ body {
     overflow: hidden;
   }
   
-  .aws-details:after {
-    content: " ";
-    position: absolute;
-    width: 1px;
-    background-color: #e8e8e8;
-    z-index: 1;
-    right: 50%;
-    top: 26px;
-    bottom: 28px;
-  }
   
   .aws-block-info {
     padding: 26px 15px 28px;
