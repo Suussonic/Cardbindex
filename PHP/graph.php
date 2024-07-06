@@ -9,30 +9,7 @@
 </head>
 <body>
   <?php 
- ini_set('display_errors', 1);
- ini_set('display_startup_errors', 1);
- error_reporting(E_ALL);
- 
- header('Content-Type: application/json');
- 
- include '../PHP/db.php'; // Assure-toi que le chemin est correct
- 
- if (isset($conn)) {
-     $sql = "SELECT * FROM logs";
-     $result = $conn->query($sql);
- 
-     $logs = array();
-     if ($result->num_rows > 0) {
-         while($row = $result->fetch_assoc()) {
-             $logs[] = $row;
-         }
-     }
-     echo json_encode($logs);
- 
-     $conn->close();
- } else {
-     echo json_encode(['error' => 'Database connection failed.']);
- }
+  include '../PHP/db.php';
   ?>
 
   <div class="aws-container">
