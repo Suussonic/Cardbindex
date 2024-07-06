@@ -18,18 +18,22 @@
   
   include('../PHP/db.php');
   
-  $sql = "SELECT * FROM logs";
-  $result = $conn->query($sql);
-  
-  $logs = array();
-  if ($result->num_rows > 0) {
-      while($row = $result->fetch_assoc()) {
-          $logs[] = $row;
-      }
-  }
-  echo json_encode($logs);
-  
-  $conn->close();
+  if (isset($conn)) {
+    $sql = "SELECT * FROM logs";
+    $result = $conn->query($sql);
+
+    $logs = array();
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            $logs[] = $row;
+        }
+    }
+    echo json_encode($logs);
+
+    $conn->close();
+} else {
+    echo json_encode(['error' => 'Database connection failed.']);
+}
   ?>
 
   <div class="aws-container">
