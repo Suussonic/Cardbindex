@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    fetch("https://api.pokemontcg.io/v2/sets?id=swsh1")
+    fetch("https://api.pokemontcg.io/v1/cards?set=swsh1")
         .then(response => {
             if (!response.ok) {
                 throw new Error("Erreur lors de la récupération des données de la carte : " + response.statusText);
