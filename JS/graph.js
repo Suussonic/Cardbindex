@@ -79,7 +79,7 @@ $(document).ready(function () {
               scales: {
                   x: {
                       ticks: {
-                          color: '#fefefe'
+                          color: '#024A8D'
                       },
                       grid: {
                           color: '#024A8D'
@@ -87,7 +87,7 @@ $(document).ready(function () {
                   },
                   y: {
                       ticks: {
-                          color: '#fefefe'
+                          color: '#024A8D'
                       },
                       grid: {
                           color: '#024A8D'
