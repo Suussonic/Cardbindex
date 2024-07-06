@@ -16,6 +16,9 @@ require_once('db.php');
 <body>
 
 <div class="main-container">
+    <?php if (isset($_GET['error'])){ ?>
+        <h1><?php echo $_GET['error']; ?> </h1>
+    <?php } ?>
     <form action="createAccount.php" method="POST">
         <h1>Inscription :</h1>
         <div>

@@ -1,0 +1,172 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    color: white !important;
+  }
+  
+  .aws-container {
+    overflow: hidden;
+    border-radius: 6px;
+    position: relative;
+    width: 560px;
+    background-color: #4dae50;
+    box-shadow: 1px 1px 0.5px 0.5px #e1e1e1;
+    color: white !important;
+  }
+  
+  .aws-content {
+    padding: 32px;
+    color: white !important;
+  }
+  
+  .aws-content nav {
+    font-size: 16px;
+    margin-bottom: 60px;
+  }
+  
+  .aws-content nav span {
+    color: #87c98a;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  
+  .aws-content nav span.aws-active {
+    color: #f2f2f2;
+  }
+  
+  .aws-chart {
+    color: white;
+  }
+  
+  .aws-details {
+    height: 100px;
+    background-color: #fefefe;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .aws-details:after {
+    content: " ";
+    position: absolute;
+    width: 1px;
+    background-color: #e8e8e8;
+    z-index: 1;
+    right: 50%;
+    top: 26px;
+    bottom: 28px;
+  }
+  
+  .aws-block-info {
+    padding: 26px 15px 28px;
+  }
+  
+  .aws-block-info h3 {
+    margin: 0px 0px 5px;
+    color: #4a4a4a;
+  }
+  
+  .aws-block-info h3[data-status] {
+    position: relative;
+  }
+  
+  .aws-block-info h3[data-status]:before {
+    content: " ";
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    position: absolute;
+    top: 8px;
+  }
+  
+  .aws-block-info h3[data-status] span {
+    padding-left: 22px;
+  }
+  
+  .aws-block-info h3[data-status=up]:before {
+    border-bottom: 8px solid #6caa32;
+  }
+  
+  .aws-block-info h3[data-status=down]:before {
+    border-top: 8px solid #b35d44;
+  }
+  
+  .aws-block-info h5 {
+    margin: 0px;
+    color: #9d9c9c;
+  }
+  
+  .aws-tooltip {
+    box-shadow: 1px 1px 0.5px 0.5px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    z-index: 99;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 9px;
+    border-radius: 3px;
+    text-align: center;
+    width: 120px;
+  }
+  
+  .aws-tooltip.aws-for-file {
+    width: 160px;
+  }
+  
+  .aws-tooltip:after {
+    content: " ";
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid rgba(255, 255, 255, 0.8);
+    position: absolute;
+    left: 50%;
+    margin-left: -6px;
+    bottom: -8px;
+  }
+  
+  .aws-tooltip span {
+    display: block;
+  }
+  
+  .aws-tooltip span:nth-child(1) {
+    font-size: 11px !important;
+  }
+  
+  .aws-tooltip span:nth-child(2) {
+    font-size: 13px !important;
+  }
+  
+  .aws-author {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    color: rgb(105, 105, 105);
+    font-size: 13px;
+  }
+  
+  .aws-author:hover a:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -4px;
+    height: 1px;
+    background-color: rgb(216, 216, 216);
+  }
+  
+  .aws-author a {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+  }
+  
+  .fa {
+    color: #db3131;
+  }
+  
