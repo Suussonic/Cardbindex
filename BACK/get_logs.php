@@ -1,16 +1,14 @@
 <?php
-include('../PHP/db.php');
+// Connexion à la base de données
+include '../PHP/db.php';
 
-$sql = "SELECT * FROM logs";
-$result = $conn->query($sql);
-
+$query = "SELECT action, DATE_FORMAT(date, '%Y-%m-%d') as date FROM logs"; // Extrait la date sans l'heure
+$result = mysqli_query($conn, $query);
 $logs = array();
-if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        $logs[] = $row;
-    }
-}
-echo json_encode($logs);
 
-$conn->close();
+while ($row = mysqli_fetch_assoc($result)) {
+    $logs[] = $row;
+}
+
+echo json_encode($logs);
 ?>
