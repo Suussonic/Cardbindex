@@ -90,7 +90,7 @@ body {
   }
   
   .aws-block-info h3[data-status=up]:before {
-    border-bottom: 8px solid #6caa32;
+    border-bottom: 8px solid #024A8D;
   }
 
   
@@ -162,8 +162,3 @@ body {
     color: inherit;
     position: relative;
   }
-  
-  .fa {
-    color: #db3131;
-  }
-  
