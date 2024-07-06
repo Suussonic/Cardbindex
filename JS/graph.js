@@ -82,7 +82,7 @@ $(document).ready(function () {
                           color: '#fefefe'
                       },
                       grid: {
-                          color: '#54b858'
+                          color: '#024A8D'
                       }
                   },
                   y: {
@@ -90,7 +90,7 @@ $(document).ready(function () {
                           color: '#fefefe'
                       },
                       grid: {
-                          color: '#54b858'
+                          color: '#024A8D'
                       }
                   }
               },
