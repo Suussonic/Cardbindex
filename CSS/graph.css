@@ -92,10 +92,7 @@ body {
   .aws-block-info h3[data-status=up]:before {
     border-bottom: 8px solid #6caa32;
   }
-  
-  .aws-block-info h3[data-status=down]:before {
-    border-top: 8px solid #b35d44;
-  }
+
   
   .aws-block-info h5 {
     margin: 0px;
