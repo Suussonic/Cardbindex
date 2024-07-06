@@ -51,91 +51,88 @@ $(document).ready(function () {
           var chartDataInitial = chartData.log;
 
           var createChartSchema = function (dataPoints) {
-            return {
-                labels: _.map(dataPoints, function (e) {
-                    return moment(e.date).format('D. MMM');
-                }),
-                datasets: [{
-                    backgroundColor: '#024A8D', // Nouvelle couleur de fond
-                    borderColor: '#0A81FF',     // Nouvelle couleur de bordure
-                    pointBackgroundColor: 'transparent',
-                    pointBorderColor: 'transparent',
-                    pointHoverBackgroundColor: '#0A81FF',
-                    pointHoverBorderColor: 'rgba(10, 129, 255, 0.3)',
-                    data: _.map(dataPoints, function (e) {
-                        return e.value;
-                    }),
-                }]
-            };
-        };
-        
-        var chartConfig = {
-            responsive: true,
-            animation: {
-                duration: 1000
-            },
-            scales: {
-                x: {
-                    ticks: {
-                        color: '#0A81FF'  // Nouvelle couleur des ticks
-                    },
-                    grid: {
-                        color: '#383B42'  // Nouvelle couleur de la grille
-                    }
-                },
-                y: {
-                    ticks: {
-                        color: '#0A81FF'  // Nouvelle couleur des ticks
-                    },
-                    grid: {
-                        color: '#383B42'  // Nouvelle couleur de la grille
-                    }
-                }
-            },
-            plugins: {
-                legend: {
-                    display: false
-                },
-                tooltip: {
-                    enabled: false,
-                    external: function(context) {
-                        var tooltipEl = $('.aws-tooltip'),
-                            whichChart = $('[data-btn-chart].aws-active').attr('data-btn-chart'),
-                            tooltipModel = context.tooltip,
-                            currentData, text;
-        
-                        if (tooltipModel.opacity === 0) {
-                            tooltipEl.css({ opacity: 0 });
-                            return;
-                        }
-        
-                        currentData = _.find(chartData[whichChart].dataPoints, function (e) {
-                            return moment(e.date).format('D. MMM') === tooltipModel.dataPoints[0].label;
-                        });
-        
-                        tooltipEl.removeClass('above below aws-for-file');
-                        tooltipEl.addClass(tooltipModel.yAlign);
-        
-                        text = accounting.formatNumber(currentData.value);
-        
-                        tooltipEl.html([
-                            '<span>' + moment(currentData.date).format("ddd, MMM DD, YYYY") + '</span>',
-                            '<span>' + chartData[whichChart].title + ': <b>' + text + '</b></span>'
-                        ].join(''));
-        
-                        var position = context.chart.canvas.getBoundingClientRect();
-        
-                        tooltipEl.css({
-                            opacity: 1,
-                            left: position.left + window.pageXOffset + tooltipModel.caretX - (tooltipEl.outerWidth() / 2) + 'px',
-                            top: position.top + window.pageYOffset + tooltipModel.caretY - 45 + 'px'
-                        });
-                    }
-                }
-            }
-        };
-        
-        
+              return {
+                  labels: _.map(dataPoints, function (e) {
+                      return moment(e.date).format('D. MMM');
+                  }),
+                  datasets: [{
+                      backgroundColor: '#024A8D',
+                      borderColor: '#fefefe',
+                      pointBackgroundColor: 'transparent',
+                      pointBorderColor: 'transparent',
+                      pointHoverBackgroundColor: '#fefefe',
+                      pointHoverBorderColor: 'rgba(255,255,255,0.3)',
+                      data: _.map(dataPoints, function (e) {
+                          return e.value;
+                      }),
+                  }]
+              };
+          };
+
+          var chartSchema = createChartSchema(chartDataInitial.dataPoints);
+
+          var chartConfig = {
+              responsive: true,
+              animation: {
+                  duration: 1000
+              },
+              scales: {
+                  x: {
+                      ticks: {
+                      },
+                      grid: {
+                      }
+                  },
+                  y: {
+                      ticks: {
+                      },
+                      grid: {
+                      }
+                  }
+              },
+              plugins: {
+                  legend: {
+                      display: false
+                  },
+                  tooltip: {
+                      enabled: false,
+                      external: function(context) {
+                          var tooltipEl = $('.aws-tooltip'),
+                              whichChart = $('[data-btn-chart].aws-active').attr('data-btn-chart'),
+                              tooltipModel = context.tooltip,
+                              currentData, text;
+
+                          if (tooltipModel.opacity === 0) {
+                              tooltipEl.css({ opacity: 0 });
+                              return;
+                          }
+
+                          currentData = _.find(chartData[whichChart].dataPoints, function (e) {
+                              return moment(e.date).format('D. MMM') === tooltipModel.dataPoints[0].label;
+                          });
+
+                          tooltipEl.removeClass('above below aws-for-file');
+                          tooltipEl.addClass(tooltipModel.yAlign);
+
+                          text = accounting.formatNumber(currentData.value);
+
+                          tooltipEl.html([
+                              '<span>' + moment(currentData.date).format("ddd, MMM DD, YYYY") + '</span>',
+                              '<span>' + chartData[whichChart].title + ': <b>' + text + '</b></span>'
+                          ].join(''));
+
+                          var position = context.chart.canvas.getBoundingClientRect();
+
+                          tooltipEl.css({
+                              opacity: 1,
+                              left: position.left + window.pageXOffset + tooltipModel.caretX - (tooltipEl.outerWidth() / 2) + 'px',
+                              top: position.top + window.pageYOffset + tooltipModel.caretY - 45 + 'px'
+                          });
+                      }
+                  }
+              }
+          };
+
           var chartContext = document.getElementById('chartCanvas').getContext('2d');
 
           var updateBlockInfo = function (whichChartData) {
