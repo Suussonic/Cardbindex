@@ -22,7 +22,7 @@ body {
   
   .aws-content {
     padding: 32px;
-    color: white !important;
+    color: #333 !important;
   }
   
   .aws-content nav {
