@@ -79,18 +79,14 @@ $(document).ready(function () {
               scales: {
                   x: {
                       ticks: {
-                          color: '#024A8D'
                       },
                       grid: {
-                          color: '#024A8D'
                       }
                   },
                   y: {
                       ticks: {
-                          color: '#024A8D'
                       },
                       grid: {
-                          color: '#024A8D'
                       }
                   }
               },
