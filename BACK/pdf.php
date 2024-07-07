@@ -7,8 +7,8 @@ ini_set('display_errors', 1);
 include_once('db.php');
 
 // Vérifier la connexion
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if ($dbh->connect_error) {
+    die("Connection failed: " . $dbh->connect_error);
 }
 
 // Inclure la bibliothèque FPDF
@@ -16,7 +16,7 @@ require('../fpdf186/fpdf.php');
 
 // Récupérer toutes les informations des utilisateurs
 $sql = "SELECT id, firstname, lastname, email, gender, role FROM users";
-$result = $conn->query($sql);
+$result = $dbh->query($sql);
 
 // Générer le PDF
 class PDF extends FPDF
