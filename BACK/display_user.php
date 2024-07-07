@@ -70,7 +70,6 @@ $stmt = $dbh->query($sql); // Exécuter la requête
         <th>Gender</th>
         <th>Theme</th>
         <th>Role</th>
-        <th>Actions</th>
     </tr>
     <?php
     if ($stmt->rowCount() > 0) {
