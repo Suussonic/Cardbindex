@@ -6,17 +6,18 @@ ini_set('display_errors', 1);
 // Inclure le fichier de connexion à la base de données
 include_once('db.php');
 
-// Vérifier la connexion
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
 // Inclure la bibliothèque FPDF
 require('../fpdf186/fpdf.php');
 
 // Récupérer toutes les informations des utilisateurs
-$sql = "SELECT id, firstname, lastname, email, gender, role FROM users";
-$result = $conn->query($sql);
+$sql = "SELECT id, firstname, lastname, email, gender, roole FROM users";
+
+try {
+    $stmt = $dbh->query($sql);
+    $users = $stmt->fetchAll();
+} catch (PDOException $e) {
+    die("Erreur lors de la récupération des données : " . $e->getMessage());
+}
 
 // Générer le PDF
 class PDF extends FPDF
@@ -44,7 +45,7 @@ class PDF extends FPDF
             $this->Cell($w[2], 6, $row['lastname'], 1);
             $this->Cell($w[3], 6, $row['email'], 1);
             $this->Cell($w[4], 6, $row['gender'], 1);
-            $this->Cell($w[5], 6, $row['role'], 1);
+            $this->Cell($w[5], 6, $row['roole'], 1);
             $this->Ln();
         }
     }
@@ -52,16 +53,9 @@ class PDF extends FPDF
 
 $pdf = new PDF();
 $pdf->AddPage();
-$header = array('ID', 'Firstname', 'Lastname', 'Email', 'Gender', 'Role');
-$data = [];
+$header = array('ID', 'Firstname', 'Lastname', 'Email', 'Gender', 'roole');
 
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $data[] = $row;
-    }
-}
-
-$pdf->UserTable($header, $data);
+$pdf->UserTable($header, $users);
 $pdf->Output('D', 'user_data.pdf');
 exit;
 ?>

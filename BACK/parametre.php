@@ -8,7 +8,8 @@ include_once('../PHP/db.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Web</title>
+    <title>Parametre</title>
+    <link rel="shortcut icon" href="../ASSET/CARDBINDEX V5.png" type="image/x-icon">
     <link rel="stylesheet" href="../CSS/parametre.css">
     <?php include '../PHP/theme.php'; ?>
 </head>
@@ -66,69 +67,7 @@ include_once('../PHP/db.php');
             </div>
             <div id="page3" class="page">
                 <h1>Administration</h1>
-                <div class="admin-section">
-                    <table class="admin-table">
-                        <tr>
-                            <th>ID</th>
-                            <th>firstname</th>
-                            <th>lastname</th>
-                            <th>Email</th>
-                            <th>gender</th>
-                            <th>Role</th>
-                            <th>Admin</th>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>test</td>
-                            <td>test</td>
-                            <td>test@example.com</td>
-                            <td>man</td>
-                            <td>user</td>
-                            <td>
-                                <button class="button" onclick="alert('Éditer utilisateur')">Éditer</button>
-                                <button class="button" onclick="alert('Supprimer utilisateur')">Supprimer</button>
-                            </td>
-                        </tr>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>test</td>
-                            <td>test</td>
-                            <td>test@example.com</td>
-                            <td>man</td>
-                            <td>admin</td>
-                            <td>
-                                <button class="button" onclick="alert('Éditer utilisateur')">Éditer</button>
-                                <button class="button" onclick="alert('Supprimer utilisateur')">Supprimer</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>test</td>
-                            <td>test</td>
-                            <td>test@example.com</td>
-                            <td>man</td>
-                            <td>user</td>
-                            <td>
-                                <button class="button" onclick="alert('Éditer utilisateur')">Éditer</button>
-                                <button class="button" onclick="alert('Supprimer utilisateur')">Supprimer</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>test</td>
-                            <td>test</td>
-                            <td>test@example.com</td>
-                            <td>man</td>
-                            <td>admin</td>
-                            <td>
-                                <button class="button" onclick="alert('Éditer utilisateur')">Éditer</button>
-                                <button class="button" onclick="alert('Supprimer utilisateur')">Supprimer</button>
-                            </td>
-                        </tr>
-                        <!-- Ajoutez d'autres lignes pour plus d'utilisateurs -->
-                    </table>
-                </div>
+                <?php include 'display_user.php'; ?>
             </div>
             <div id="page4" class="page">
                 <h1>Captcha</h1>
