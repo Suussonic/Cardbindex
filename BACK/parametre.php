@@ -26,6 +26,7 @@ include_once('db.php');
                         <a href="#page4">- Captcha</a><br>
                         <a href="#page5">- Logs</a><br>
                         <a href="#page6">- Newsletter</a><br>
+                        <a href="pdf.php">- PDF</a><br>
                     </div>
                 </div>
             </ul>
