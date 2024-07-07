@@ -4,47 +4,45 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault();
         let pokemon = document.getElementById("search").value.trim();
 
-        fetch("https://api.pokemontcg.io/v1/cards?name=" + pokemon)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Erreur lors de la récupération des données de la carte : " + response.statusText);
-                }
-                return response.json();
-            })
-            .then(data => {
-                data.cards.forEach(card => {
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://api.pokemontcg.io/v1/cards?name=" + pokemon, true);
+        xhr.onload = function() {
+            if (xhr.status >= 200 && xhr.status < 300) {
+                let response = JSON.parse(xhr.responseText);
+                for (let i = 0; i < response.cards.length; i++) {
                     let pokemonCard = document.createElement("img");
                     pokemonCard.classList.add("pkmn-card");
-                    pokemonCard.src = card.imageUrlHiRes;
-                    pokemonCard.dataset.cardId = card.id;
+                    pokemonCard.src = response.cards[i].imageUrlHiRes;
+                    pokemonCard.dataset.cardId = response.cards[i].id;
                     document.getElementById("card-container").appendChild(pokemonCard);
-                });
+                }
 
-                document.querySelectorAll(".pkmn-card").forEach(cardElement => {
+                let cardElements = document.querySelectorAll(".pkmn-card");
+                cardElements.forEach(function(cardElement) {
                     cardElement.addEventListener("click", function() {
                         let cardId = this.dataset.cardId;
-                        fetch("recherche.php", {
-                            method: "POST",
-                            headers: {
-                                "Content-Type": "application/x-www-form-urlencoded"
-                            },
-                            body: new URLSearchParams({ cardId: cardId })
-                        })
-                        .then(response => {
-                            if (response.ok) {
-                                console.log("ID de la carte stocké avec succès !");
-                            } else {
-                                console.error("Erreur lors du stockage de l'ID de la carte :", response.statusText);
+                        let xhr = new XMLHttpRequest();
+                        xhr.open("POST", "recherche.php", true);
+                        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                        xhr.onreadystatechange = function() {
+                            if (xhr.readyState === XMLHttpRequest.DONE) {
+                                if (xhr.status === 200) {
+                                    console.log("ID de la carte stocké avec succès !");
+                                } else {
+                                    console.error("Erreur lors du stockage de l'ID de la carte :", xhr.statusText);
+                                }
                             }
-                        })
-                        .catch(error => {
-                            console.error("Erreur lors de la requête POST :", error);
-                        });
+                        };
+                        xhr.send("cardId=" + cardId);
                     });
                 });
-            })
-            .catch(error => {
-                console.error("Erreur lors de la requête :", error);
-            });
+            } else {
+                console.error("Erreur lors de la récupération des données de la carte :", xhr.statusText);
+            }
+        };
+        xhr.onerror = function() {
+            console.error("Erreur lors de la requête AJAX.");
+        };
+        xhr.send();
     });
 });

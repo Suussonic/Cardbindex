@@ -71,7 +71,7 @@ h1 {
 }
 
 #deco {
-    background-color: #007bff;
+    background-color: red;
     color: black;
     border: 2px black solid;
     cursor: pointer;
@@ -85,9 +85,9 @@ h1 {
 }
 
 form {
-    width: 70%;
+    width: 50%;
     margin: 0 auto;
-    padding: 2.5rem;
+    padding: 2rem;
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -97,7 +97,7 @@ form {
 }
   
 form div {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     width: 100%;
 }
   

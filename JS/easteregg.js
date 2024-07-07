@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Séquence du Konami Code
+    
     const konamiCode = [
         "ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown",
         "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight",
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let konamiCodePosition = 0;
 
-    // Fonction pour télécharger l'image
+    
     function downloadImage(url) {
         console.log("Konami Code entered! Downloading image...");
         let a = document.createElement("a");
@@ -19,17 +19,14 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.removeChild(a);
     }
 
-    // Écouteur d'événements pour les touches du clavier
+   
     document.addEventListener("keydown", function(event) {
         if (event.key === konamiCode[konamiCodePosition]) {
             konamiCodePosition++;
             if (konamiCodePosition === konamiCode.length) {
-                // URL de l'image à télécharger
+               
                 const imageUrl = "../ASSET/LOGONVMAX.png";
-                const imageUrl2 = "../ASSET/EASTEREGG2.png";
-                new Audio('../ASSET/SONICRING.mp3').play();
                 downloadImage(imageUrl);
-                downloadImage(imageUrl2);
                 konamiCodePosition = 0;
             }
         } else {

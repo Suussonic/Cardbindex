@@ -1,21 +1,21 @@
 <?php
-include 'db.php'; // Inclure le fichier de connexion à la base de données
+include 'db.php';
 
-// Handle deletion
+
 if (isset($_POST['delete_id'])) {
     $delete_id = $_POST['delete_id'];
     $delete_sql = "DELETE FROM captcha WHERE id = :id";
     $stmt = $dbh->prepare($delete_sql);
     $stmt->execute([':id' => $delete_id]);
 
-    // Redirect to the same page to prevent form resubmission
+
     header("Location: " . $_SERVER['PHP_SELF']);
     exit;
 }
 
-// Définir la requête SQL pour récupérer les données de la table captcha
+
 $sql = "SELECT id, firstname, lastname, email, password, gender, theme, roole FROM users";
-$stmt = $dbh->query($sql); // Exécuter la requête
+$stmt = $dbh->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -73,7 +73,7 @@ $stmt = $dbh->query($sql); // Exécuter la requête
     </tr>
     <?php
     if ($stmt->rowCount() > 0) {
-        // Afficher les données de chaque ligne
+
         while ($row = $stmt->fetch()) {
             echo "<tr>
                 <td>" . htmlspecialchars($row["id"]) . "</td>
@@ -84,16 +84,10 @@ $stmt = $dbh->query($sql); // Exécuter la requête
                 <td>" . htmlspecialchars($row["gender"]) . "</td>
                 <td>" . htmlspecialchars($row["theme"]) . "</td>
                 <td>" . htmlspecialchars($row["roole"]) . "</td>
-                <td>
-                    <form method='post' action='' class='action-form'>
-                        <input type='hidden' name='delete_id' value='" . htmlspecialchars($row["id"]) . "'>
-                        <button type='submit' class='action-button'>Supprimer</button>
-                    </form>
-                </td>
             </tr>";
         }
     } else {
-        // Si aucun enregistrement n'est trouvé, afficher un message
+
         echo "<tr><td colspan='4'>0 résultats</td></tr>";
     }
     ?>

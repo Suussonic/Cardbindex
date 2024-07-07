@@ -57,6 +57,14 @@ $test = "SELECT id_carte FROM classeur WHERE firstname=:firstname"
 </head>
 
 <body>
+    <header>
+        <nav>
+            <ul>
+                <a href="../index.php"><img src="../ASSET/CARDBINDEX V4.png" alt="LOGO"></a>
+            </ul>
+
+        </nav>
+    </header>
 
     <h1>Bienvenue <?php echo $_SESSION['firstname'] ?></h1>
 
@@ -68,14 +76,14 @@ $test = "SELECT id_carte FROM classeur WHERE firstname=:firstname"
             </div>
         </div>
         <div class="mb-3">
-            <!--  NOM  -->
+        
             <div>
                 <label for="lastname">Nom</label>
                 <input id="lastname" type="text" name="lastname" value="<?php echo $user['lastname'] ?>">
             </div>
         </div>
         <div class="mb-3">
-            <!--  EMAIL  -->
+     
             <div>
                 <label for="email">Email</label>
                 <input id="email" type="email" name="email" value="<?php echo $user['email'] ?>">
@@ -101,8 +109,10 @@ $test = "SELECT id_carte FROM classeur WHERE firstname=:firstname"
 
 
         <input type="submit" value="Modifier">
-        <a id="deco" href="../PHP/logout.php">Se deconnecter</a>
+        <a id="deco" href="logout.php">Se deconnecter</a>
     </form>
+    <script src="../JS/recup.js"></script>
+    <script src="../JS/easteregg.js"></script>
 </body>
 
 </html>

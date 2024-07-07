@@ -10,6 +10,3 @@ try {
     var_dump($e);
 }
 
-//$userQuery = $dbh->query("SELECT * FROM users");
-//$allUsers = $userQuery->fetchAll();
-//var_dump($allUsers);
