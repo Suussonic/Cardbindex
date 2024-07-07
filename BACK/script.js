@@ -9,12 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const displayName = document.getElementById('display-name');
     const displayGender = document.getElementById('display-gender');
 
-    // Vérifie si tous les éléments requis existent
-    if (!pages || !links || !profileForm || !profileImg || !displayImg || !profileName || !profileGender || !displayName || !displayGender) {
-        console.error("Un ou plusieurs éléments DOM requis sont manquants.");
-        return;
-    }
-
     function showPage(id) {
         pages.forEach(page => {
             page.style.display = page.id === id ? 'block' : 'none';
@@ -46,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         displayName.textContent = name;
         displayGender.textContent = gender.charAt(0).toUpperCase() + gender.slice(1);
-        console.log('Profil mis à jour : ' + name);
+        alert('Profil mis à jour : ' + name);
     });
 
     // Affiche par défaut la première page
