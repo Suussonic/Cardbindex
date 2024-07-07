@@ -150,7 +150,9 @@ include_once('db.php');
             </div>
             <div id="page7" class="page">
                 <h1>Generate PDF</h1>
-                <?php include '../PHP/pdf.php'; ?>
+                <form method="GET" action="../PHP/pdf.php">
+                    <button type="submit">Download All Users Info</button>
+                </form>
             </div>
         </div>
     </div>
