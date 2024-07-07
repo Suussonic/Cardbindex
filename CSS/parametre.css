@@ -178,3 +178,8 @@ button:hover {
 .page:first-child {
     display: block;
 }
+
+.sidebar ul li a img {
+    max-width: 100px; /* Ajustez cette valeur selon vos besoins */
+    height: auto; /* Assurez-vous que l'aspect ratio est maintenu */
+}
