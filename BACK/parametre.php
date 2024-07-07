@@ -9,6 +9,7 @@ include_once('../PHP/db.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Web</title>
+    <link rel="shortcut icon" href="../ASSET/CARDBINDEX V5.png" type="image/x-icon">
     <link rel="stylesheet" href="../CSS/parametre.css">
     <?php include '../PHP/theme.php'; ?>
 </head>
