@@ -13,7 +13,7 @@ body {
 
 /* Sidebar styling */
 .sidebar {
-    width: 100px;
+    width: 20px;
     height: 100vh;
     background-color: #23272b;
     position: fixed;
