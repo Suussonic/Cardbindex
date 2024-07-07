@@ -84,12 +84,6 @@ $stmt = $dbh->query($sql); // Exécuter la requête
                 <td>" . htmlspecialchars($row["gender"]) . "</td>
                 <td>" . htmlspecialchars($row["theme"]) . "</td>
                 <td>" . htmlspecialchars($row["roole"]) . "</td>
-                <td>
-                    <form method='post' action='' class='action-form'>
-                        <input type='hidden' name='delete_id' value='" . htmlspecialchars($row["id"]) . "'>
-                        <button type='submit' class='action-button'>Supprimer</button>
-                    </form>
-                </td>
             </tr>";
         }
     } else {
