@@ -32,10 +32,8 @@ $stmt = $dbh->query($sql); // Exécuter la requête
             padding: 8px;
             text-align: left;
         }
-        .admin-table th {
-            background-color: #007bff;
-            color: white;
-        }
+        
+        
        
         .action-button:hover {
             background-color: #c82333;
