@@ -36,13 +36,7 @@ $stmt = $dbh->query($sql); // Exécuter la requête
             background-color: #007bff;
             color: white;
         }
-        .action-button {
-            background-color: #dc3545;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
+       
         .action-button:hover {
             background-color: #c82333;
         }
