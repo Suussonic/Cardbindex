@@ -28,6 +28,7 @@ if (isset($_POST['captcha_answer']) && isset($_POST['captcha_id'])) {
         $email = $_POST['email'];
         $pass = $_POST['password'];
         $gender = $_POST['gender'];
+        $confirme = 0;
         $cle = rand(1000000, 9000000);
 
         // Vérifier la validité du mot de passe
@@ -36,7 +37,7 @@ if (isset($_POST['captcha_answer']) && isset($_POST['captcha_id'])) {
 
             $insertUser = "
             INSERT INTO users (firstname, lastname, email, password, gender, confirme, cle)
-            VALUES (:firstname, :lastname, :email, :password, :gender, ?, :cle)
+            VALUES (:firstname, :lastname, :email, :password, :gender, :confirme, :cle)
             ";
 
             $preparedQuery = $dbh->prepare($insertUser);
@@ -46,7 +47,7 @@ if (isset($_POST['captcha_answer']) && isset($_POST['captcha_id'])) {
                 'email' => $email,
                 'password' => $passHash,
                 'gender' => $gender,
-                'confirme' => 0,
+                'confirme' => $confirme,
                 'cle' => $cle
             ]);
 
