@@ -2,7 +2,6 @@
 session_start();
 // Inclure le fichier de connexion à la base de données
 include_once('db.php');
-include ('script.js');
 ?>
 <!DOCTYPE html>
 <html lang="fr">
