@@ -103,8 +103,6 @@ $test = "SELECT id_carte FROM classeur WHERE firstname=:firstname"
         <input type="submit" value="Modifier">
         <a id="deco" href="logout.php">Se deconnecter</a>
     </form>
-    <script src="../JS/recup.js"></script>
-    <script src="../JS/easteregg.js"></script>
 </body>
 
 </html>
