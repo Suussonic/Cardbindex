@@ -1,5 +1,5 @@
 <?php
-include '../PHP/db_connection.php';
+include '../BACK/db.php';
 
 $sql = "SELECT id, q, r FROM captcha";
 $result = $conn->query($sql);
