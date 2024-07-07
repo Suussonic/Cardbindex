@@ -45,7 +45,7 @@ if (isset($_POST['captcha_answer']) && isset($_POST['captcha_id'])) {
             ]);
 
             // Rediriger vers la page de connexion après une inscription réussie
-            header("Location: login.php");
+            header("Location: loginForm.php");
             exit;
         } else {
             header('Location: form.php?error=Votre mot de passe doit posséder un minimum de 8 caractères, dont une majuscule, une minuscule, un caractère spécial et un chiffre.');
