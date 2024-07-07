@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'MADE Mirage';
+    src: url('../ASSET/MADEMirage-Bold.woff2') format('woff2'),
+        url('../ASSET/MADEMirage-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'MADE Mirage';
+    background-color: #383B42;
+    height: auto;
+    align-items: center;
+  }
+
+  header {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    background-color: #555962;
+    height: 80px;
+    align-items: center;
+    color: white;
+    justify-content: space-around;
+    border-radius: 15px;
+  }
+
+  header a {
+    text-align: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+
+  header img{
+    width: 64px;
+    margin: 8px;
+  }
+  
+  .pkmn-card {
+    width: 215px;
+    height: 300px;
+    margin: 15px;
+    cursor: pointer;
+  }
+  
+  #container, img{
+    cursor: pointer;
+  }
+  
+  h1 {
+    text-align: center;
+    color: white;
+  }
+  
+  .col-auto{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #card-container{
+    align-items: center;
+    justify-content: center;
+  }
