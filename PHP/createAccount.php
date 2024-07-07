@@ -1,55 +1,62 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription</title>
-</head>
-<body>
-    <form method="POST" action="register.php">
-        <label for="firstname">Prénom:</label>
-        <input type="text" name="firstname" id="firstname" required><br><br>
+<?php
+session_start();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-        <label for="lastname">Nom:</label>
-        <input type="text" name="lastname" id="lastname" required><br><br>
+require_once('db.php');
+include('../BACK/verifmdp.php');
 
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email" required><br><br>
+if (isset($_POST['captcha_answer']) && isset($_POST['captcha_id'])) {
+    $captcha_id = $_POST['captcha_id'];
+    $captcha_answer = trim($_POST['captcha_answer']);
 
-        <label for="password">Mot de passe:</label>
-        <input type="password" name="password" id="password" required><br><br>
+    // Récupérer la réponse correcte depuis la base de données
+    $sql = "SELECT r FROM captcha WHERE id = :captcha_id";
+    $stmt = $dbh->prepare($sql);
+    $stmt->bindParam(':captcha_id', $captcha_id, PDO::PARAM_INT);
+    $stmt->execute();
+    $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        <label for="gender">Genre:</label>
-        <select name="gender" id="gender" required>
-            <option value="male">Homme</option>
-            <option value="female">Femme</option>
-            <option value="other">Autre</option>
-        </select><br><br>
+    // Vérifier si la réponse est correcte
+    if ($row && strcasecmp($row['r'], $captcha_answer) == 0) {
+        $firstname = $_POST['firstname'];
+        $lastname = $_POST['lastname'];
+        $email = $_POST['email'];
+        $pass = $_POST['password'];
+        $gender = $_POST['gender'];
 
-        <?php
-       
-        require_once('db.php');
+        // Vérifier la validité du mot de passe
+        if (verifierMotDePasse($pass)) {
+            $passHash = password_hash($pass, PASSWORD_BCRYPT);
 
-        
-        $sql = "SELECT id, question FROM captcha_questions ORDER BY RAND() LIMIT 1";
-        $stmt = $dbh->prepare($sql);
-        $stmt->execute();
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            $insertUser = "
+            INSERT INTO users (firstname, lastname, email, password, gender)
+            VALUES (:firstname, :lastname, :email, :password, :gender)
+            ";
 
-        if ($row) {
-            $captcha_id = $row['id'];
-            $captcha_question = $row['question'];
+            $preparedQuery = $dbh->prepare($insertUser);
+            $preparedQuery->execute([
+                'firstname' => $firstname,
+                'lastname' => $lastname,
+                'email' => $email,
+                'password' => $passHash,
+                'gender' => $gender,
+            ]);
+
+            // Rediriger vers la page de connexion après une inscription réussie
+            header("Location: login.php");
+            exit;
         } else {
-            echo "Aucune question CAPTCHA trouvée.";
+            header('Location: form.php?error=Votre mot de passe doit posséder un minimum de 8 caractères, dont une majuscule, une minuscule, un caractère spécial et un chiffre.');
             exit;
         }
-        ?>
-
-        <label for="captcha"><?php echo $captcha_question; ?></label>
-        <input type="text" name="captcha_answer" id="captcha" required>
-        <input type="hidden" name="captcha_id" value="<?php echo $captcha_id; ?>"><br><br>
-
-        <button type="submit">S'inscrire</button>
-    </form>
-</body>
-</html>
+    } else {
+        header('Location: form.php?error=Réponse au captcha incorrecte. Veuillez réessayer.');
+        exit;
+    }
+} else {
+    header('Location: form.php?error=Veuillez répondre au captcha.');
+    exit;
+}
+?>
