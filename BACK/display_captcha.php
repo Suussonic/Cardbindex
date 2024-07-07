@@ -25,7 +25,7 @@ $stmt = $dbh->query($sql); // Exécuter la requête
             text-align: left;
         }
         .admin-table th {
-            background-color: #f2f2f2;
+            background-color: #007bff;
         }
     </style>
 </head>
