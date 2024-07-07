@@ -44,6 +44,7 @@ if (isset($_GET['user_id'])) {
         $pdf->AddPage();
         $pdf->UserDetails($user);
         $pdf->Output();
+        exit; // Terminer le script après la génération du PDF
 
     } else {
         echo "User not found";
@@ -51,9 +52,9 @@ if (isset($_GET['user_id'])) {
 
     $stmt->close();
     $conn->close();
-    exit;
 }
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -63,12 +64,13 @@ if (isset($_GET['user_id'])) {
         body { font-family: Arial, sans-serif; }
         form { margin: 20px; }
         label, input { display: block; margin: 10px 0; }
-        button { margin-top: 10px; padding: 10px; background-color: #4CAF50; color: white; border: none; }
+        button { margin-top: 10px; padding: 10px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #45a049; }
     </style>
 </head>
 <body>
     <h1>Generate PDF</h1>
-    <form id="pdfForm" method="GET">
+    <form id="pdfForm" method="GET" action="">
         <label for="user_id">User ID:</label>
         <input type="number" id="user_id" name="user_id" required>
         <button type="submit">Generate PDF</button>
@@ -76,10 +78,10 @@ if (isset($_GET['user_id'])) {
 
     <script>
         document.getElementById('pdfForm').addEventListener('submit', function (e) {
-            e.preventDefault();
             const userId = document.getElementById('user_id').value;
             window.open(`index.php?user_id=${userId}`, '_blank');
         });
     </script>
 </body>
 </html>
+
