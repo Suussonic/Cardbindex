@@ -123,7 +123,7 @@ while($user = $recupEmails->fetch()) {
     $sender = 'noreplycardbindex';
     $objet = 'Votre newsletter de CardBinDex';
 
-    // Envoi de l'e-mail
+
     $result = sendMail($sender, $email, $objet, $body);
 }
 ?>

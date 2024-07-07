@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['cardId'])) {
         $cardId = $_POST['cardId'];
 
-        // Récupération des informations de l'utilisateur
+
         $getUser = "SELECT firstname FROM users WHERE id = :id";
         $preparedGetUser = $dbh->prepare($getUser);
         $preparedGetUser->execute([
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($user) {
             $firstname = $user['firstname'];
 
-            // Insertion dans la base de données
+
             $insertUser = "
             INSERT INTO classeur (firstname, id_carte)
             VALUES (:firstname, :cardId)
