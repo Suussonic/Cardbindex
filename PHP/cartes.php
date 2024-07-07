@@ -37,9 +37,6 @@ $userCardsJson = json_encode($userCards);
     <div class="button-container">
         <a id="delete" href="delete.php">Supprimer des cartes</a>
     </div>
-    <div class="button-container">
-        <a id="delete" href="cartepdf.php">Télécharger mes cartes</a>
-    </div>
     <div class="rectangle-9">
         <div class="flex-row-b">
             <div class="container">
