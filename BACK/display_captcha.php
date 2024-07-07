@@ -34,6 +34,21 @@ $stmt = $dbh->query($sql); // Exécuter la requête
         }
         .admin-table th {
             background-color: #007bff;
+            color: white;
+        }
+        .action-button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .action-button:hover {
+            background-color: #c82333;
+        }
+        form {
+            display: inline-block;
+            margin: 0;
         }
     </style>
 </head>
@@ -55,9 +70,9 @@ $stmt = $dbh->query($sql); // Exécuter la requête
                 <td>" . htmlspecialchars($row["q"]) . "</td>
                 <td>" . htmlspecialchars($row["r"]) . "</td>
                 <td>
-                    <form method='post' action='' style='display:inline-block;'>
-                        <input type='hidden' name='delete_id' value='" . $row["id"] . "'>
-                        <button type='submit'>Supprimer</button>
+                    <form method='post' action=''>
+                        <input type='hidden' name='delete_id' value='" . htmlspecialchars($row["id"]) . "'>
+                        <button type='submit' class='action-button'>Supprimer</button>
                     </form>
                 </td>
             </tr>";
