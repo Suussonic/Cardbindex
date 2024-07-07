@@ -1,7 +1,7 @@
 <?php
 global $dbh;
 session_start();
-require_once('../PHP/db.php');
+require_once('../../PHP/db.php');
 ?>
 
 <?php
