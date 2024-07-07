@@ -9,9 +9,18 @@ include_once('db.php');
 // Inclure la bibliothèque FPDF
 require('../fpdf186/fpdf.php');
 
-// Récupérer les cartes de l'utilisateur spécifique
+// Assurez-vous que l'utilisateur est connecté et que son ID est stocké dans la session
+if (!isset($_SESSION['user_id'])) {
+    die("Erreur : utilisateur non connecté.");
+}
+
 $user_id = $_SESSION['user_id']; // Supposons que l'ID utilisateur soit stocké dans la session
-$sql = "SELECT firstname, id_carte FROM classeur WHERE user_id = :user_id";
+
+// Récupérer les cartes de l'utilisateur spécifique de la table "classeur"
+$sql = "SELECT u.firstname, c.id_carte 
+        FROM users u
+        JOIN classeur c ON u.id = c.user_id
+        WHERE u.id = :user_id"; 
 
 try {
     $stmt = $dbh->prepare($sql);
