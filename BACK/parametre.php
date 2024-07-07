@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+// Inclure le fichier de connexion à la base de données
 include_once('../PHP/db.php');
 ?>
 <!DOCTYPE html>

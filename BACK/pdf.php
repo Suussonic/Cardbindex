@@ -3,13 +3,13 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-
+// Inclure le fichier de connexion à la base de données
 include_once('db.php');
 
-
+// Inclure la bibliothèque FPDF
 require('../fpdf186/fpdf.php');
 
-
+// Récupérer toutes les informations des utilisateurs
 $sql = "SELECT id, firstname, lastname, email, gender, roole FROM users";
 
 try {
@@ -19,6 +19,7 @@ try {
     die("Erreur lors de la récupération des données : " . $e->getMessage());
 }
 
+// Générer le PDF
 class PDF extends FPDF
 {
     function Header()
@@ -30,14 +31,14 @@ class PDF extends FPDF
 
     function UserTable($header, $data)
     {
-
+        // Largeurs des colonnes
         $w = array(10, 30, 30, 50, 20, 30);
-
+        // En-têtes
         for ($i = 0; $i < count($header); $i++) {
             $this->Cell($w[$i], 7, $header[$i], 1, 0, 'C');
         }
         $this->Ln();
-
+        // Données
         foreach ($data as $row) {
             $this->Cell($w[0], 6, $row['id'], 1);
             $this->Cell($w[1], 6, $row['firstname'], 1);

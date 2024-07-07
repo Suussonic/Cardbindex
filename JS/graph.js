@@ -3,22 +3,22 @@ $(document).ready(function () {
       url: '../BACK/get_logs.php',
       method: 'GET',
       success: function (data) {
-          console.log(data);
+          console.log(data); // Vérifie les données reçues
           var logsData;
           try {
               logsData = JSON.parse(data);
-              console.log(logsData);
+              console.log(logsData); // Vérifie que les données sont bien parsées
           } catch (e) {
               console.error("Parsing error:", e);
               return;
           }
-         
+          // Filtrage et comptage des logs par date
           var logCountsByDate = _.countBy(_.filter(logsData, { 'action': 'connexion' }), function(log) {
-              return log.date.split(' ')[0];
+              return log.date.split(' ')[0]; // Extrait la date sans l'heure
           });
 
           var modificationCountsByDate = _.countBy(_.filter(logsData, { 'action': 'modification de donnée' }), function(log) {
-              return log.date.split(' ')[0];
+              return log.date.split(' ')[0]; // Extrait la date sans l'heure
           });
 
           var chartData = {
