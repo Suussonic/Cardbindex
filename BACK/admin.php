@@ -5,7 +5,7 @@
     if (isset($_SESSION['userId'])) { 
         $userId = $_SESSION['userId'];
 
-        $getUser = "SELECT role FROM users WHERE id = :id";
+        $getUser = "SELECT roole FROM users WHERE id = :id";
         
         $preparedGetUser = $dbh->prepare($getUser);
         $preparedGetUser->execute([
