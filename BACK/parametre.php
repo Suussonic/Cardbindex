@@ -132,7 +132,7 @@ include_once('../PHP/db.php');
             </div>
             <div id="page4" class="page">
                 <h1>Captcha</h1>
-                <?php include 'display-captcha.php'; ?>
+                <?php include 'display_captcha.php'; ?>
             </div>
             <div id="page5" class="page">
                 <h1>Logs</h1>
