@@ -26,8 +26,7 @@ include_once('db.php');
                         <a href="#page3">- Liste utilisateur</a><br>
                         <a href="#page4">- Captcha</a><br>
                         <a href="#page5">- Logs</a><br>
-                        <a href="#page6">- Newsletter</a><br>
-                        <a href="#page7">- Pdf</a><br>
+                        <a href="#page6">- Pdf</a><br>
                     </div>
                 </div>
             </ul>
@@ -150,9 +149,6 @@ include_once('db.php');
                 <form method="GET" action="">
                     <button type="submit">Télécharger les infos utilisateurs</button>
                 </form>
-            </div>
-            <div id="page7" class="page">
-                
             </div>
         </div>
     </div>
