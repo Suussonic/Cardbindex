@@ -65,6 +65,7 @@ $stmt = $dbh->query($sql); // Exécuter la requête
         <th>ID</th>
         <th>Q</th>
         <th>R</th>
+        <th>Actions</th>
     </tr>
     <?php
     if ($stmt->rowCount() > 0) {
@@ -74,6 +75,12 @@ $stmt = $dbh->query($sql); // Exécuter la requête
                 <td>" . htmlspecialchars($row["id"]) . "</td>
                 <td>" . htmlspecialchars($row["q"]) . "</td>
                 <td>" . htmlspecialchars($row["r"]) . "</td>
+                <td>
+                    <form method='post' action='' class='action-form'>
+                        <input type='hidden' name='delete_id' value='" . htmlspecialchars($row["id"]) . "'>
+                        <button type='submit' class='action-button'>Supprimer</button>
+                    </form>
+                </td>
             </tr>";
         }
     } else {
