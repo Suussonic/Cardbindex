@@ -7,21 +7,24 @@ document.addEventListener("DOMContentLoaded", function() {
             return response.json();
         })
         .then(data => {
-            if (!data.cards) {
-                throw new Error("Données de cartes introuvables dans la réponse.");
-            }
+            const cardContainer = document.getElementById("card-container");
             data.cards.forEach(card => {
                 let pokemonCard = document.createElement("img");
-                pokemonCard.classList.add("pkmn-card");
+                pokemonCard.classList.add("card");
                 pokemonCard.src = card.imageUrlHiRes;
                 pokemonCard.dataset.cardId = card.id;
-                document.getElementById("card-container").appendChild(pokemonCard);
+                cardContainer.appendChild(pokemonCard);
             });
 
-            document.querySelectorAll(".pkmn-card").forEach(cardElement => {
+            document.querySelectorAll(".card").forEach(cardElement => {
                 cardElement.addEventListener("click", function() {
                     let cardId = this.dataset.cardId;
-                    fetch("recherche.php", {
+
+                    // Vérification du chemin d'accès
+                    const url = "/collection/js/recherche.php";
+                    console.log("Sending POST request to:", url);
+
+                    fetch(url, {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/x-www-form-urlencoded"
@@ -30,10 +33,13 @@ document.addEventListener("DOMContentLoaded", function() {
                     })
                     .then(response => {
                         if (response.ok) {
-                            console.log("ID de la carte stocké avec succès !");
+                            return response.text();
                         } else {
-                            console.error("Erreur lors du stockage de l'ID de la carte :", response.statusText);
+                            throw new Error("Erreur lors du stockage de l'ID de la carte : " + response.statusText);
                         }
+                    })
+                    .then(data => {
+                        console.log("Succès :", data);
                     })
                     .catch(error => {
                         console.error("Erreur lors de la requête POST :", error);
