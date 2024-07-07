@@ -169,3 +169,12 @@ button:hover {
   .dropdown:hover .dropdown-content {
     display: block;
   }
+
+
+  .page {
+    display: none;
+}
+
+.page:first-child {
+    display: block;
+}
