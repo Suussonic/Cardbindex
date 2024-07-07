@@ -1,6 +1,22 @@
 <?php
+session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// Inclure le fichier de connexion à la base de données
+include_once('db.php');
+
 // Inclure la bibliothèque FPDF
 require('../fpdf186/fpdf.php');
+
+// Vérifier la connexion
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Récupérer toutes les informations des utilisateurs
+$sql = "SELECT id, firstname, lastname, email, gender, roole FROM users";
+$result = $conn->query($sql);
 
 // Générer le PDF
 class PDF extends FPDF
@@ -23,12 +39,12 @@ class PDF extends FPDF
         $this->Ln();
         // Données
         foreach ($data as $row) {
-            $this->Cell($w[0], 6, $row[0], 1);
-            $this->Cell($w[1], 6, $row[1], 1);
-            $this->Cell($w[2], 6, $row[2], 1);
-            $this->Cell($w[3], 6, $row[3], 1);
-            $this->Cell($w[4], 6, $row[4], 1);
-            $this->Cell($w[5], 6, $row[5], 1);
+            $this->Cell($w[0], 6, $row['id'], 1);
+            $this->Cell($w[1], 6, $row['firstname'], 1);
+            $this->Cell($w[2], 6, $row['lastname'], 1);
+            $this->Cell($w[3], 6, $row['email'], 1);
+            $this->Cell($w[4], 6, $row['gender'], 1);
+            $this->Cell($w[5], 6, $row['roole'], 1);
             $this->Ln();
         }
     }
@@ -37,10 +53,13 @@ class PDF extends FPDF
 $pdf = new PDF();
 $pdf->AddPage();
 $header = array('ID', 'Firstname', 'Lastname', 'Email', 'Gender', 'Role');
-$data = [
-    [1, 'John', 'Doe', 'john@example.com', 'man', 'admin'],
-    [2, 'Jane', 'Smith', 'jane@example.com', 'woman', 'user']
-];
+$data = [];
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $data[] = $row;
+    }
+}
 
 $pdf->UserTable($header, $data);
 $pdf->Output('D', 'user_data.pdf');
