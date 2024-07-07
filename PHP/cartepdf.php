@@ -10,7 +10,7 @@ include_once('db.php');
 require('../fpdf186/fpdf.php');
 
 // Récupérer toutes les informations des cartes
-$sql = "SELECT id, card_name, card_description, card_value FROM cards"; // Assurez-vous que cette requête correspond à vos données
+$sql = "SELECT firstname, id_carte FROM your_table_name"; // Remplacez "your_table_name" par le nom réel de votre table
 
 try {
     $stmt = $dbh->query($sql);
@@ -32,7 +32,7 @@ class PDF extends FPDF
     function CardTable($header, $data)
     {
         // Largeurs des colonnes
-        $w = array(10, 50, 90, 30);
+        $w = array(50, 50);
         // En-têtes
         for ($i = 0; $i < count($header); $i++) {
             $this->Cell($w[$i], 7, $header[$i], 1, 0, 'C');
@@ -40,10 +40,8 @@ class PDF extends FPDF
         $this->Ln();
         // Données
         foreach ($data as $row) {
-            $this->Cell($w[0], 6, $row['id'], 1);
-            $this->Cell($w[1], 6, $row['card_name'], 1);
-            $this->Cell($w[2], 6, $row['card_description'], 1);
-            $this->Cell($w[3], 6, $row['card_value'], 1);
+            $this->Cell($w[0], 6, $row['firstname'], 1);
+            $this->Cell($w[1], 6, $row['id_carte'], 1);
             $this->Ln();
         }
     }
@@ -51,7 +49,7 @@ class PDF extends FPDF
 
 $pdf = new PDF();
 $pdf->AddPage();
-$header = array('ID', 'Card Name', 'Description', 'Value');
+$header = array('Firstname', 'ID Carte');
 
 $pdf->CardTable($header, $cards);
 $pdf->Output('D', 'card_data.pdf');
