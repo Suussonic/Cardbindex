@@ -146,13 +146,13 @@ include_once('db.php');
                 <?php include '../PHP/graph.php'; ?>
             </div>
             <div id="page6" class="page">
-                <h1>Création Newsletter</h1>
-            </div>
-            <div id="page7" class="page">
                 <h1>Generate PDF</h1>
-                <form method="GET" action="../PHP/pdf.php">
+                <form method="GET" action="">
                     <button type="submit">Télécharger les infos utilisateurs</button>
                 </form>
+            </div>
+            <div id="page7" class="page">
+                
             </div>
         </div>
     </div>
