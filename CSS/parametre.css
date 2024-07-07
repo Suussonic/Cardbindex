@@ -169,3 +169,17 @@ button:hover {
   .dropdown:hover .dropdown-content {
     display: block;
   }
+
+
+  .page {
+    display: none;
+}
+
+.page:first-child {
+    display: block;
+}
+
+.sidebar ul li a img {
+    max-width: 100px; /* Ajustez cette valeur selon vos besoins */
+    height: auto; /* Assurez-vous que l'aspect ratio est maintenu */
+}
