@@ -146,7 +146,7 @@ include_once('db.php');
             </div>
             <div id="page6" class="page">
                 <h1>Generate PDF</h1>
-                <form action="generate_pdf.php" method="get">
+                <form action="pdf.php" method="get">
                     <button type="submit">Download PDF</button>
                 </form>
             </div>
