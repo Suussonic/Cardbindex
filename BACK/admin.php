@@ -13,15 +13,15 @@
 
         if ($result) { 
             if ($result['role'] == 'admin') {
-                <div class="dropdown">
+                echo '<div class="dropdown">
                     <span>Administration</span>
                     <div class="dropdown-content">
                         <a href="#page3">- Liste utilisateur</a><br>
                         <a href="#page4">- Captcha</a><br>
                         <a href="#page5">- Logs</a><br>
                         <a href="#page6">- Newsletter</a><br>
-                    </div>
-                </div>
+                    </div></div>"';
             }
         }
+    }
 ?>
