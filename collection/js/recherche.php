@@ -2,9 +2,6 @@
 global $dbh;
 session_start();
 require_once('../../PHP/db.php');
-?>
-
-<?php
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Code de mise à jour de l'utilisateur...
