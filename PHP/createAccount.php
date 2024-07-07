@@ -14,14 +14,14 @@ if (isset($_POST['captcha_answer']) && isset($_POST['captcha_id'])) {
     $captcha_id = $_POST['captcha_id'];
     $captcha_answer = trim($_POST['captcha_answer']);
 
-    // Récupérer la réponse correcte depuis la base de données
+
     $sql = "SELECT r FROM captcha WHERE id = :captcha_id";
     $stmt = $dbh->prepare($sql);
     $stmt->bindParam(':captcha_id', $captcha_id, PDO::PARAM_INT);
     $stmt->execute();
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // Vérifier si la réponse est correcte
+
     if ($row && strcasecmp($row['r'], $captcha_answer) == 0) {
         $firstname = $_POST['firstname'];
         $lastname = $_POST['lastname'];
@@ -31,7 +31,7 @@ if (isset($_POST['captcha_answer']) && isset($_POST['captcha_id'])) {
         $confirme = 0;
         $cle = rand(1000000, 9000000);
 
-        // Vérifier la validité du mot de passe
+
         if (verifierMotDePasse($pass)) {
             $passHash = password_hash($pass, PASSWORD_BCRYPT);
 
@@ -170,7 +170,7 @@ if (isset($_POST['captcha_answer']) && isset($_POST['captcha_id'])) {
             }
 
 
-            // Rediriger vers la page de connexion après une inscription réussie
+
             header("Location: loginForm.php");
             exit;
         } else {
