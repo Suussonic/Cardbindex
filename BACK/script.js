@@ -43,6 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('Profil mis à jour : ' + name);
     });
 
-
+    // Affiche par défaut la première page
     showPage('page1');
 });

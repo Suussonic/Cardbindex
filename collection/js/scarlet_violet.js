@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const cardContainer = document.getElementById("card-container");
             data.cards.forEach(card => {
                 let pokemonCard = document.createElement("img");
-                pokemonCard.classList.add("pkmn-card");
+                pokemonCard.classList.add("pkmn-card");  // Ajout de la classe pkmn-card
                 pokemonCard.src = card.imageUrlHiRes;
                 pokemonCard.dataset.cardId = card.id;
                 cardContainer.appendChild(pokemonCard);
