@@ -1,11 +1,20 @@
+@font-face {
+    font-family: 'MADE Mirage';
+    src: url('../ASSET/MADEMirage-Bold.woff2') format('woff2'),
+        url('../ASSET/MADEMirage-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    display: flex; /* Flex pour centrer le contenu du body */
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
     margin: 0;
+    font-family: 'MADE Mirage';
     background-color: #383B42;
+    display: flex;  /* Utilisation de flexbox pour centrer le contenu */
+    flex-direction: column; /* Disposition en colonne pour les enfants directs */
+    align-items: center; /* Centre les éléments horizontalement */
+    min-height: 100vh; /* S'assure que le body prend toute la hauteur */
 }
 
 header {
@@ -19,11 +28,8 @@ header {
     color: white;
     justify-content: space-around;
     border-radius: 15px;
-}
-
-header img {
-    width: 64px;
-    margin: 8px;
+    width: 100%; /* Occupe toute la largeur disponible */
+    max-width: 1200px; /* Largeur maximale pour le header */
 }
 
 header a {
@@ -34,46 +40,16 @@ header a {
     font-weight: bold;
 }
 
-header a:hover {
-    text-decoration: none;
-    color: rgb(59, 59, 255);
-    font-weight: bold;
-    font-size: 120%;
+header img {
+    width: 64px;
+    margin: 8px;
 }
 
-.container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    width: 80%;
-    max-width: 1200px;
-    margin-top: 20px;
-    margin-right: auto;
-    margin-left: auto;
-    justify-content: center; /* Centrer les éléments horizontalement */
-}
-
-.button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    background-color: #fff;
-    border: 2px solid #ccc;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: transform 0.3s;
-    text-decoration: none;
-}
-
-.button img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-.button:hover {
-    transform: scale(1.05);
+h1 {
+    text-align: center;
+    color: white;
+    width: 100%; /* S'assure que le titre prend toute la largeur */
+    margin: 20px 0; /* Marge pour espacement */
 }
 
 .pkmn-card {
@@ -82,22 +58,22 @@ header a:hover {
     margin: 15px;
     cursor: pointer;
 }
-  
-#card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Centrer les cartes horizontalement */
-    align-items: center;
-    margin: 20px auto;
-    padding: 10px;
+
+#container, img {
+    cursor: pointer;
 }
 
-h1 {
-    text-align: center;
-    color: white;
-}
-  
 .col-auto {
     margin-left: auto;
     margin-right: auto;
+}
+
+#card-container {
+    display: flex; /* Utilisation de flexbox pour les cartes */
+    flex-wrap: wrap; /* Permet de passer à la ligne pour les cartes */
+    justify-content: center; /* Centre les cartes horizontalement */
+    align-items: center; /* Centre les cartes verticalement */
+    margin: 20px 0; /* Marge pour espacement avec les autres éléments */
+    width: 100%; /* Occupe toute la largeur disponible */
+    max-width: 1200px; /* Largeur maximale pour le conteneur de cartes */
 }
