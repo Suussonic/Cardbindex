@@ -12,16 +12,35 @@
             <ul>
                 <li><a href="#page1">Informations du compte</a></li>
                 <li><a href="#page2">Profil utilisateur</a></li>
+                
+                <?php
+                if (isset($_SESSION['userId'])) { 
+                    $userId = $_SESSION['userId'];
 
-                <div class="dropdown">
-                    <span>Administration</span>
-                    <div class="dropdown-content">
-                        <a href="#page3">- Liste utilisateur</a><br>
-                        <a href="#page4">- Captcha</a><br>
-                        <a href="#page5">- Logs</a><br>
-                        <a href="#page6">- Newsletter</a><br>
-                    </div>
-                </div>
+                    $getUser = "SELECT role FROM users WHERE id = :id";
+                    
+                    $preparedGetUser = $dbh->prepare($getUser);
+                    $preparedGetUser->execute([
+                        'id' => $userId
+                    ]);
+
+                    $result = $preparedGetUser->fetch(PDO::FETCH_ASSOC);
+
+                    if ($result) { 
+                        if ($result['role'] == 'admin') {
+                            <div class="dropdown">
+                                <span>Administration</span>
+                                <div class="dropdown-content">
+                                    <a href="#page3">- Liste utilisateur</a><br>
+                                    <a href="#page4">- Captcha</a><br>
+                                    <a href="#page5">- Logs</a><br>
+                                    <a href="#page6">- Newsletter</a><br>
+                                </div>
+                            </div>
+                        }
+                    }
+                ?>
+                
             </ul>
         </div>
 
