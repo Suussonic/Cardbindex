@@ -148,8 +148,7 @@ include_once('db.php');
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
-    <script>showPage('page1');</script>
+    <script src="script.js">showPage('page1');</script>
     <script src="../JS/easteregg.js"></script>
 </body>
 </html>
