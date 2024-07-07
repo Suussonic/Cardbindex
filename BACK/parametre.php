@@ -11,8 +11,7 @@
         <div class="sidebar">
             <ul>
                 <li><a href="#page1">Informations du compte</a></li>
-                <li><a href="#page2">Profil utilisateur</a></li>                
-                <?php include 'admin.php'; ?>
+                <li><a href="#page2">Profil utilisateur</a></li>             
             </ul>
         </div>
 
