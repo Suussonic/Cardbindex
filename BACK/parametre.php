@@ -36,6 +36,7 @@ include_once('db.php');
         <div class="content">
             <div id="page1" class="page">
             <?php include '../PHP/compte.php'; ?>
+            <a id="deco" href="../PHP/logout.php">Se deconnecter</a>
             </div>
             <div id="page2" class="page">
                 <h1>Conditions Générales d'Utilisation</h1>
