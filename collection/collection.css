@@ -1,7 +1,8 @@
 body {
     font-family: Arial, sans-serif;
-    display: block;
+    display: flex; /* Flex pour centrer le contenu du body */
     align-items: center;
+    justify-content: center;
     min-height: 100vh;
     margin: 0;
     background-color: #383B42;
@@ -49,6 +50,7 @@ header a:hover {
     margin-top: 20px;
     margin-right: auto;
     margin-left: auto;
+    justify-content: center; /* Centrer les éléments horizontalement */
 }
 
 .button {
@@ -79,23 +81,23 @@ header a:hover {
     height: 300px;
     margin: 15px;
     cursor: pointer;
-  }
+}
   
-  #container, img{
-    cursor: pointer;
-  }
-  
-  h1 {
+#card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centrer les cartes horizontalement */
+    align-items: center;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+h1 {
     text-align: center;
     color: white;
-  }
+}
   
-  .col-auto{
+.col-auto {
     margin-left: auto;
     margin-right: auto;
-  }
-  
-  #card-container{
-    align-items: center;
-    justify-content: center;
-  }
+}
