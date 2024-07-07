@@ -13,7 +13,7 @@ body {
 
 /* Sidebar styling */
 .sidebar {
-    width: 20px;
+    width: 250px;
     height: 100vh;
     background-color: #23272b;
     position: fixed;
@@ -22,7 +22,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 20px;
+    padding: 10px;
 }
 
 .sidebar ul {
