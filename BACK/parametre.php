@@ -33,26 +33,7 @@ include_once('db.php');
 
         <div class="content">
             <div id="page1" class="page">
-                <h1>Informations du compte</h1>
-                <div class="profile-section">
-                    <img id="profile-img" src="default-profile.png" alt="Profile Image">
-                    <form id="profile-form">
-                        <label for="profile-name">Nom :</label>
-                        <input type="text" id="profile-name" name="profile-name" value="Utilisateur">
-                        <br><br>
-                        <label for="profile-gender">Genre :</label>
-                        <select id="profile-gender" name="profile-gender">
-                            <option value="homme">Homme</option>
-                            <option value="femme">Femme</option>
-                            <option value="autre">Autre</option>
-                        </select>
-                        <br><br>
-                        <label for="profile-img-upload">Changer l'image de profil :</label>
-                        <input type="file" id="profile-img-upload" name="profile-img-upload">
-                        <br><br>
-                        <button type="submit" class="button">Mettre à jour</button>
-                    </form>
-                </div>
+            <?php include '../PHP/compte.php'; ?>
             </div>
             <div id="page2" class="page">
                 <h1>Conditions Générales d'Utilisation</h1>
