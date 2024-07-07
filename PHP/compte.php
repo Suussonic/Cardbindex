@@ -57,14 +57,6 @@ $test = "SELECT id_carte FROM classeur WHERE firstname=:firstname"
 </head>
 
 <body>
-    <header>
-        <nav>
-            <ul>
-                <a href="../index.php"><img src="../ASSET/CARDBINDEX V4.png" alt="LOGO"></a>
-            </ul>
-
-        </nav>
-    </header>
 
     <h1>Bienvenue <?php echo $_SESSION['firstname'] ?></h1>
 

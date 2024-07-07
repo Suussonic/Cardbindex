@@ -10,12 +10,14 @@ include_once('db.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Web</title>
     <link rel="stylesheet" href="../CSS/parametre.css">
+    <link rel="stylesheet" href="../CSS/index.css">
     <?php include '../PHP/theme.php'; ?>
 </head>
 <body>
     <div class="container">
         <div class="sidebar">
             <ul>
+                <li><a href="../index.php"><img src="../ASSET/CARDBINDEX V4.png" alt="LOGO"></a></li>
                 <li><a href="#page1">Informations du compte</a></li>
                 <li><a href="#page2">Conditions d'utilisateurs</a></li>       
                 
@@ -26,7 +28,6 @@ include_once('db.php');
                         <a href="#page4">- Captcha</a><br>
                         <a href="#page5">- Logs</a><br>
                         <a href="#page6">- Newsletter</a><br>
-                        <a href="#page7">- PDF</a><br>
                     </div>
                 </div>
             </ul>
@@ -146,10 +147,6 @@ include_once('db.php');
             </div>
             <div id="page6" class="page">
                 <h1>Création Newsletter</h1>
-            </div>
-            <div id="page7" class="page">
-                <h1>PDF</h1>
-                <?php include 'pdf.php'; ?>
             </div>
         </div>
     </div>
