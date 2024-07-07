@@ -20,15 +20,8 @@ include_once('../PHP/db.php');
                 <li><a href="#page1">Informations du compte</a></li>
                 <li><a href="#page2">Conditions d'utilisateurs</a></li>       
                 
-                <div class="dropdown">
-                    <span>Administration</span>
-                    <div class="dropdown-content">
-                        <a href="#page3">- Liste utilisateur</a><br>
-                        <a href="#page4">- Captcha</a><br>
-                        <a href="#page5">- Logs</a><br>
-                        <a href="#page6">- Pdf</a><br>
-                    </div>
-                </div>
+                <?php include 'admin.php'; ?>
+
             </ul>
         </div>
 
