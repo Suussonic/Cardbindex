@@ -151,7 +151,7 @@ $(document).ready(function () {
               $block1After.find('h3 span').html([
                   accounting.formatNumber(whichChartData.value), 
                   whichChartData.title
-              ].join(' '));
+              ].join('cacher'));
 
               $block2After.find('h3 span').html(
                   accounting.formatNumber(whichChartData.percentage, 2)
