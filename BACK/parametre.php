@@ -16,8 +16,8 @@ include_once('../PHP/db.php');
 <body>
     <div class="container">
         <div class="sidebar">
-        <li><a href="../index.php"><img src="../ASSET/CARDBINDEX V4.png" alt="LOGO"></a></li>
             <ul>
+                <li><a href="../index.php"><img src="../ASSET/CARDBINDEX V4.png" alt="LOGO"></a></li>
                 <li><a href="#page1">Informations du compte</a></li>
                 <li><a href="#page2">Conditions d'utilisateurs</a></li>       
                 
