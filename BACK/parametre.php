@@ -26,7 +26,7 @@ include_once('db.php');
                         <a href="#page4">- Captcha</a><br>
                         <a href="#page5">- Logs</a><br>
                         <a href="#page6">- Newsletter</a><br>
-                        <a href="pdf.php">- PDF</a><br>
+                        <a href="#page7">- PDF</a><br>
                     </div>
                 </div>
             </ul>
@@ -146,6 +146,10 @@ include_once('db.php');
             </div>
             <div id="page6" class="page">
                 <h1>Création Newsletter</h1>
+            </div>
+            <div id="page7" class="page">
+                <h1>PDF</h1>
+                <?php include 'pdf.php'; ?>
             </div>
         </div>
     </div>
