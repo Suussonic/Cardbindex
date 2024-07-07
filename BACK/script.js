@@ -9,12 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const displayName = document.getElementById('display-name');
     const displayGender = document.getElementById('display-gender');
 
+    // Function to show a specific page
     function showPage(id) {
         pages.forEach(page => {
             page.style.display = page.id === id ? 'block' : 'none';
         });
     }
 
+    // Add event listeners to sidebar links
     links.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -23,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Handle profile form submission
     profileForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const name = profileName.value;
@@ -43,6 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('Profil mis à jour : ' + name);
     });
 
-    // Affiche par défaut la première page
+    // Show the first page by default
     showPage('page1');
 });
