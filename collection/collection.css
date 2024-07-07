@@ -52,6 +52,20 @@ h1 {
     margin: 20px 0; /* Marge pour espacement */
 }
 
+#container, img{
+    cursor: pointer;
+  }
+  
+  h1 {
+    text-align: center;
+    color: white;
+  }
+  
+  .col-auto{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
 .pkmn-card {
     width: 215px;
     height: 300px;
