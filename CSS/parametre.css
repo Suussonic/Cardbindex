@@ -13,9 +13,9 @@ body {
 
 /* Sidebar styling */
 .sidebar {
-    width: 220px;
+    width: 100px;
     height: 100vh;
-    background-color: #23272b; /* Couleur de fond de la barre latérale */
+    background-color: #23272b;
     position: fixed;
     top: 0;
     left: 0;
