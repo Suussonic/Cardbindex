@@ -25,14 +25,6 @@ $stmt = $dbh->query($sql); // Exécuter la requête
             width: 100%;
             border-collapse: collapse;
         }
-        .admin-table, .admin-table th, .admin-table td {
-            border: 1px solid black;
-        }
-        .admin-table th, .admin-table td {
-            padding: 8px;
-            text-align: left;
-        }
-        
         
        
         .action-button:hover {
