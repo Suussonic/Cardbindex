@@ -10,7 +10,7 @@ include_once('db.php');
 require('../fpdf186/fpdf.php');
 
 // Récupérer toutes les informations des cartes
-$sql = "SELECT firstname, id_carte FROM your_table_name"; // Remplacez "your_table_name" par le nom réel de votre table
+$sql = "SELECT firstname, id_carte FROM classeur"; // Remplacez "your_table_name" par le nom réel de votre table
 
 try {
     $stmt = $dbh->query($sql);
