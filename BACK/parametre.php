@@ -147,7 +147,6 @@ include_once('db.php');
             </div>
             <div id="page6" class="page">
                 <h1>Création Newsletter</h1>
-                <?php include '../PHP/pdf.php'; ?>
             </div>
             <div id="page7" class="page">
                 <h1>Generate PDF</h1>
