@@ -6,12 +6,14 @@ ini_set('display_errors', 1);
 // Inclure le fichier de connexion à la base de données
 include_once('db.php');
 
-// Inclure la bibliothèque FPDF
-require('../fpdf186/fpdf.php');
+// Vérifier si l'utilisateur est connecté
+if (!isset($_SESSION['userId'])) {
+    // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
+    header('Location: loginForm.php');
+    exit; // Arrêter l'exécution du script
+}
 
-
-
-$user_id = $_SESSION['user_id']; // Supposons que l'ID utilisateur soit stocké dans la session
+$user_id = $_SESSION['userId']; // Supposons que l'ID utilisateur soit stocké dans la session
 
 // Récupérer les cartes de l'utilisateur spécifique de la table "classeur"
 $sql = "SELECT u.firstname, c.id_carte 
@@ -23,10 +25,13 @@ try {
     $stmt = $dbh->prepare($sql);
     $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
     $stmt->execute();
-    $cards = $stmt->fetchAll();
+    $cards = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     die("Erreur lors de la récupération des données : " . $e->getMessage());
 }
+
+// Inclure la bibliothèque FPDF
+require('../fpdf186/fpdf.php');
 
 // Générer le PDF
 class PDF extends FPDF
