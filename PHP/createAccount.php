@@ -2,15 +2,13 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+global $dbh;
 require_once('db.php');
 include('../BACK/verifmdp.php');
-session_start();
 
 if (isset($_POST['captcha_input'])) {
     $user_answer = $_POST['captcha_input'];
-    $correct_answer = $_SESSION['captcha_answer'];
-
-    if ($user_answer == $correct_answer) {
+    if ($user_answer == "200") {
         $firstname = $_POST['firstname'];
         $lastname = $_POST['lastname'];
         $email = $_POST['email'];
@@ -36,15 +34,14 @@ if (isset($_POST['captcha_input'])) {
             header("Location: /");
             exit;
         } else {
-            header('Location: form.php?error=Votre mot de passe doit posséder un minimum de 8 caractères, dont une majuscule, une minuscule, un caractère spécial et un chiffre.');
-            exit;
+            header('location: form.php?error=Votre mot de passe doit posséder un minimum de 8 caractères, dont une majuscule, une minuscule, un caractère spécial et un chiffre.');
+
         }
     } else {
-        header('Location: form.php?error=Réponse incorrecte. Veuillez réessayer.');
+        echo "réponse incorrecte. Veuillez réessayer";
+        header("Location: form.php");
         exit;
     }
 } else {
-    header('Location: form.php?error=Veuillez répondre au captcha.');
-    exit;
+    echo "Veuillez répondre au captcha.";
 }
-?>
