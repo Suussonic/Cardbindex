@@ -10,6 +10,7 @@ include_once('db.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Web</title>
     <link rel="stylesheet" href="../CSS/parametre.css">
+    <link rel="stylesheet" href="../CSS/index.css">
     <?php include '../PHP/theme.php'; ?>
 </head>
 <body>
