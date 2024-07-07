@@ -39,8 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         }
                     })
                     .then(data => {
-                        console.log(data);
-                        alert(data); // Afficher la réponse du serveur
+                        console.log("Succès :", data);
                     })
                     .catch(error => {
                         console.error("Erreur lors de la requête POST :", error);
