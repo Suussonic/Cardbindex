@@ -11,6 +11,7 @@ include ('script.js');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Web</title>
     <link rel="stylesheet" href="../CSS/parametre.css">
+    <?php include '../PHP/theme.php'; ?>
 </head>
 <body>
     <div class="container">
@@ -26,6 +27,7 @@ include ('script.js');
                         <a href="#page4">- Captcha</a><br>
                         <a href="#page5">- Logs</a><br>
                         <a href="#page6">- Newsletter</a><br>
+                        <a href="pdf.php">- PDF</a><br>
                     </div>
                 </div>
             </ul>
