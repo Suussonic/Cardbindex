@@ -13,17 +13,10 @@ include_once('db.php');
     <?php include '../PHP/theme.php'; ?>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <a href="../index.php"><img src="../ASSET/CARDBINDEX V4.png" alt="LOGO"></a>
-            </ul>
-
-        </nav>
-    </header>
     <div class="container">
         <div class="sidebar">
             <ul>
+                <li><a href="../index.php"><img src="../ASSET/CARDBINDEX V4.png" alt="LOGO"></a></li>
                 <li><a href="#page1">Informations du compte</a></li>
                 <li><a href="#page2">Conditions d'utilisateurs</a></li>       
                 
