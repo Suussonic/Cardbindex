@@ -2,8 +2,8 @@
 if (isset($_GET['user_id'])) {
     $userId = $_GET['user_id'];
 
-    // Connexion à la base de données
-    $conn = new mysqli('localhost', 'root', 'tn3bbjTDe5UQ', 'pdf_generator');
+    session_start();
+    include_once('./PHP/db.php');
 
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
@@ -43,7 +43,7 @@ if (isset($_GET['user_id'])) {
         $pdf = new PDF();
         $pdf->AddPage();
         $pdf->UserDetails($user);
-        $pdf->Output();
+        $pdf->Output('D', 'user_info.pdf'); // 'D' forces the PDF to download
         exit; // Terminer le script après la génération du PDF
 
     } else {
@@ -52,36 +52,7 @@ if (isset($_GET['user_id'])) {
 
     $stmt->close();
     $conn->close();
+} else {
+    echo "User ID not provided.";
 }
 ?>
-
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Generate PDF</title>
-    <style>
-        body { font-family: Arial, sans-serif; }
-        form { margin: 20px; }
-        label, input { display: block; margin: 10px 0; }
-        button { margin-top: 10px; padding: 10px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
-        button:hover { background-color: #45a049; }
-    </style>
-</head>
-<body>
-    <h1>Generate PDF</h1>
-    <form id="pdfForm" method="GET" action="">
-        <label for="user_id">User ID:</label>
-        <input type="number" id="user_id" name="user_id" required>
-        <button type="submit">Generate PDF</button>
-    </form>
-
-    <script>
-        document.getElementById('pdfForm').addEventListener('submit', function (e) {
-            const userId = document.getElementById('user_id').value;
-            window.open(`index.php?user_id=${userId}`, '_blank');
-        });
-    </script>
-</body>
-</html>
-

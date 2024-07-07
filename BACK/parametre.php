@@ -27,6 +27,7 @@ include_once('db.php');
                         <a href="#page4">- Captcha</a><br>
                         <a href="#page5">- Logs</a><br>
                         <a href="#page6">- Newsletter</a><br>
+                        <a href="#page7">- Pdf</a><br>
                     </div>
                 </div>
             </ul>
@@ -146,6 +147,14 @@ include_once('db.php');
             </div>
             <div id="page6" class="page">
                 <h1>Création Newsletter</h1>
+            </div>
+            <div id="page7" class="page">
+                <h1>Generate PDF</h1>
+                <form id="pdfForm" method="GET" action="pdf.php">
+                    <label for="user_id">User ID:</label>
+                    <input type="number" id="user_id" name="user_id" required>
+                    <button type="submit">Generate PDF</button>
+                </form>
             </div>
         </div>
     </div>
