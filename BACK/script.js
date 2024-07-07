@@ -44,5 +44,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Affiche par défaut la première page
-    showPage('page2');
+    showPage('page1');
 });
