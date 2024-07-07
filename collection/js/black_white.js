@@ -10,21 +10,16 @@ document.addEventListener("DOMContentLoaded", function() {
             const cardContainer = document.getElementById("card-container");
             data.cards.forEach(card => {
                 let pokemonCard = document.createElement("img");
-                pokemonCard.classList.add("card");
+                pokemonCard.classList.add("pkmn-card");  // Ajout de la classe pkmn-card
                 pokemonCard.src = card.imageUrlHiRes;
                 pokemonCard.dataset.cardId = card.id;
                 cardContainer.appendChild(pokemonCard);
             });
 
-            document.querySelectorAll(".card").forEach(cardElement => {
+            document.querySelectorAll(".pkmn-card").forEach(cardElement => {
                 cardElement.addEventListener("click", function() {
                     let cardId = this.dataset.cardId;
-
-                    // Vérification du chemin d'accès
-                    const url = "/collection/js/recherche.php";
-                    console.log("Sending POST request to:", url);
-
-                    fetch(url, {
+                    fetch("/collection/js/recherche.php", {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/x-www-form-urlencoded"
