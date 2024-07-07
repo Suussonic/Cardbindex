@@ -52,19 +52,39 @@ h1 {
     margin: 20px 0; /* Marge pour espacement */
 }
 
-#container, img{
-    cursor: pointer;
-  }
-  
-  h1 {
-    text-align: center;
-    color: white;
-  }
-  
-  .col-auto{
-    margin-left: auto;
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 80%;
+    max-width: 1200px;
+    margin-top: 20px;
     margin-right: auto;
-  }
+    margin-left: auto;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    text-decoration: none;
+}
+
+.button img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}
 
 .pkmn-card {
     width: 215px;
