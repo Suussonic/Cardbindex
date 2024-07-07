@@ -4,18 +4,18 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 // Inclure le fichier de connexion à la base de données
-include_once('../PHP/db.php');
-
-// Inclure la bibliothèque FPDF
-require('../fpdf186/fpdf.php');
+include_once('db.php');
 
 // Vérifier la connexion
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+// Inclure la bibliothèque FPDF
+require('../fpdf186/fpdf.php');
+
 // Récupérer toutes les informations des utilisateurs
-$sql = "SELECT id, firstname, lastname, email, gender, roole FROM users";
+$sql = "SELECT id, firstname, lastname, email, gender, role FROM users";
 $result = $conn->query($sql);
 
 // Générer le PDF
@@ -44,7 +44,7 @@ class PDF extends FPDF
             $this->Cell($w[2], 6, $row['lastname'], 1);
             $this->Cell($w[3], 6, $row['email'], 1);
             $this->Cell($w[4], 6, $row['gender'], 1);
-            $this->Cell($w[5], 6, $row['roole'], 1);
+            $this->Cell($w[5], 6, $row['role'], 1);
             $this->Ln();
         }
     }

@@ -1,7 +1,7 @@
 <?php
 session_start();
 // Inclure le fichier de connexion à la base de données
-include_once('db.php');
+include_once('../PHP/db.php');
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -132,7 +132,7 @@ include_once('db.php');
             </div>
             <div id="page4" class="page">
                 <h1>Captcha</h1>
-                
+                <?php include 'display_captcha.php'; ?>
             </div>
             <div id="page5" class="page">
                 <h1>Logs</h1>
