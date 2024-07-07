@@ -1,22 +1,17 @@
 <?php
-include 'db.php'; // Include the database connection file
+include 'db.php'; // Inclure le fichier de connexion à la base de données
 
-// Define the SQL query to fetch data from the captcha table
+// Définir la requête SQL pour récupérer les données de la table captcha
 $sql = "SELECT id, q, r FROM captcha";
-$result = $dbh->query($sql); // Execute the query
-
-if ($result === false) {
-    // Handle query error
-    die("Error: " . $dbh->error);
-}
+$stmt = $dbh->query($sql); // Exécuter la requête
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Captcha Display</title>
+    <title>Affichage du Captcha</title>
     <style>
         .admin-table {
             width: 100%;
@@ -43,17 +38,14 @@ if ($result === false) {
         <th>R</th>
     </tr>
     <?php
-    if ($result->num_rows > 0) {
-        // Output data of each row
-        while ($row = $result->fetch_assoc()) {
+    if ($stmt->rowCount() > 0) {
+        // Afficher les données de chaque ligne
+        while ($row = $stmt->fetch()) {
             echo "<tr><td>" . htmlspecialchars($row["id"]) . "</td><td>" . htmlspecialchars($row["q"]) . "</td><td>" . htmlspecialchars($row["r"]) . "</td></tr>";
         }
     } else {
-        // If no records are found, display a message
-        echo "<tr><td colspan='3'>0 résultats</td></tr>";
-    }
-    $result->free(); // Free the memory associated with the result
-    $dbh->close(); // Close the database connection
+        // Si aucun enregistrement n'est trouvé, afficher un message
+        echo "<tr><td colspan='3'>0 résultats</td></tr>";  }
     ?>
 </table>
 
