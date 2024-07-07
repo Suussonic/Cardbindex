@@ -16,7 +16,7 @@ include_once('db.php');
         <div class="sidebar">
             <ul>
                 <li><a href="#page1">Informations du compte</a></li>
-                <li><a href="#page2">Profil utilisateur</a></li>       
+                <li><a href="#page2">Conditions d'utilisateurs</a></li>       
                 
                 <div class="dropdown">
                     <span>Administration</span>
@@ -55,9 +55,8 @@ include_once('db.php');
                 </div>
             </div>
             <div id="page2" class="page">
-                <h1>Conditions d'utilisateurs</h1>
+                <h1>Conditions Générales d'Utilisation</h1>
                 <div class="Liste des condition">
-                    <h1>Conditions Générales d'Utilisation</h1>
 
                     <h2>1. Acceptation des Conditions</h2>
                     <p>En accédant à ce site web et en l'utilisant, vous acceptez de vous conformer aux présentes conditions d'utilisation. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser ce site.</p>
