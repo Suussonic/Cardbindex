@@ -76,14 +76,14 @@ $test = "SELECT id_carte FROM classeur WHERE firstname=:firstname"
             </div>
         </div>
         <div class="mb-3">
-            <!--  NOM  -->
+        
             <div>
                 <label for="lastname">Nom</label>
                 <input id="lastname" type="text" name="lastname" value="<?php echo $user['lastname'] ?>">
             </div>
         </div>
         <div class="mb-3">
-            <!--  EMAIL  -->
+     
             <div>
                 <label for="email">Email</label>
                 <input id="email" type="email" name="email" value="<?php echo $user['email'] ?>">
