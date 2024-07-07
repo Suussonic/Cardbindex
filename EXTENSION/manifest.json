@@ -1,0 +1,15 @@
+{
+    "manifest_version": 3,
+    "name": "CardBinDex",
+    "description": "Rechercher les cartes pokemon",
+    "version": "0.10",
+    "icons": {
+        "16": "CARDBINDEX V4.png",
+        "32": "CARDBINDEX V4.png",
+        "48": "CARDBINDEX V4.png",
+        "128": "CARDBINDEX V4.png"
+      },
+    "action": {
+    "default_popup": "recherche.html"
+    }
+}

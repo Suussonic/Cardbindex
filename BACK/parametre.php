@@ -26,7 +26,7 @@ include_once('db.php');
                         <a href="#page3">- Liste utilisateur</a><br>
                         <a href="#page4">- Captcha</a><br>
                         <a href="#page5">- Logs</a><br>
-                        <a href="#page6">- Newsletter</a><br>
+                        <a href="#page6">- Pdf</a><br>
                     </div>
                 </div>
             </ul>
@@ -146,7 +146,10 @@ include_once('db.php');
                 <?php include '../PHP/graph.php'; ?>
             </div>
             <div id="page6" class="page">
-                <h1>Création Newsletter</h1>
+                <h1>Generate PDF</h1>
+                <form action="pdf.php" method="get">
+                    <button type="submit">Download PDF</button>
+                </form>
             </div>
         </div>
     </div>

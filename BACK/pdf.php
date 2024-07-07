@@ -1,87 +1,67 @@
 <?php
-if (isset($_GET['user_id'])) {
-    $userId = $_GET['user_id'];
+session_start();
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-    // Connexion à la base de données
-    $conn = new mysqli('localhost', 'root', 'tn3bbjTDe5UQ', 'pdf_generator');
+// Inclure le fichier de connexion à la base de données
+include_once('db.php');
 
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+// Inclure la bibliothèque FPDF
+require('../fpdf186/fpdf.php');
 
-    $sql = "SELECT * FROM users WHERE id = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $userId);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
-        $user = $result->fetch_assoc();
-
-        // Générer le PDF
-        require('../fpdf186/fpdf.php');
-
-        class PDF extends FPDF
-        {
-            function Header()
-            {
-                $this->SetFont('Arial', 'B', 12);
-                $this->Cell(0, 10, 'User Information', 0, 1, 'C');
-                $this->Ln(10);
-            }
-
-            function UserDetails($user)
-            {
-                $this->SetFont('Arial', '', 12);
-                foreach ($user as $key => $value) {
-                    $this->Cell(30, 10, ucfirst($key) . ':', 0, 0);
-                    $this->Cell(50, 10, $value, 0, 1);
-                }
-            }
-        }
-
-        $pdf = new PDF();
-        $pdf->AddPage();
-        $pdf->UserDetails($user);
-        $pdf->Output();
-        exit; // Terminer le script après la génération du PDF
-
-    } else {
-        echo "User not found";
-    }
-
-    $stmt->close();
-    $conn->close();
+// Vérifier la connexion
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
+
+// Récupérer toutes les informations des utilisateurs
+$sql = "SELECT id, firstname, lastname, email, gender, roole FROM users";
+$result = $conn->query($sql);
+
+// Générer le PDF
+class PDF extends FPDF
+{
+    function Header()
+    {
+        $this->SetFont('Arial', 'B', 12);
+        $this->Cell(0, 10, 'User Information', 0, 1, 'C');
+        $this->Ln(10);
+    }
+
+    function UserTable($header, $data)
+    {
+        // Largeurs des colonnes
+        $w = array(10, 30, 30, 50, 20, 30);
+        // En-têtes
+        for ($i = 0; $i < count($header); $i++) {
+            $this->Cell($w[$i], 7, $header[$i], 1, 0, 'C');
+        }
+        $this->Ln();
+        // Données
+        foreach ($data as $row) {
+            $this->Cell($w[0], 6, $row['id'], 1);
+            $this->Cell($w[1], 6, $row['firstname'], 1);
+            $this->Cell($w[2], 6, $row['lastname'], 1);
+            $this->Cell($w[3], 6, $row['email'], 1);
+            $this->Cell($w[4], 6, $row['gender'], 1);
+            $this->Cell($w[5], 6, $row['roole'], 1);
+            $this->Ln();
+        }
+    }
+}
+
+$pdf = new PDF();
+$pdf->AddPage();
+$header = array('ID', 'Firstname', 'Lastname', 'Email', 'Gender', 'Role');
+$data = [];
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        $data[] = $row;
+    }
+}
+
+$pdf->UserTable($header, $data);
+$pdf->Output('D', 'user_data.pdf');
+exit;
 ?>
-
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Generate PDF</title>
-    <style>
-        body { font-family: Arial, sans-serif; }
-        form { margin: 20px; }
-        label, input { display: block; margin: 10px 0; }
-        button { margin-top: 10px; padding: 10px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
-        button:hover { background-color: #45a049; }
-    </style>
-</head>
-<body>
-    <h1>Generate PDF</h1>
-    <form id="pdfForm" method="GET" action="">
-        <label for="user_id">User ID:</label>
-        <input type="number" id="user_id" name="user_id" required>
-        <button type="submit">Generate PDF</button>
-    </form>
-
-    <script>
-        document.getElementById('pdfForm').addEventListener('submit', function (e) {
-            const userId = document.getElementById('user_id').value;
-            window.open(`index.php?user_id=${userId}`, '_blank');
-        });
-    </script>
-</body>
-</html>
-
