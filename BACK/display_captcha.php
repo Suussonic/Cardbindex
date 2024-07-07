@@ -21,7 +21,19 @@ $stmt = $dbh->query($sql); // Exécuter la requête
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Affichage du Captcha</title>
     <style>
-    
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+       
+        .action-button:hover {
+            background-color: #c82333;
+        }
+        form {
+            display: inline-block;
+            margin: 0;
+        }
     </style>
 </head>
 <body>
