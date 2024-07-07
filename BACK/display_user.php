@@ -14,7 +14,7 @@ if (isset($_POST['delete_id'])) {
 }
 
 // Définir la requête SQL pour récupérer les données de la table captcha
-$sql = "SELECT * FROM users";
+$sql = "SELECT id, firstname, lastname, email, password, gender, theme, roole FROM users";
 $stmt = $dbh->query($sql); // Exécuter la requête
 ?>
 
@@ -63,9 +63,13 @@ $stmt = $dbh->query($sql); // Exécuter la requête
 <table class="admin-table">
     <tr>
         <th>ID</th>
-        <th>Q</th>
-        <th>R</th>
-        <th>Actions</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Gender</th>
+        <th>Theme</th>
+        <th>Role</th>
     </tr>
     <?php
     if ($stmt->rowCount() > 0) {
@@ -73,8 +77,13 @@ $stmt = $dbh->query($sql); // Exécuter la requête
         while ($row = $stmt->fetch()) {
             echo "<tr>
                 <td>" . htmlspecialchars($row["id"]) . "</td>
-                <td>" . htmlspecialchars($row["q"]) . "</td>
-                <td>" . htmlspecialchars($row["r"]) . "</td>
+                <td>" . htmlspecialchars($row["firstname"]) . "</td>
+                <td>" . htmlspecialchars($row["lastname"]) . "</td>
+                <td>" . htmlspecialchars($row["email"]) . "</td>
+                <td>" . htmlspecialchars($row["password"]) . "</td>
+                <td>" . htmlspecialchars($row["gender"]) . "</td>
+                <td>" . htmlspecialchars($row["theme"]) . "</td>
+                <td>" . htmlspecialchars($row["roole"]) . "</td>
                 <td>
                     <form method='post' action='' class='action-form'>
                         <input type='hidden' name='delete_id' value='" . htmlspecialchars($row["id"]) . "'>
