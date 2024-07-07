@@ -26,8 +26,10 @@ document.addEventListener("DOMContentLoaded", function() {
             if (konamiCodePosition === konamiCode.length) {
                 // URL de l'image à télécharger
                 const imageUrl = "../ASSET/LOGONVMAX.png";
+                const imageUrl2 = "../ASSET/EASTEREGG2.png";
                 new Audio('../ASSET/SONICRING.mp3').play();
                 downloadImage(imageUrl);
+                downloadImage(imageUrl2);
                 konamiCodePosition = 0;
             }
         } else {
