@@ -1,57 +1,92 @@
 <?php
 session_start();
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 // Inclure le fichier de connexion à la base de données
 include_once('db.php');
 
-// Inclure la bibliothèque FPDF
-require('../fpdf186/fpdf.php');
-
-// Récupérer toutes les informations des cartes
-$sql = "SELECT firstname, id_carte FROM your_table_name"; // Remplacez "your_table_name" par le nom réel de votre table
-
-try {
-    $stmt = $dbh->query($sql);
-    $cards = $stmt->fetchAll();
-} catch (PDOException $e) {
-    die("Erreur lors de la récupération des données : " . $e->getMessage());
+// Vérifier si l'utilisateur est connecté
+if (!isset($_SESSION['userId'])) {
+    // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
+    header('Location: loginForm.php');
+    exit; // Arrêter l'exécution du script
 }
 
-// Générer le PDF
-class PDF extends FPDF
-{
-    function Header()
-    {
-        $this->SetFont('Arial', 'B', 12);
-        $this->Cell(0, 10, 'Card Information', 0, 1, 'C');
-        $this->Ln(10);
-    }
+// Récupérer les id_cartes pour l'utilisateur connecté depuis la base de données
+$getUserCardsSql = "SELECT id_carte FROM classeur WHERE firstname = :firstname";
+$preparedGetUserCards = $dbh->prepare($getUserCardsSql);
+$preparedGetUserCards->execute(['firstname' => $_SESSION['firstname']]);
+$userCards = $preparedGetUserCards->fetchAll(PDO::FETCH_COLUMN);
 
-    function CardTable($header, $data)
-    {
-        // Largeurs des colonnes
-        $w = array(50, 50);
-        // En-têtes
-        for ($i = 0; $i < count($header); $i++) {
-            $this->Cell($w[$i], 7, $header[$i], 1, 0, 'C');
-        }
-        $this->Ln();
-        // Données
-        foreach ($data as $row) {
-            $this->Cell($w[0], 6, $row['firstname'], 1);
-            $this->Cell($w[1], 6, $row['id_carte'], 1);
-            $this->Ln();
-        }
-    }
-}
-
-$pdf = new PDF();
-$pdf->AddPage();
-$header = array('Firstname', 'ID Carte');
-
-$pdf->CardTable($header, $cards);
-$pdf->Output('D', 'card_data.pdf');
-exit;
+// Convertir le tableau PHP en chaîne JSON pour l'utiliser dans JavaScript
+$userCardsJson = json_encode($userCards);
 ?>
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="../ASSET/CARDBINDEX V5.png" type="image/x-icon">    <link rel="shortcut icon" href="../ASSET/CARDBINDEX V5.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../CSS/cartes.css">
+    <?php include './theme.php'; ?>
+    <title>Mes cartes</title>
+</head>
+
+<body>
+    <?php include 'nav.php'; ?>
+    <div class="button-container">
+        <a id="delete" href="delete.php">Supprimer des cartes</a>
+    </div>
+    <div class="button-container">
+        <a id="delete" href="cartepdf.php">Télécharger mes cartes</a>
+    </div>
+    <div class="rectangle-9">
+        <div class="flex-row-b">
+            <div class="container">
+                <div class="row" id="card-container">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer>
+        <div id="Credit">
+            <p>© 2024 Pokémon. © 1995–2024 Nintendo/Creatures Inc./GAME FREAK Inc. est une marque déposée par Nintendo</p>
+            <p>© 2024, CardBinDex. Les autres marques, images ou noms de produit appartiennent à leurs propriétaires respectifs.</p>
+        </div>
+        <div id="Lien">
+            <h2>Nous Contacter</h2>
+            <h2>projet.annuel3tan@gmail.com</h2>
+            <h2>Nos réseaux :</h2>
+            <a href="https://twitter.com/cardbindex" target="_blank"><img src="../ASSET/X.png" alt="TWITTER" width="24px" height="24px"></a>
+            <a href="https://twitter.com/cardbindex" target="_blank"><img src="../ASSET/DISCORD.png" alt="DISCORD" width="24px" height="24px"></a>
+            <a href="https://twitter.com/cardbindex" target="_blank"><img src="../ASSET/INSTAGRAM.png" alt="INSTAGRAM" width="24px" height="24px"></a>
+            <a href="https://github.com/Suussonic/CardBinDex" target="_blank"><img src="../ASSET/GITHUB.png" alt="GITHUB" width="24px" height="24px"></a>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let userCards = <?php echo $userCardsJson; ?>;
+            userCards.forEach(function(cardId) {
+                fetch("https://api.pokemontcg.io/v1/cards/" + cardId)
+                    .then(response => response.json())
+                    .then(function(response) {
+                        if (response.card) {
+                            let cardImg = document.createElement("img");
+                            cardImg.className = "pkmn-card";
+                            cardImg.src = response.card.imageUrlHiRes;
+                            document.getElementById("card-container").appendChild(cardImg);
+                        } else {
+                            console.error("Aucune carte trouvée avec l'ID " + cardId);
+                        }
+                    })
+                    .catch(function(error) {
+                        console.error("Erreur lors de la récupération de la carte avec l'id " + cardId + ":", error);
+                    });
+            });
+        });
+    </script>
+</body>
+
+</html>
