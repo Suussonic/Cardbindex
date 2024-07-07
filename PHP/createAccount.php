@@ -69,10 +69,7 @@ if (isset($_POST['captcha_answer']) && isset($_POST['captcha_id'])) {
                         $mail->Port = 465;  
                         $mail->Username = 'noreplycardbindex@gmail.com';
                         $mail->Password = 'vtlwswtcphagplaw';   
-                
-                //   $path = 'reseller.pdf';
-                //   $mail->AddAttachment($path);
-                
+                    
                         $mail->IsHTML(true);
                         $mail->From="noreplycardbindex@gmail.com";
                         $mail->FromName=$from_name;
